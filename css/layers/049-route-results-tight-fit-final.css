@@ -1,0 +1,91 @@
+/* Tight-fit cards: don't stretch a short Lumen card across a large empty area. */
+.route-lumen-grid{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(175px,220px)) !important;
+  justify-content:start !important;
+  align-items:start !important;
+  gap:6px !important;
+  padding:6px !important;
+}
+.route-lumen-grid .route-codex-item{
+  display:grid !important;
+  grid-template-columns:32px 34px minmax(0,1fr) !important;
+  grid-template-rows:18px 18px !important;
+  column-gap:5px !important;
+  row-gap:0 !important;
+  width:100% !important;
+  min-width:175px !important;
+  max-width:220px !important;
+  height:48px !important;
+  min-height:48px !important;
+  padding:5px 6px !important;
+  box-sizing:border-box !important;
+  border-radius:7px !important;
+}
+.route-lumen-grid .route-codex-item .side-thumb{
+  width:32px !important;
+  height:32px !important;
+  padding:2px !important;
+}
+.route-lumen-grid .route-codex-item .side-num{
+  font-size:9px !important;
+  line-height:16px !important;
+}
+.route-lumen-grid .route-codex-item .side-name{
+  font-size:13px !important;
+  line-height:16px !important;
+}
+.route-lumen-grid .route-codex-item .side-types .chip{
+  font-size:7px !important;
+  line-height:12px !important;
+  padding:1px 4px !important;
+  height:14px !important;
+}
+
+/* Let the results area stay shallow. */
+body.world-map-full-page.route-panel-open #route-results{
+  max-height:min(22vh,190px) !important;
+  overflow-y:auto !important;
+}
+
+@media(max-width:900px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(auto-fit,minmax(170px,200px)) !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    min-width:170px !important;
+    max-width:200px !important;
+  }
+}
+@media(max-width:520px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    justify-content:stretch !important;
+    gap:4px !important;
+    padding:5px !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    height:46px !important;
+    min-height:46px !important;
+    grid-template-columns:29px 30px minmax(0,1fr) !important;
+    column-gap:4px !important;
+    padding:4px 5px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-thumb{
+    width:29px !important;
+    height:29px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-name{
+    font-size:11px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-num{
+    font-size:8px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-types .chip{
+    font-size:6px !important;
+    padding:1px 3px !important;
+  }
+}

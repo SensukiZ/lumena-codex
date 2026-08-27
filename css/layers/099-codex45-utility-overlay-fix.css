@@ -1,0 +1,59 @@
+/*
+   * Any full utility view must be the only visible working surface.
+   * This prevents the currently selected Lumen card/artwork from floating
+   * above Moves, Leaderboard, Counters, VS, Move Compare, etc. on mobile.
+   */
+  body.codex-utility-open .detail-panel,
+  body.codex-utility-open .detail-view,
+  body.codex-utility-open .lumena-art{
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  /*
+   * Utility overlays themselves remain visible and interactive even though
+   * the underlying Codex detail is hidden.
+   */
+  body.codex-utility-open .compare-overlay.open,
+  body.codex-utility-open .compare-overlay.open *,
+  body.codex-utility-open #team-builder-overlay.open,
+  body.codex-utility-open #team-builder-overlay.open *,
+  body.codex-utility-open #mv-tracker-overlay.open,
+  body.codex-utility-open #mv-tracker-overlay.open *,
+  body.codex-utility-open #move-compare-overlay.open,
+  body.codex-utility-open #move-compare-overlay.open *,
+  body.codex-utility-open #lumen-vs-overlay.open,
+  body.codex-utility-open #lumen-vs-overlay.open *{
+    visibility:visible !important;
+    pointer-events:auto !important;
+  }
+
+  /*
+   * Keep all full-screen utilities above every legacy Codex layer.
+   * Older detail/map patches used very high z-index values.
+   */
+  .compare-overlay.open,
+  #team-builder-overlay.open,
+  #mv-tracker-overlay.open,
+  #move-compare-overlay.open,
+  #lumen-vs-overlay.open{
+    z-index:2147483646 !important;
+  }
+
+  /*
+   * On mobile the bottom navigation remains usable, but never sits above
+   * modal content. The modal/tool surface gets priority.
+   */
+  @media(max-width:600px){
+    body.codex-utility-open #codex-app-nav{
+      z-index:2147483400 !important;
+    }
+
+    body.codex-utility-open .compare-overlay.open,
+    body.codex-utility-open #team-builder-overlay.open,
+    body.codex-utility-open #mv-tracker-overlay.open,
+    body.codex-utility-open #move-compare-overlay.open,
+    body.codex-utility-open #lumen-vs-overlay.open{
+      z-index:2147483646 !important;
+    }
+  }

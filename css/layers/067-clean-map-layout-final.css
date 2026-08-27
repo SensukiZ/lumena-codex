@@ -1,0 +1,47 @@
+/* Remove the artificial blocks that were previously added to cover the
+   legends. They take up map space and are not part of the desired UI. */
+#rebuilt-map-ui .rebuilt-route-cover,
+#rebuilt-map-ui .rebuilt-type-cover{
+  display:none !important;
+}
+
+/* Remove the instructional footer entirely. */
+#rebuilt-map-ui .rebuilt-map-footer{
+  display:none !important;
+}
+
+/* Give all recovered vertical space back to the map. */
+#rebuilt-map-ui{
+  grid-template-rows:72px minmax(0,1fr) !important;
+}
+#rebuilt-map-ui .rebuilt-map-body{
+  min-height:0 !important;
+  height:100% !important;
+}
+#rebuilt-map-ui .rebuilt-map-left,
+#rebuilt-map-ui .rebuilt-map-viewport{
+  bottom:0 !important;
+}
+
+/* The map itself fills the available left pane without added blank strips. */
+#rebuilt-map-ui .rebuilt-map-image-wrap{
+  width:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  margin:0 auto !important;
+}
+
+/* Mobile also gets the clean two-row layout. */
+@media (max-width:900px){
+  #rebuilt-map-ui{
+    grid-template-rows:62px minmax(0,1fr) !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-panel{
+    bottom:8px !important;
+  }
+}
+@media (max-width:560px){
+  #rebuilt-map-ui .rebuilt-map-panel{
+    bottom:8px !important;
+  }
+}

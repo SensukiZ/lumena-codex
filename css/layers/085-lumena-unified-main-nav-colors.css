@@ -1,0 +1,50 @@
+/* Make every main navigation control use the same gold/yellow style as Moves. */
+  #codex-app-nav > button,
+  #codex-app-nav > .codex-nav-group > button,
+  #codex-app-nav #world-map-toggle,
+  #codex-app-nav #team-builder-toggle-btn,
+  #codex-app-nav #mv-tracker-toggle-btn,
+  #codex-app-nav #battle-tools-trigger,
+  #codex-app-nav #favorites-toggle-btn{
+    background:linear-gradient(180deg,#ffe66d 0%,#ffc928 100%) !important;
+    border:1px solid #ffd64a !important;
+    color:#101521 !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.65),
+      0 0 0 1px rgba(255,196,24,.12) !important;
+    text-shadow:none !important;
+  }
+
+  #codex-app-nav > button:hover,
+  #codex-app-nav > .codex-nav-group > button:hover,
+  #codex-app-nav #world-map-toggle:hover,
+  #codex-app-nav #team-builder-toggle-btn:hover,
+  #codex-app-nav #mv-tracker-toggle-btn:hover,
+  #codex-app-nav #battle-tools-trigger:hover,
+  #codex-app-nav #favorites-toggle-btn:hover{
+    background:linear-gradient(180deg,#fff08a 0%,#ffd43b 100%) !important;
+    border-color:#ffe270 !important;
+    color:#090d15 !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.75),
+      0 0 12px rgba(255,205,45,.28) !important;
+  }
+
+  #codex-app-nav #favorites-toggle-btn .favorites-toggle-count{
+    background:rgba(9,13,21,.20) !important;
+    color:#101521 !important;
+  }
+
+  /* Keep the Battle Tools dropdown items in their normal tool colors;
+     only the main Battle Tools navigation button is unified. */
+  #codex-app-nav .battle-tools-menu > button{
+    background:#132440 !important;
+    border-color:#466184 !important;
+    color:#d8e7ff !important;
+    box-shadow:none !important;
+  }
+  #codex-app-nav .battle-tools-menu > button:hover{
+    background:#183255 !important;
+    border-color:var(--signal) !important;
+    color:#fff !important;
+  }

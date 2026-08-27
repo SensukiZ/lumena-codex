@@ -1,0 +1,68 @@
+/* Keep the original illustrated Lumena map visible and use one SVG coordinate
+   layer over it. Because the SVG and image share the same 1402x1122 system,
+   hotspots stay aligned at every responsive size. */
+body.world-map-full-page #lumena-world-map .world-map-image{
+  display:block !important;
+  pointer-events:none !important;
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:fill !important;
+  z-index:1 !important;
+}
+body.world-map-full-page #lumena-world-map .world-map-canvas{
+  position:relative !important;
+  overflow:hidden !important;
+  background:#06131f !important;
+  aspect-ratio:1402 / 1122 !important;
+}
+/* Disable every older click layer so only the SVG layer receives taps. */
+body.world-map-full-page #lumena-world-map #lumena-simplified-map,
+body.world-map-full-page #lumena-world-map #lumena-svg-hotspots,
+body.world-map-full-page #lumena-world-map .map-route,
+body.world-map-full-page #lumena-world-map .map-town-hitbox,
+body.world-map-full-page #lumena-world-map .map-town-symbol{
+  display:none !important;
+  pointer-events:none !important;
+}
+#lumena-merged-hotspots{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  z-index:2147483600 !important;
+  pointer-events:auto !important;
+  touch-action:manipulation;
+}
+#lumena-merged-hotspots .map-hotspot{
+  cursor:pointer;
+  outline:none;
+}
+#lumena-merged-hotspots .hit-area{
+  fill:rgba(255,255,255,0.001);
+  stroke:transparent;
+  stroke-width:3;
+  vector-effect:non-scaling-stroke;
+  pointer-events:all;
+  transition:fill .12s ease, stroke .12s ease;
+}
+/* Keep the original artwork unchanged until the user points at a location. */
+#lumena-merged-hotspots .map-hotspot:hover .hit-area,
+#lumena-merged-hotspots .map-hotspot:focus-visible .hit-area,
+#lumena-merged-hotspots .map-hotspot.active .hit-area{
+  fill:rgba(255,196,77,.12);
+  stroke:#ffd36b;
+}
+#lumena-merged-hotspots .town-hotspot:hover .hit-area,
+#lumena-merged-hotspots .town-hotspot:focus-visible .hit-area,
+#lumena-merged-hotspots .town-hotspot.active .hit-area{
+  fill:rgba(51,243,214,.10);
+  stroke:#72ffe9;
+}
+/* A subtle dot appears only on keyboard focus/hover, not over the artwork normally. */
+#lumena-merged-hotspots .hover-dot{opacity:0;pointer-events:none;fill:#ffd36b;stroke:#1b1205;stroke-width:2;vector-effect:non-scaling-stroke;}
+#lumena-merged-hotspots .town-hotspot .hover-dot{fill:#72ffe9;}
+#lumena-merged-hotspots .map-hotspot:hover .hover-dot,
+#lumena-merged-hotspots .map-hotspot:focus-visible .hover-dot,
+#lumena-merged-hotspots .map-hotspot.active .hover-dot{opacity:1;}

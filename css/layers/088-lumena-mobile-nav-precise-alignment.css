@@ -1,0 +1,120 @@
+@media (max-width:600px){
+
+  /* Five perfectly equal columns. */
+  #codex-app-nav{
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    align-items:stretch !important;
+  }
+
+  /* Every top-level nav slot gets the same geometry. */
+  #codex-app-nav > button,
+  #codex-app-nav > .codex-nav-group,
+  #codex-app-nav > .codex-nav-group > button,
+  #codex-app-nav #world-map-toggle,
+  #codex-app-nav #team-builder-toggle-btn,
+  #codex-app-nav #mv-tracker-toggle-btn,
+  #codex-app-nav #battle-tools-trigger,
+  #codex-app-nav #favorites-toggle-btn{
+    position:relative !important;
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    height:58px !important;
+    min-height:58px !important;
+    max-height:58px !important;
+    margin:0 !important;
+    padding:5px 2px 6px !important;
+    box-sizing:border-box !important;
+    border-radius:10px !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:3px !important;
+
+    text-align:center !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    line-height:1 !important;
+  }
+
+  /* The group container itself should not add another visual box. */
+  #codex-app-nav > .codex-nav-group{
+    padding:0 !important;
+    border:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    overflow:visible !important;
+  }
+
+  #codex-app-nav > .codex-nav-group > #battle-tools-trigger{
+    height:58px !important;
+    min-height:58px !important;
+    max-height:58px !important;
+  }
+
+  /* Give every icon the same reserved vertical space. */
+  #codex-app-nav #world-map-toggle::before,
+  #codex-app-nav #team-builder-toggle-btn::before,
+  #codex-app-nav #mv-tracker-toggle-btn::before,
+  #codex-app-nav #battle-tools-trigger::before,
+  #codex-app-nav #favorites-toggle-btn::before{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    height:19px !important;
+    min-height:19px !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:15px !important;
+    line-height:19px !important;
+  }
+
+  /* Identical label typography for all five controls. */
+  #codex-app-nav #world-map-toggle,
+  #codex-app-nav #team-builder-toggle-btn,
+  #codex-app-nav #mv-tracker-toggle-btn,
+  #codex-app-nav #battle-tools-trigger,
+  #codex-app-nav #favorites-toggle-btn{
+    font-size:8.5px !important;
+    font-weight:700 !important;
+    letter-spacing:0 !important;
+  }
+
+  /* Stop the dropdown arrow from taking a different amount of space. */
+  #codex-app-nav #battle-tools-trigger::after{
+    position:absolute !important;
+    right:5px !important;
+    bottom:7px !important;
+    margin:0 !important;
+    font-size:7px !important;
+    line-height:1 !important;
+  }
+
+  /* Collection count becomes a corner badge and no longer affects centering. */
+  #codex-app-nav #favorites-toggle-btn .favorites-toggle-count{
+    position:absolute !important;
+    top:3px !important;
+    right:4px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-width:13px !important;
+    width:auto !important;
+    height:13px !important;
+    padding:0 3px !important;
+    margin:0 !important;
+    border-radius:7px !important;
+    font-size:7px !important;
+    line-height:13px !important;
+    z-index:2 !important;
+  }
+
+  /* Prevent old mobile Collection span rule from making it wider. */
+  #codex-app-nav #favorites-toggle-btn{
+    grid-column:auto !important;
+    justify-self:stretch !important;
+  }
+}

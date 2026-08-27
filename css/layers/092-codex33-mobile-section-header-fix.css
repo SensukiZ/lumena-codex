@@ -1,0 +1,66 @@
+/* Outside phone mode, the generated wrapper should behave like normal
+     document flow and its accordion button must not exist visually. */
+  .detail-view .mobile-section-wrap{
+    display:contents !important;
+  }
+
+  .detail-view .mobile-section-toggle{
+    display:none !important;
+  }
+
+  .detail-view .mobile-section-content{
+    display:contents !important;
+  }
+
+  /* Re-enable the intended accordion UI only on actual small mobile screens. */
+  @media (max-width:600px){
+    .detail-view .mobile-section-wrap{
+      display:block !important;
+      border:1px solid var(--line) !important;
+      border-radius:10px !important;
+      margin:8px 0 !important;
+      overflow:hidden !important;
+      background:var(--panel-raised) !important;
+    }
+
+    .detail-view .mobile-section-toggle{
+      width:100% !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      border:0 !important;
+      border-radius:0 !important;
+      background:rgba(181,140,255,.07) !important;
+      color:var(--ink) !important;
+      padding:10px 11px !important;
+      margin:0 !important;
+      font:700 10px 'JetBrains Mono',monospace !important;
+      cursor:pointer !important;
+      text-transform:uppercase !important;
+      appearance:none !important;
+      -webkit-appearance:none !important;
+    }
+
+    .detail-view .mobile-section-toggle::after{
+      content:'＋' !important;
+      color:#b58cff !important;
+      font-size:13px !important;
+    }
+
+    .detail-view .mobile-section-wrap.open > .mobile-section-toggle::after{
+      content:'−' !important;
+    }
+
+    .detail-view .mobile-section-content{
+      display:none !important;
+      padding:0 8px 8px !important;
+    }
+
+    .detail-view .mobile-section-wrap.open > .mobile-section-content{
+      display:block !important;
+    }
+
+    .detail-view .mobile-section-content > .panel{
+      margin:8px 0 0 !important;
+    }
+  }

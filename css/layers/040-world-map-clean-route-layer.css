@@ -1,0 +1,41 @@
+/* The route names are already printed on the map artwork.
+   Keep the HTML buttons as invisible click targets so names never appear twice. */
+#lumena-world-map .map-route{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  text-shadow:none !important;
+  outline:none !important;
+  padding:0 !important;
+  min-width:88px !important;
+  max-width:125px !important;
+  min-height:30px !important;
+  opacity:0 !important;
+  cursor:pointer !important;
+  transform:translate(-50%,-50%) !important;
+  z-index:50 !important;
+}
+#lumena-world-map .map-route:hover,
+#lumena-world-map .map-route:focus,
+#lumena-world-map .map-route.active{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  opacity:0 !important;
+  transform:translate(-50%,-50%) !important;
+}
+/* Prevent the old "0 recorded" pseudo-label from appearing on invisible targets. */
+#lumena-world-map .map-route::after{
+  display:none !important;
+  content:none !important;
+}
+/* Keep route targets clickable even though their labels are supplied by the image. */
+#lumena-world-map .map-route{
+  pointer-events:auto !important;
+}
+/* Town symbols are already part of the artwork. */
+#lumena-world-map .map-town-symbol{
+  display:none !important;
+}

@@ -1,0 +1,25 @@
+/* Center the type symbol + name inside the left Type column. */
+.type-chart th.row-type,
+.counter-filtered-chart .row-type {
+  text-align:center !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  vertical-align:middle !important;
+}
+
+.type-chart th.row-type .chart-type-label,
+.counter-filtered-chart .row-type .counter-chip {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Keep the symbol and type name centered together inside the pill. */
+.chart-type-label::before,
+.counter-chip::before {
+  flex:0 0 auto !important;
+  margin-right:3px !important;
+}

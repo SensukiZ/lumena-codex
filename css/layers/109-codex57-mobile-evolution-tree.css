@@ -1,0 +1,98 @@
+@media(max-width:600px){
+
+  /* Keep the entire evolution chain on one continuous horizontal line. */
+  .detail-view .evo-tree,
+  .detail-view .evolution-tree,
+  .detail-view .evo-tree-row,
+  .detail-view .evolution-tree-row{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:7px !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    padding:5px 4px 9px !important;
+    box-sizing:border-box !important;
+    scroll-snap-type:x proximity !important;
+    scrollbar-width:thin !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  /* Evolution cards become compact enough for mobile but never wrap. */
+  .detail-view .evo-node,
+  .detail-view .evo-card{
+    flex:0 0 125px !important;
+    width:125px !important;
+    min-width:125px !important;
+    max-width:125px !important;
+    min-height:170px !important;
+    height:auto !important;
+    padding:9px 6px !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+    scroll-snap-align:center !important;
+  }
+
+  .detail-view .evo-node img,
+  .detail-view .evo-card img{
+    width:64px !important;
+    height:64px !important;
+    object-fit:contain !important;
+    margin:0 auto 5px !important;
+  }
+
+  .detail-view .evo-node .evo-name,
+  .detail-view .evo-card .evo-name,
+  .detail-view .evo-node b,
+  .detail-view .evo-card b{
+    font-size:12px !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    max-width:100% !important;
+  }
+
+  .detail-view .evo-node .evo-num,
+  .detail-view .evo-card .evo-num{
+    font-size:8px !important;
+  }
+
+  .detail-view .evo-node .evo-level,
+  .detail-view .evo-card .evo-level{
+    font-size:8px !important;
+    margin-top:4px !important;
+  }
+
+  /* Arrows stay centered between adjacent evolution cards. */
+  .detail-view .evo-arrow,
+  .detail-view .evolution-arrow{
+    flex:0 0 18px !important;
+    width:18px !important;
+    min-width:18px !important;
+    height:auto !important;
+    margin:0 !important;
+    align-self:center !important;
+    text-align:center !important;
+    font-size:14px !important;
+    line-height:1 !important;
+  }
+
+  /* Do not let older grid/flex rules push stage 3 onto another row. */
+  .detail-view .evolution-tree > *,
+  .detail-view .evo-tree > *{
+    grid-column:auto !important;
+    grid-row:auto !important;
+  }
+
+  /* The evolution panel itself must not clip the horizontal scroller. */
+  .detail-view .mobile-section-content .panel:has(.evo-tree),
+  .detail-view .mobile-section-content .panel:has(.evolution-tree),
+  .detail-view .panel:has(.evo-tree),
+  .detail-view .panel:has(.evolution-tree){
+    overflow:visible !important;
+  }
+}

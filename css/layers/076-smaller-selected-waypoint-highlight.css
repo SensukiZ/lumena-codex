@@ -1,0 +1,12 @@
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active circle.ring{
+  stroke-width:2.6 !important;
+  filter:drop-shadow(0 0 2px rgba(255,196,46,.9)) drop-shadow(0 0 4px rgba(255,196,46,.55)) !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active circle.hit{
+  fill:rgba(255,196,77,.06) !important;
+  stroke:rgba(255,222,120,.7) !important;
+  stroke-width:1 !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active{
+  filter:none !important;
+}

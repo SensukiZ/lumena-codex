@@ -1,0 +1,13 @@
+/* Central design tokens for future maintenance. Existing legacy layers retain visual parity. */
+:root {
+  --rarity-common:#f2f5f8; --rarity-uncommon:#65d889; --rarity-rare:#4ea3ff;
+  --rarity-epic:#a778ff; --rarity-legendary:#ffca45; --rarity-mythic:#ff6fae;
+  --rarity-starter:#ff914d; --type-normal:#b9b6a9; --type-fire:#e8703a;
+  --type-water:#4e9bd9; --type-electric:#e0be3c; --type-grass:#6fbe6e;
+  --type-ice:#7fd6d6; --type-fighting:#c1554a; --type-poison:#a85ab5;
+  --type-ground:#d2aa51; --type-flying:#9fb6e8; --type-psychic:#e96b9a;
+  --type-bug:#9ac13a; --type-rock:#b7a35a; --type-ghost:#7366b2;
+  --type-dragon:#735bd3; --type-dark:#6d625a; --type-steel:#9fa9b6;
+  --type-fairy:#de8fce; --category-physical:#c69a72;
+  --category-special:#eda6d1; --category-status:#c7cbd1;
+}

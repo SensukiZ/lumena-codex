@@ -1,0 +1,19 @@
+/* Keep the map above the Codex detail background layer. */
+#lumena-world-map{
+  position:relative !important;
+  z-index:20 !important;
+}
+#lumena-world-map .world-map-shell,
+#lumena-world-map .world-map-stage,
+#lumena-world-map .world-map-canvas{
+  position:relative;
+  z-index:21;
+}
+/* The artwork already contains the town emblems, so don't duplicate them. */
+#lumena-world-map .map-town-symbol{
+  display:none !important;
+}
+/* Routes remain the only clickable overlay. */
+#lumena-world-map .map-route{
+  z-index:30 !important;
+}

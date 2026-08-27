@@ -1,0 +1,84 @@
+@media(max-width:600px){
+  /* Make the six Current Team slots much shorter. */
+  #team-builder-slots{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:5px !important;
+  }
+
+  #team-builder-slots .team-slot{
+    min-height:62px !important;
+    height:62px !important;
+    padding:5px 3px !important;
+    gap:2px !important;
+  }
+
+  /* Empty slots no longer consume a large block of the phone screen. */
+  #team-builder-slots .team-slot:empty,
+  #team-builder-slots .team-slot.empty{
+    min-height:62px !important;
+    height:62px !important;
+  }
+
+  #team-builder-slots .team-slot img{
+    width:27px !important;
+    height:27px !important;
+  }
+
+  #team-builder-slots .team-slot b,
+  #team-builder-slots .team-slot .team-slot-name{
+    font-size:7.8px !important;
+    line-height:1 !important;
+    max-width:100% !important;
+  }
+
+  /* Type badges remain visible in compact mode. */
+  #team-builder-slots .team-slot .team-slot-types,
+  #team-builder-slots .team-slot .tb-slot-types{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-wrap:wrap !important;
+    gap:2px !important;
+    width:100% !important;
+    margin-top:1px !important;
+  }
+
+  #team-builder-slots .team-slot .team-slot-types > *,
+  #team-builder-slots .team-slot .tb-slot-types > *,
+  #team-builder-slots .team-slot .type-chip,
+  #team-builder-slots .team-slot .type-badge{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-width:0 !important;
+    height:13px !important;
+    padding:1px 4px !important;
+    border-radius:999px !important;
+    font-size:5.7px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+
+  /* Keep remove/reorder controls from covering the type badges. */
+  #team-builder-slots [data-tb-remove]{
+    width:15px !important;
+    min-width:15px !important;
+    height:15px !important;
+    top:2px !important;
+    right:2px !important;
+    font-size:7px !important;
+  }
+
+  #team-builder-slots .tb-mobile-order button{
+    width:15px !important;
+    min-width:15px !important;
+    height:15px !important;
+    font-size:8px !important;
+  }
+
+  /* Reduce the gap before Add Lumen. */
+  #team-builder-overlay .team-builder-picker,
+  #team-builder-overlay .team-builder-add{
+    margin-top:5px !important;
+  }
+}

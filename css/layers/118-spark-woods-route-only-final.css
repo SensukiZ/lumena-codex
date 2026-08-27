@@ -1,0 +1,4 @@
+#lumena-world-map .spark-woods-symbol,
+#lumena-world-map [data-location="Spark Woods"] .map-town-symbol{
+  display:none !important;
+}

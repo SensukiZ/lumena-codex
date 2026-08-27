@@ -1,0 +1,23 @@
+/* Pack route encounter cards together instead of stretching a short route
+   across the whole screen. On wide screens up to eight compact cards fit
+   naturally in one row; short routes stay grouped from the left. */
+@media (min-width:1101px){
+  .route-lumen-grid{
+    display:grid !important;
+    /* Up to 10 Lumen per row. The grid itself is capped at the width
+       of ten compact cards, so ultra-wide screens can never create
+       an 11th column. Empty tracks keep short routes packed left. */
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr)) !important;
+    width:100% !important;
+    max-width:2254px !important;
+    justify-content:start !important;
+    align-items:start !important;
+    gap:6px !important;
+    padding:6px !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:220px !important;
+  }
+}

@@ -1,0 +1,4 @@
+/* Type selector: remove the pill shape while keeping equal dimensions. */
+#counter-tracker-overlay .counter-type-selector-btn{
+  border-radius:0 !important;
+}

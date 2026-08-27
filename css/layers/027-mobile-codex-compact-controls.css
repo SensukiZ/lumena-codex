@@ -1,0 +1,80 @@
+/* Compact mobile controls: preserve every existing button/function, but use much less vertical space. */
+@media (max-width:820px){
+  .topbar{padding-bottom:7px !important;}
+
+  .search-row{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:6px !important;
+    margin-top:8px !important;
+  }
+
+  .search-row > input{
+    grid-column:1 / -1 !important;
+    min-height:42px !important;
+    height:42px !important;
+  }
+
+  .search-row > .filter-select-custom,
+  .search-row > .location-filter-wrap,
+  .search-row > select{
+    grid-column:auto !important;
+  }
+
+  .search-row .filter-select-trigger,
+  .search-row > select{
+    min-height:42px !important;
+    height:42px !important;
+    padding:6px 9px !important;
+    font-size:12px !important;
+  }
+
+  /* Reset gets one short row instead of a large button. */
+  .search-row > .clear-btn{
+    grid-column:1 / -1 !important;
+    min-height:34px !important;
+    height:34px !important;
+    padding:5px 10px !important;
+    margin:0 !important;
+    font-size:10px !important;
+    border-radius:18px !important;
+  }
+
+  /* Five tools use three columns: only two rows on a phone. */
+  .search-row > .compare-btn,
+  .search-row > .leaderboard-btn,
+  .search-row > .mv-tracker-btn,
+  .search-row > .counter-tracker-btn,
+  .search-row > .lumen-counter-btn{
+    min-height:40px !important;
+    height:40px !important;
+    padding:6px 5px !important;
+    margin:0 !important;
+    width:100% !important;
+    font-size:10px !important;
+    line-height:1.05 !important;
+    border-radius:20px !important;
+  }
+
+  .search-row > .compare-btn{grid-column:1 !important; grid-row:auto !important;}
+  .search-row > .leaderboard-btn{grid-column:2 !important; grid-row:auto !important;}
+  .search-row > .mv-tracker-btn{grid-column:3 !important; grid-row:auto !important;}
+  .search-row > .counter-tracker-btn{grid-column:1 !important; grid-row:auto !important;}
+  .search-row > .lumen-counter-btn{grid-column:2 !important; grid-row:auto !important;}
+
+  .search-row > .compare-btn .compare-count{display:none !important;}
+
+  /* Don't reserve a large blank header area for the result count on mobile. */
+  .result-count{min-height:0 !important; height:auto !important; margin:3px 0 0 !important;}
+}
+
+@media (max-width:480px){
+  .topbar{padding-left:10px !important; padding-right:10px !important;}
+  .search-row{gap:5px !important;}
+  .search-row .filter-select-trigger,
+  .search-row > select{font-size:11px !important; padding-left:7px !important; padding-right:7px !important;}
+  .search-row > .compare-btn,
+  .search-row > .leaderboard-btn,
+  .search-row > .mv-tracker-btn,
+  .search-row > .counter-tracker-btn,
+  .search-row > .lumen-counter-btn{font-size:9px !important;}
+}

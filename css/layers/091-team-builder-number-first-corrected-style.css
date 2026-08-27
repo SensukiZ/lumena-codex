@@ -1,0 +1,17 @@
+#team-builder-list .team-builder-option-identity{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    min-width:0 !important;
+  }
+  #team-builder-list .team-builder-option-num{
+    order:0 !important;
+    margin:0 !important;
+    color:#ffbf3f !important;
+    font:700 10px 'JetBrains Mono',monospace !important;
+    flex:0 0 auto !important;
+  }
+  #team-builder-list .team-builder-option-name{
+    order:1 !important;
+    margin:0 !important;
+  }

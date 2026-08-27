@@ -1,0 +1,31 @@
+/* Gold = every recorded location for the selected Lumen. */
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight circle.ring {
+  fill: rgba(255,196,77,.32) !important;
+  stroke: #FFC44D !important;
+  stroke-width: 9px !important;
+  opacity: 1 !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight circle.hit {
+  fill: rgba(255,196,77,.16) !important;
+  stroke: rgba(255,196,77,.90) !important;
+  stroke-width: 4px !important;
+  opacity: 1 !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight {
+  filter: drop-shadow(0 0 5px #FFC44D) drop-shadow(0 0 14px rgba(255,196,77,.95)) !important;
+}
+/* Cyan = the one location chip the user clicked. */
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight.lumen-location-primary circle.ring {
+  fill: rgba(51,243,214,.36) !important;
+  stroke: #33F3D6 !important;
+  stroke-width: 10px !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight.lumen-location-primary circle.hit {
+  fill: rgba(51,243,214,.18) !important;
+  stroke: rgba(51,243,214,.95) !important;
+  stroke-width: 4px !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.lumen-location-highlight.lumen-location-primary {
+  filter: drop-shadow(0 0 6px #33F3D6) drop-shadow(0 0 16px rgba(51,243,214,1)) !important;
+}
+#map-lumen-highlight-banner.visible { display:block !important; }

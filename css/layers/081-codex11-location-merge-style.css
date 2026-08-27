@@ -1,0 +1,38 @@
+/* The original detail location panel is the single source of truth. */
+.lumen-location-panel{display:none !important;}
+.detail-location-panel h4{gap:12px;}
+.detail-location-panel .detail-location-chip{
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.detail-location-panel .detail-location-chip:hover,
+.detail-location-panel .detail-location-chip:focus-visible{
+  border-color:var(--signal);
+  background:rgba(94,230,199,.14);
+  box-shadow:0 0 9px rgba(94,230,199,.18);
+  outline:none;
+}
+.detail-location-map-all{
+  margin-left:auto;
+  border:1px solid var(--gold);
+  background:rgba(255,196,77,.08);
+  color:var(--gold);
+  border-radius:7px;
+  padding:5px 9px;
+  font:600 10px 'JetBrains Mono',monospace;
+  text-transform:none;
+  letter-spacing:0;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.detail-location-map-all:hover,
+.detail-location-map-all:focus-visible{
+  background:rgba(255,196,77,.16);
+  box-shadow:0 0 9px rgba(255,196,77,.22);
+  outline:none;
+}
+@media (max-width:600px){
+  .detail-location-panel h4{align-items:center;}
+  .detail-location-map-all{font-size:9px;padding:5px 7px;}
+}

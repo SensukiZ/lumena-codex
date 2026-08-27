@@ -1,0 +1,165 @@
+@media(max-width:600px){
+
+  /* Force exactly 3 cards + 2 arrows into the available width. */
+  .detail-view .evo-tree,
+  .detail-view .evolution-tree{
+    display:grid !important;
+    grid-template-columns:
+      minmax(0,1fr)
+      14px
+      minmax(0,1fr)
+      14px
+      minmax(0,1fr) !important;
+    align-items:center !important;
+    gap:3px !important;
+
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+
+    overflow:visible !important;
+    padding:5px 2px 8px !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Every evolution card takes one equal flexible column. */
+  .detail-view .evo-tree .evo-node,
+  .detail-view .evo-tree .evo-card,
+  .detail-view .evolution-tree .evo-node,
+  .detail-view .evolution-tree .evo-card{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    min-height:145px !important;
+    height:auto !important;
+
+    padding:7px 3px !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  .detail-view .evo-tree .evo-node img,
+  .detail-view .evo-tree .evo-card img,
+  .detail-view .evolution-tree .evo-node img,
+  .detail-view .evolution-tree .evo-card img{
+    width:50px !important;
+    height:50px !important;
+    max-width:50px !important;
+    max-height:50px !important;
+    object-fit:contain !important;
+    margin:0 auto 4px !important;
+  }
+
+  .detail-view .evo-tree .evo-name,
+  .detail-view .evo-tree b,
+  .detail-view .evolution-tree .evo-name,
+  .detail-view .evolution-tree b{
+    width:100% !important;
+    max-width:100% !important;
+    font-size:9.5px !important;
+    line-height:1.05 !important;
+    text-align:center !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .detail-view .evo-tree .evo-num,
+  .detail-view .evolution-tree .evo-num{
+    font-size:6.5px !important;
+  }
+
+  .detail-view .evo-tree .evo-level,
+  .detail-view .evolution-tree .evo-level{
+    font-size:7px !important;
+    margin-top:3px !important;
+  }
+
+  .detail-view .evo-tree .current-badge,
+  .detail-view .evo-tree .evo-current,
+  .detail-view .evolution-tree .current-badge,
+  .detail-view .evolution-tree .evo-current{
+    font-size:6px !important;
+    padding:2px 5px !important;
+    white-space:nowrap !important;
+  }
+
+  /* Arrows get their own fixed narrow grid columns. */
+  .detail-view .evo-tree .evo-arrow,
+  .detail-view .evo-tree .evolution-arrow,
+  .detail-view .evolution-tree .evo-arrow,
+  .detail-view .evolution-tree .evolution-arrow{
+    width:14px !important;
+    min-width:14px !important;
+    max-width:14px !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    font-size:11px !important;
+    line-height:1 !important;
+    align-self:center !important;
+  }
+
+  /* Remove old horizontal-scroll behavior from Codex 57. */
+  .detail-view .evo-tree,
+  .detail-view .evolution-tree{
+    scroll-snap-type:none !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:auto !important;
+  }
+  .detail-view .evo-tree::-webkit-scrollbar,
+  .detail-view .evolution-tree::-webkit-scrollbar{
+    display:none !important;
+  }
+}
+
+/* Extra-small phones: compress a little more, but still keep one row. */
+@media(max-width:390px){
+  .detail-view .evo-tree,
+  .detail-view .evolution-tree{
+    grid-template-columns:
+      minmax(0,1fr)
+      10px
+      minmax(0,1fr)
+      10px
+      minmax(0,1fr) !important;
+    gap:2px !important;
+  }
+
+  .detail-view .evo-tree .evo-node,
+  .detail-view .evo-tree .evo-card,
+  .detail-view .evolution-tree .evo-node,
+  .detail-view .evolution-tree .evo-card{
+    min-height:132px !important;
+    padding:5px 2px !important;
+  }
+
+  .detail-view .evo-tree .evo-node img,
+  .detail-view .evo-tree .evo-card img,
+  .detail-view .evolution-tree .evo-node img,
+  .detail-view .evolution-tree .evo-card img{
+    width:43px !important;
+    height:43px !important;
+  }
+
+  .detail-view .evo-tree .evo-name,
+  .detail-view .evo-tree b,
+  .detail-view .evolution-tree .evo-name,
+  .detail-view .evolution-tree b{
+    font-size:8.5px !important;
+  }
+
+  .detail-view .evo-tree .evo-arrow,
+  .detail-view .evo-tree .evolution-arrow,
+  .detail-view .evolution-tree .evo-arrow,
+  .detail-view .evolution-tree .evolution-arrow{
+    width:10px !important;
+    min-width:10px !important;
+    max-width:10px !important;
+    font-size:9px !important;
+  }
+}

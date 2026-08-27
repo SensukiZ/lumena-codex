@@ -1,0 +1,150 @@
+@media(max-width:600px){
+
+  /* The Moves toolbar becomes a clean single-column mobile form. */
+  #mv-tracker-overlay .mv-controls{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:7px !important;
+    width:100% !important;
+    margin-bottom:10px !important;
+    overflow:visible !important;
+  }
+
+  #mv-tracker-overlay #mv-move-search,
+  #mv-tracker-overlay .mv-filter-custom,
+  #mv-tracker-overlay .filter-select-custom,
+  #mv-tracker-overlay #mv-method-filter{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    margin:0 !important;
+  }
+
+  #mv-tracker-overlay #mv-move-search{
+    grid-column:1 !important;
+    min-height:46px !important;
+    height:46px !important;
+    padding:9px 12px !important;
+    font-size:12px !important;
+  }
+
+  #mv-tracker-overlay .mv-filter-custom .filter-select-trigger,
+  #mv-tracker-overlay .filter-select-custom .filter-select-trigger,
+  #mv-tracker-overlay #mv-method-filter{
+    width:100% !important;
+    min-height:44px !important;
+    height:44px !important;
+    padding:8px 12px !important;
+    font-size:11px !important;
+    border-radius:9px !important;
+  }
+
+  /*
+   * Most important fix:
+   * dropdown options are IN DOCUMENT FLOW on phones, not absolute/floating.
+   * They push the move list down instead of covering move cards.
+   */
+  #mv-tracker-overlay .mv-filter-custom,
+  #mv-tracker-overlay .filter-select-custom{
+    position:relative !important;
+    z-index:auto !important;
+  }
+
+  #mv-tracker-overlay .mv-filter-custom .filter-select-menu,
+  #mv-tracker-overlay .filter-select-custom .filter-select-menu{
+    position:static !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    max-height:235px !important;
+    margin:5px 0 0 !important;
+    padding:5px !important;
+    box-sizing:border-box !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    border:1px solid #53698f !important;
+    border-radius:9px !important;
+    background:#0f1830 !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035) !important;
+    z-index:auto !important;
+    scrollbar-width:thin !important;
+  }
+
+  #mv-tracker-overlay .mv-filter-custom:not(.open) .filter-select-menu,
+  #mv-tracker-overlay .filter-select-custom:not(.open) .filter-select-menu{
+    display:none !important;
+  }
+
+  #mv-tracker-overlay .mv-filter-custom.open .filter-select-menu,
+  #mv-tracker-overlay .filter-select-custom.open .filter-select-menu{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:5px !important;
+  }
+
+  /* Type/category choices fit in two compact columns. */
+  #mv-tracker-overlay .filter-select-menu .filter-select-option{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    min-height:33px !important;
+    margin:0 !important;
+    padding:5px 7px !important;
+    box-sizing:border-box !important;
+    justify-content:flex-start !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+    font-size:8px !important;
+  }
+
+  #mv-tracker-overlay .filter-select-option .filter-option-symbol{
+    flex:0 0 auto !important;
+  }
+
+  #mv-tracker-overlay .filter-select-option .filter-select-label{
+    min-width:0 !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    white-space:nowrap !important;
+  }
+
+  /* Learn Method stays a normal full-width native selector. */
+  #mv-tracker-overlay #mv-method-filter{
+    display:block !important;
+    position:relative !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    appearance:auto !important;
+    -webkit-appearance:auto !important;
+    background:var(--panel) !important;
+    color:var(--ink) !important;
+    border:1px solid var(--line) !important;
+  }
+
+  /* The move list receives the full width once filters finish. */
+  #mv-tracker-overlay .mv-move-list{
+    width:100% !important;
+    max-height:none !important;
+    overflow-x:hidden !important;
+    padding-right:2px !important;
+  }
+
+  #mv-tracker-overlay .mv-move-card{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Modal can scroll naturally while an inline dropdown is expanded. */
+  #mv-tracker-overlay .mv-tracker-modal{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    max-height:calc(100dvh - 16px) !important;
+  }
+}

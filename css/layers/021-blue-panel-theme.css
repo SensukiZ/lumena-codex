@@ -1,0 +1,42 @@
+/* Blue dashboard panel theme — matched to the supplied reference */
+.detail-panel .panel,
+.detail-panel .entry-grid .panel{
+  background:
+    linear-gradient(180deg, rgba(20,103,205,.94) 0%, rgba(8,48,104,.96) 100%) !important;
+  border:1.5px solid rgba(52,157,255,.92) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(130,205,255,.22),
+    0 8px 24px rgba(0,0,0,.28),
+    0 0 12px rgba(30,125,255,.10);
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+.detail-panel .panel h4,
+.detail-panel .panel .panel-sub,
+.detail-panel .panel .section-title{
+  color:#d9ecff;
+}
+
+.detail-panel .panel-sub,
+.detail-panel .profile-list dt,
+.detail-panel .entry-locations,
+.detail-panel .location-empty,
+.detail-panel .stat-label{
+  color:#b9d5f7;
+}
+
+.detail-panel .profile-list dd,
+.detail-panel .stat-value,
+.detail-panel .ability-value{
+  color:#ffffff;
+}
+
+.detail-panel .stat-track{
+  background:#092b60 !important;
+  border-color:rgba(75,166,255,.55) !important;
+}
+
+.detail-panel .stat-fill{
+  background:linear-gradient(90deg, #22c55e 0%, #84cc16 22%, #facc15 45%, #f97316 70%, #ef4444 100%);
+}

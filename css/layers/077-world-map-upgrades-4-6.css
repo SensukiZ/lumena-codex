@@ -1,0 +1,147 @@
+/* 4 — Previous / Next location */
+#rebuilt-map-ui .rebuilt-location-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:10px 14px 14px;
+  border-top:1px solid rgba(83,145,205,.22);
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 9px;
+  border:1px solid #315d8d;
+  border-radius:7px;
+  background:linear-gradient(180deg,#123f72,#0b2e56);
+  color:#f8efd8;
+  cursor:pointer;
+  text-align:left;
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn.next{
+  justify-content:flex-end;
+  text-align:right;
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn:hover{
+  border-color:#ffc44d;
+  background:linear-gradient(180deg,#194f88,#103961);
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn small,
+#rebuilt-map-ui .rebuilt-location-nav-btn b{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn small{
+  color:#8eb8dc;
+  font:600 8px 'JetBrains Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+#rebuilt-map-ui .rebuilt-location-nav-btn b{
+  margin-top:2px;
+  color:#f8efd8;
+  font:600 10px 'Fraunces',serif;
+}
+#rebuilt-map-ui .nav-arrow{
+  flex:0 0 auto;
+  color:#ffc44d;
+  font-size:22px;
+  line-height:1;
+}
+
+/* 5 — Town/city and route headers are visually distinct */
+#rebuilt-map-ui .rebuilt-location-head.is-town{
+  background:linear-gradient(135deg,#236bb2 0%,#174f8d 55%,#103a69 100%) !important;
+}
+#rebuilt-map-ui .rebuilt-location-head.is-route{
+  background:linear-gradient(135deg,#17466f 0%,#103753 55%,#0b293f 100%) !important;
+}
+#rebuilt-map-ui .rebuilt-location-kind{
+  display:inline-flex;
+  align-items:center;
+  margin-right:7px;
+  padding:2px 6px;
+  border-radius:999px;
+  border:1px solid rgba(255,196,77,.72);
+  color:#ffd76a;
+  background:rgba(255,196,77,.10);
+  font:700 8px 'JetBrains Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+#rebuilt-map-ui .rebuilt-location-subtype{
+  color:#bdd7ee;
+}
+
+/* 6 — Zoom controls and panning */
+#rebuilt-map-ui .rebuilt-map-viewport{
+  position:relative;
+  overflow:hidden !important;
+}
+#rebuilt-map-ui .rebuilt-map-image-wrap{
+  transition:transform .12s ease-out;
+  will-change:transform;
+}
+#rebuilt-map-ui .rebuilt-map-image-wrap.is-zoomed{
+  cursor:grab;
+}
+#rebuilt-map-ui .rebuilt-map-image-wrap.is-zoomed:active{
+  cursor:grabbing;
+}
+#rebuilt-map-ui .rebuilt-map-zoom-controls{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  z-index:2147483640;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:4px;
+  border:1px solid rgba(255,196,77,.48);
+  border-radius:8px;
+  background:rgba(4,20,36,.88);
+  box-shadow:0 4px 14px rgba(0,0,0,.35);
+}
+#rebuilt-map-ui .rebuilt-map-zoom-controls button{
+  height:30px;
+  min-width:30px;
+  padding:0 7px;
+  border:1px solid #365f86;
+  border-radius:5px;
+  background:#0d3156;
+  color:#f6e8c4;
+  font:700 12px 'JetBrains Mono',monospace;
+  cursor:pointer;
+}
+#rebuilt-map-ui .rebuilt-map-zoom-controls button:hover{
+  border-color:#ffc44d;
+}
+#rebuilt-map-ui .rebuilt-map-zoom-controls button:disabled{
+  opacity:.35;
+  cursor:default;
+}
+#rebuilt-map-ui #rebuilt-map-zoom-reset{
+  min-width:52px;
+  font-size:9px;
+}
+
+@media (max-width:900px){
+  #rebuilt-map-ui .rebuilt-map-viewport{
+    touch-action:none;
+  }
+  #rebuilt-map-ui .rebuilt-map-zoom-controls{
+    right:7px;
+    bottom:7px;
+  }
+  #rebuilt-map-ui .rebuilt-location-nav{
+    padding:8px 9px 11px;
+  }
+}
+@media (max-width:520px){
+  #rebuilt-map-ui .rebuilt-location-nav{
+    grid-template-columns:1fr;
+  }
+}

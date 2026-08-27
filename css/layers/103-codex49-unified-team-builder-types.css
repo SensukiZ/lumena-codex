@@ -1,0 +1,63 @@
+/*
+   * Team Builder now reuses .type-chip.small from the main Codex.
+   * Do not override its background, border, icon, text treatment, or type color.
+   * Only adjust spacing so the shared component fits Team Builder layouts.
+   */
+  #team-builder-overlay .team-builder-unified-type{
+    flex:0 0 auto !important;
+    margin:0 !important;
+  }
+
+  #team-builder-list .team-builder-option-types{
+    display:flex !important;
+    align-items:center !important;
+    gap:5px !important;
+    flex-wrap:wrap !important;
+  }
+
+  #team-builder-slots .team-builder-slot-types{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:4px !important;
+    flex-wrap:wrap !important;
+  }
+
+  #team-builder-analysis .tb-chip-wrap{
+    gap:6px !important;
+  }
+
+  /*
+   * Undo the simplified Codex 47/48 rules that were shrinking generic
+   * .type-chip elements inside Team Builder and replacing the unified look.
+   */
+  @media(max-width:600px){
+    #team-builder-list .team-builder-option-types .type-chip.team-builder-unified-type,
+    #team-builder-slots .team-builder-slot-types .type-chip.team-builder-unified-type,
+    #team-builder-analysis .type-chip.team-builder-unified-type{
+      min-width:44px !important;
+      width:auto !important;
+      height:16px !important;
+      padding:1px 5px 2px !important;
+      border-radius:999px !important;
+      font-size:7px !important;
+      line-height:1 !important;
+      margin:0 !important;
+    }
+
+    /* Keep the official symbol visible instead of clipping it in tight cards. */
+    #team-builder-overlay .type-chip.team-builder-unified-type::before{
+      display:inline-block !important;
+      width:9px !important;
+      height:9px !important;
+      margin-right:3px !important;
+      flex:0 0 9px !important;
+      background-size:contain !important;
+      background-repeat:no-repeat !important;
+      background-position:center !important;
+    }
+
+    #team-builder-list [data-tb-add]{
+      min-height:64px !important;
+    }
+  }

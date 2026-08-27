@@ -1,0 +1,13 @@
+body.world-map-full-page #lumena-world-map .world-map-canvas{
+  aspect-ratio:1537 / 1023 !important;
+}
+body.world-map-full-page #lumena-world-map .world-map-image,
+body.world-map-full-page #lumena-world-map #lumena-svg-hotspots{
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+}
+/* Slightly larger touch target on phones without moving the waypoint center. */
+@media (max-width:820px){
+  #lumena-svg-hotspots .lumena-svg-hotspot[data-kind="route"]{stroke-width:4 !important;}
+}

@@ -1,0 +1,40 @@
+/* When a route is open, reserve space for the route panel instead of covering
+   the bottom of the world map. The map automatically scales to the remaining
+   viewport and stays fully visible. */
+body.world-map-full-page.route-panel-open #lumena-world-map .world-map-stage{
+  height:calc(100vh - var(--route-panel-height, 0px)) !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  transition:height .22s ease !important;
+}
+body.world-map-full-page.route-panel-open #lumena-world-map .world-map-canvas{
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  aspect-ratio:auto !important;
+  transition:height .22s ease,width .22s ease !important;
+}
+body.world-map-full-page.route-panel-open #lumena-world-map .world-map-image{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+}
+body.world-map-full-page.route-panel-open #route-results{
+  bottom:0 !important;
+  left:0 !important;
+  right:0 !important;
+  margin:0 !important;
+  max-height:min(34vh, 330px) !important;
+  border-radius:12px 12px 0 0 !important;
+  overflow:auto !important;
+  transition:max-height .22s ease !important;
+}
+@media(max-width:820px){
+  body.world-map-full-page.route-panel-open #lumena-world-map .world-map-stage{
+    height:calc(100vh - var(--route-panel-height, 0px)) !important;
+  }
+  body.world-map-full-page.route-panel-open #route-results{
+    max-height:min(42vh, 390px) !important;
+  }
+}

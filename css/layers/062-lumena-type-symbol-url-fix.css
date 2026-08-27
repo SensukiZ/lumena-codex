@@ -1,0 +1,144 @@
+/* Use Lumena's official white type-symbol WebP files for every Lumen Type. */
+.type-chip[style*="#B9B6A9"]::before,
+.lumen-counter-defending-type[style*="#B9B6A9"]::before,
+.mv-type-chip[style*="#B9B6A9"]::before,
+.counter-selected-type[style*="#B9B6A9"]::before,
+.counter-result-type-badge[style*="#B9B6A9"]::before,
+.counter-chip[style*="#B9B6A9"]::before,
+.lumen-counter-item-type[style*="#B9B6A9"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/normal.webp") !important; }
+
+.type-chip[style*="#E8703A"]::before,
+.lumen-counter-defending-type[style*="#E8703A"]::before,
+.mv-type-chip[style*="#E8703A"]::before,
+.counter-selected-type[style*="#E8703A"]::before,
+.counter-result-type-badge[style*="#E8703A"]::before,
+.counter-chip[style*="#E8703A"]::before,
+.lumen-counter-item-type[style*="#E8703A"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/fire.webp") !important; }
+
+.type-chip[style*="#4E9BD9"]::before,
+.lumen-counter-defending-type[style*="#4E9BD9"]::before,
+.mv-type-chip[style*="#4E9BD9"]::before,
+.counter-selected-type[style*="#4E9BD9"]::before,
+.counter-result-type-badge[style*="#4E9BD9"]::before,
+.counter-chip[style*="#4E9BD9"]::before,
+.lumen-counter-item-type[style*="#4E9BD9"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/water.webp") !important; }
+
+.type-chip[style*="#E0BE3C"]::before,
+.lumen-counter-defending-type[style*="#E0BE3C"]::before,
+.mv-type-chip[style*="#E0BE3C"]::before,
+.counter-selected-type[style*="#E0BE3C"]::before,
+.counter-result-type-badge[style*="#E0BE3C"]::before,
+.counter-chip[style*="#E0BE3C"]::before,
+.lumen-counter-item-type[style*="#E0BE3C"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/electric.webp") !important; }
+
+.type-chip[style*="#6FBE6E"]::before,
+.lumen-counter-defending-type[style*="#6FBE6E"]::before,
+.mv-type-chip[style*="#6FBE6E"]::before,
+.counter-selected-type[style*="#6FBE6E"]::before,
+.counter-result-type-badge[style*="#6FBE6E"]::before,
+.counter-chip[style*="#6FBE6E"]::before,
+.lumen-counter-item-type[style*="#6FBE6E"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/grass.webp") !important; }
+
+.type-chip[style*="#7FD6D6"]::before,
+.lumen-counter-defending-type[style*="#7FD6D6"]::before,
+.mv-type-chip[style*="#7FD6D6"]::before,
+.counter-selected-type[style*="#7FD6D6"]::before,
+.counter-result-type-badge[style*="#7FD6D6"]::before,
+.counter-chip[style*="#7FD6D6"]::before,
+.lumen-counter-item-type[style*="#7FD6D6"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/ice.webp") !important; }
+
+.type-chip[style*="#C1554A"]::before,
+.lumen-counter-defending-type[style*="#C1554A"]::before,
+.mv-type-chip[style*="#C1554A"]::before,
+.counter-selected-type[style*="#C1554A"]::before,
+.counter-result-type-badge[style*="#C1554A"]::before,
+.counter-chip[style*="#C1554A"]::before,
+.lumen-counter-item-type[style*="#C1554A"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/fighting.webp") !important; }
+
+.type-chip[style*="#A45FC1"]::before,
+.lumen-counter-defending-type[style*="#A45FC1"]::before,
+.mv-type-chip[style*="#A45FC1"]::before,
+.counter-selected-type[style*="#A45FC1"]::before,
+.counter-result-type-badge[style*="#A45FC1"]::before,
+.counter-chip[style*="#A45FC1"]::before,
+.lumen-counter-item-type[style*="#A45FC1"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/poison.webp") !important; }
+
+.type-chip[style*="#C7A15C"]::before,
+.lumen-counter-defending-type[style*="#C7A15C"]::before,
+.mv-type-chip[style*="#C7A15C"]::before,
+.counter-selected-type[style*="#C7A15C"]::before,
+.counter-result-type-badge[style*="#C7A15C"]::before,
+.counter-chip[style*="#C7A15C"]::before,
+.lumen-counter-item-type[style*="#C7A15C"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/ground.webp") !important; }
+
+.type-chip[style*="#9FB6E8"]::before,
+.lumen-counter-defending-type[style*="#9FB6E8"]::before,
+.mv-type-chip[style*="#9FB6E8"]::before,
+.counter-selected-type[style*="#9FB6E8"]::before,
+.counter-result-type-badge[style*="#9FB6E8"]::before,
+.counter-chip[style*="#9FB6E8"]::before,
+.lumen-counter-item-type[style*="#9FB6E8"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/flying.webp") !important; }
+
+.type-chip[style*="#E86FA3"]::before,
+.lumen-counter-defending-type[style*="#E86FA3"]::before,
+.mv-type-chip[style*="#E86FA3"]::before,
+.counter-selected-type[style*="#E86FA3"]::before,
+.counter-result-type-badge[style*="#E86FA3"]::before,
+.counter-chip[style*="#E86FA3"]::before,
+.lumen-counter-item-type[style*="#E86FA3"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/psychic.webp") !important; }
+
+.type-chip[style*="#9AC13A"]::before,
+.lumen-counter-defending-type[style*="#9AC13A"]::before,
+.mv-type-chip[style*="#9AC13A"]::before,
+.counter-selected-type[style*="#9AC13A"]::before,
+.counter-result-type-badge[style*="#9AC13A"]::before,
+.counter-chip[style*="#9AC13A"]::before,
+.lumen-counter-item-type[style*="#9AC13A"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/bug.webp") !important; }
+
+.type-chip[style*="#B0A06A"]::before,
+.lumen-counter-defending-type[style*="#B0A06A"]::before,
+.mv-type-chip[style*="#B0A06A"]::before,
+.counter-selected-type[style*="#B0A06A"]::before,
+.counter-result-type-badge[style*="#B0A06A"]::before,
+.counter-chip[style*="#B0A06A"]::before,
+.lumen-counter-item-type[style*="#B0A06A"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/rock.webp") !important; }
+
+.type-chip[style*="#8577D6"]::before,
+.lumen-counter-defending-type[style*="#8577D6"]::before,
+.mv-type-chip[style*="#8577D6"]::before,
+.counter-selected-type[style*="#8577D6"]::before,
+.counter-result-type-badge[style*="#8577D6"]::before,
+.counter-chip[style*="#8577D6"]::before,
+.lumen-counter-item-type[style*="#8577D6"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/ghost.webp") !important; }
+
+.type-chip[style*="#6F7FE8"]::before,
+.lumen-counter-defending-type[style*="#6F7FE8"]::before,
+.mv-type-chip[style*="#6F7FE8"]::before,
+.counter-selected-type[style*="#6F7FE8"]::before,
+.counter-result-type-badge[style*="#6F7FE8"]::before,
+.counter-chip[style*="#6F7FE8"]::before,
+.lumen-counter-item-type[style*="#6F7FE8"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/dragon.webp") !important; }
+
+.type-chip[style*="#8A8896"]::before,
+.lumen-counter-defending-type[style*="#8A8896"]::before,
+.mv-type-chip[style*="#8A8896"]::before,
+.counter-selected-type[style*="#8A8896"]::before,
+.counter-result-type-badge[style*="#8A8896"]::before,
+.counter-chip[style*="#8A8896"]::before,
+.lumen-counter-item-type[style*="#8A8896"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/dark.webp") !important; }
+
+.type-chip[style*="#9FB0BF"]::before,
+.lumen-counter-defending-type[style*="#9FB0BF"]::before,
+.mv-type-chip[style*="#9FB0BF"]::before,
+.counter-selected-type[style*="#9FB0BF"]::before,
+.counter-result-type-badge[style*="#9FB0BF"]::before,
+.counter-chip[style*="#9FB0BF"]::before,
+.lumen-counter-item-type[style*="#9FB0BF"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/steel.webp") !important; }
+
+.type-chip[style*="#E896C7"]::before,
+.lumen-counter-defending-type[style*="#E896C7"]::before,
+.mv-type-chip[style*="#E896C7"]::before,
+.counter-selected-type[style*="#E896C7"]::before,
+.counter-result-type-badge[style*="#E896C7"]::before,
+.counter-chip[style*="#E896C7"]::before,
+.lumen-counter-item-type[style*="#E896C7"]::before { background-image:url("https://lumena.gg/images/battle/type-icons/white/fairy.webp") !important; }

@@ -1,0 +1,6 @@
+/* Firstlight is a town/location, but it has no type emblem by design.
+   Only the printed FIRSTLIGHT label gets an invisible mobile-friendly hitbox. */
+body.world-map-full-page #lumena-world-map .firstlight-location{
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+}

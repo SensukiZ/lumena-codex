@@ -1,0 +1,27 @@
+body.world-map-full-page #lumena-world-map .map-route,
+body.world-map-full-page #lumena-world-map .map-town-hitbox{
+  position:absolute !important;z-index:2147483000 !important;transform:none !important;
+  min-width:0 !important;min-height:0 !important;max-width:none !important;max-height:none !important;
+  margin:0 !important;padding:0 !important;opacity:0 !important;pointer-events:auto !important;
+  cursor:pointer !important;touch-action:manipulation !important;background:transparent !important;
+  border:0 !important;box-shadow:none !important;
+}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Cinderfall Tarn"]{left:16.70% !important;top:16.10% !important;width:12.25% !important;height:4.35% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Ember Pass"]{left:17.85% !important;top:36.25% !important;width:7.25% !important;height:3.65% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Quarry Road"]{left:36.25% !important;top:36.80% !important;width:8.10% !important;height:3.45% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Frostpeak Climb"]{left:45.20% !important;top:21.25% !important;width:9.75% !important;height:4.15% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Snowline Rise"]{left:45.35% !important;top:27.35% !important;width:9.55% !important;height:4.10% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Glimmer Flats"]{left:55.75% !important;top:37.50% !important;width:9.05% !important;height:3.80% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Spark Woods"]{left:58.20% !important;top:45.15% !important;width:8.30% !important;height:3.65% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Shade Trail"]{left:77.60% !important;top:46.20% !important;width:7.15% !important;height:3.65% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Coast Route"]{left:32.65% !important;top:62.60% !important;width:8.05% !important;height:3.85% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Marsh Route"]{left:48.80% !important;top:59.40% !important;width:7.70% !important;height:3.85% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Softglade Path"]{left:21.80% !important;top:74.70% !important;width:8.65% !important;height:3.90% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Firstlight Village"]{left:14.10% !important;top:84.30% !important;width:11.90% !important;height:5.05% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Bloomvale"]{left:14.55% !important;top:67.05% !important;width:12.10% !important;height:4.90% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Tidemarsh"]{left:40.80% !important;top:74.70% !important;width:11.70% !important;height:5.10% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Frostpeak"]{left:44.50% !important;top:14.30% !important;width:11.30% !important;height:5.10% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Spark Metropolis"]{left:40.75% !important;top:50.05% !important;width:16.35% !important;height:5.55% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Prismgate"]{left:66.45% !important;top:45.15% !important;width:10.65% !important;height:4.75% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Shadeholt"]{left:84.30% !important;top:42.85% !important;width:11.15% !important;height:4.55% !important;}
+body.world-map-full-page #lumena-world-map .map-town-symbol{pointer-events:none !important;}

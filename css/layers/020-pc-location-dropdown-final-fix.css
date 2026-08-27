@@ -1,0 +1,45 @@
+/* PC FIX:
+   The Location filter itself is narrow, but the dropdown needs enough
+   width to display the full location names. */
+@media (min-width:821px){
+  .location-filter-wrap{
+    position:relative !important;
+    overflow:visible !important;
+  }
+
+  .location-filter-wrap .filter-select-menu{
+    left:0 !important;
+    right:auto !important;
+    width:300px !important;
+    min-width:300px !important;
+    max-width:calc(100vw - 30px) !important;
+    box-sizing:border-box !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    scrollbar-width:none !important;
+    border:none !important;
+    box-shadow:0 8px 18px rgba(0,0,0,.45) !important;
+  }
+
+  .location-filter-wrap .filter-select-menu::-webkit-scrollbar{
+    width:0 !important;
+    height:0 !important;
+    display:none !important;
+  }
+
+  .location-filter-wrap .filter-select-option{
+    display:flex !important;
+    align-items:center !important;
+    width:calc(100% - 10px) !important;
+    max-width:calc(100% - 10px) !important;
+    min-width:0 !important;
+    margin:3px 5px !important;
+    box-sizing:border-box !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    border:none !important;
+    outline:none !important;
+    box-shadow:none !important;
+  }
+}

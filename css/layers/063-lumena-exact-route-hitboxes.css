@@ -1,0 +1,44 @@
+/* Exact route hitboxes: the printed route names are part of the map artwork.
+   The HTML buttons are only transparent touch/click targets. */
+body.world-map-full-page #lumena-world-map .map-route{
+  position:absolute !important;
+  z-index:1000000 !important;
+  margin:0 !important;
+  padding:0 !important;
+  min-width:0 !important;
+  max-width:none !important;
+  min-height:0 !important;
+  width:0;
+  height:0;
+  transform:none !important;
+  opacity:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:8px !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  text-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  cursor:pointer !important;
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:rgba(255,211,107,.22) !important;
+  outline:none !important;
+  font-size:0 !important;
+}
+body.world-map-full-page #lumena-world-map .map-route:focus-visible{
+  opacity:.22 !important;
+  background:rgba(255,211,107,.18) !important;
+  outline:2px solid rgba(255,211,107,.95) !important;
+  outline-offset:1px !important;
+}
+body.world-map-full-page #lumena-world-map .map-route.active{
+  opacity:.16 !important;
+  background:rgba(255,211,107,.18) !important;
+  outline:2px solid rgba(255,211,107,.9) !important;
+}
+body.world-map-full-page #lumena-world-map .map-route::after{
+  display:none !important;
+  content:none !important;
+}

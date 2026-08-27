@@ -1,0 +1,9 @@
+/* Blue styling ONLY for the selected route/town header. */
+#rebuilt-map-ui .rebuilt-location-head{
+  background:linear-gradient(180deg,#215f9c 0%,#164b7d 52%,#103d68 100%) !important;
+  border-bottom:1px solid #4d91cf !important;
+}
+#rebuilt-map-ui .rebuilt-location-icon{
+  background:rgba(8,31,55,.72) !important;
+  border-color:rgba(255,193,55,.75) !important;
+}

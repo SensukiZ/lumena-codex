@@ -1,0 +1,77 @@
+@media (max-width:900px){
+  /* The empty location panel used to sit on top of the artwork as a large
+     dark rectangle. Keep the whole map pane available until a location is tapped. */
+  #rebuilt-map-ui .rebuilt-map-body{
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-left{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    border-right:0 !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-viewport{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    overflow:hidden !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-image-wrap{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    aspect-ratio:1537 / 1023 !important;
+    margin:auto !important;
+    flex:0 0 auto !important;
+  }
+  #rebuilt-map-ui #rebuilt-map-image,
+  #rebuilt-map-ui #rebuilt-map-hotspots{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+  }
+
+  /* Parent must disappear too. Hiding only .rebuilt-panel-card left the
+     parent's dark background covering most of the phone screen. */
+  #rebuilt-map-ui .rebuilt-map-panel.mobile-panel-empty{
+    display:none !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-panel.mobile-panel-open{
+    display:block !important;
+    visibility:visible !important;
+    pointer-events:none !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-panel.mobile-panel-open .rebuilt-panel-card{
+    display:flex !important;
+    pointer-events:auto !important;
+  }
+}
+
+@media (max-width:560px){
+  #rebuilt-map-ui .rebuilt-map-header{
+    min-height:62px !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-brand-text h2{
+    font-size:24px !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-image-wrap{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  #rebuilt-map-ui .rebuilt-map-left{
+    overflow:hidden !important;
+  }
+}

@@ -1,0 +1,14 @@
+#rebuilt-map-ui .rebuilt-location-icon{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  padding:3px !important;
+}
+#rebuilt-map-ui .header-town-emblem{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+}

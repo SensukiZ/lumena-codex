@@ -1,0 +1,19 @@
+body.world-map-full-page #lumena-world-map .map-route{
+  pointer-events:auto !important;
+  z-index:1000 !important;
+  min-width:120px !important;
+  max-width:160px !important;
+  min-height:46px !important;
+  padding:0 !important;
+  opacity:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+}
+body.world-map-full-page #lumena-world-map .spark-woods-route{
+  opacity:0 !important;
+  min-width:120px !important;
+  max-width:160px !important;
+}
+#lumena-world-map .map-route::after{display:none !important;content:none !important;}

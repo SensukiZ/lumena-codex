@@ -1,0 +1,105 @@
+/* Compact route results: keep the encounter panel short without changing
+   the Codex colors or the information shown in each Lumen card. */
+.route-results-head{
+  padding:7px 10px !important;
+  min-height:38px !important;
+}
+.route-results-head h3{font-size:16px !important;}
+.route-results-head p{font-size:9px !important;margin-top:1px !important;}
+.route-results-close{padding:4px 8px !important;font-size:11px !important;}
+
+.route-lumen-grid{
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:5px !important;
+  padding:6px !important;
+}
+.route-lumen-grid .route-codex-item{
+  grid-template-columns:34px 38px minmax(0,1fr) !important;
+  min-height:52px !important;
+  height:52px !important;
+  padding:5px 7px !important;
+  column-gap:5px !important;
+  border-radius:7px !important;
+}
+.route-lumen-grid .route-codex-item .side-thumb{
+  width:34px !important;
+  height:34px !important;
+  padding:2px !important;
+  border-radius:7px !important;
+}
+.route-lumen-grid .route-codex-item .side-num{
+  font-size:9px !important;
+}
+.route-lumen-grid .route-codex-item .side-name{
+  font-size:13px !important;
+  line-height:1 !important;
+}
+.route-lumen-grid .route-codex-item .side-types{
+  gap:2px !important;
+}
+.route-lumen-grid .route-codex-item .side-types .chip{
+  font-size:7px !important;
+  line-height:1 !important;
+  padding:2px 4px !important;
+  white-space:nowrap !important;
+}
+
+/* Keep the fixed panel itself compact when the map is open. */
+body.world-map-full-page #route-results{
+  max-height:min(27vh,245px) !important;
+}
+@media(max-width:1100px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:700px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:4px !important;
+    padding:5px !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    min-height:50px !important;
+    height:50px !important;
+    padding:4px 6px !important;
+    grid-template-columns:31px 34px minmax(0,1fr) !important;
+  }
+  .route-lumen-grid .route-codex-item .side-thumb{
+    width:31px !important;
+    height:31px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-name{
+    font-size:12px !important;
+  }
+}
+@media(max-width:420px){
+  .route-results-head{padding:6px 8px !important;}
+  .route-results-head h3{font-size:15px !important;}
+  .route-lumen-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    grid-template-columns:28px minmax(0,1fr) !important;
+    grid-template-rows:auto auto !important;
+  }
+  .route-lumen-grid .route-codex-item .side-thumb{
+    grid-column:1 !important;
+    grid-row:1 / span 2 !important;
+    width:28px !important;
+    height:28px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-num{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  .route-lumen-grid .route-codex-item .side-name{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    margin-left:32px !important;
+  }
+  .route-lumen-grid .route-codex-item .side-types{
+    grid-column:2 !important;
+    grid-row:2 !important;
+  }
+}

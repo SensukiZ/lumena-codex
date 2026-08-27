@@ -1,0 +1,17 @@
+/* Match the World Map empty/location panel to the blue Locations panel */
+body.world-map-full-page #lumena-world-map .rebuilt-panel-card,
+body.world-map-full-page #lumena-world-map .rebuilt-panel-empty{
+  background:linear-gradient(180deg,#215f9d 0%,#174b78 52%,#103b60 100%) !important;
+}
+body.world-map-full-page #lumena-world-map .rebuilt-panel-card{
+  border-color:#b77a25 !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+body.world-map-full-page #lumena-world-map .rebuilt-panel-empty{
+  color:#8fb1d1 !important;
+}
+/* Keep the Lumen detail Locations box on the same blue family */
+.detail-view > .detail-location-panel{
+  background:linear-gradient(180deg,#2366b7 0%,#164b8e 100%) !important;
+  border-color:#c47f38 !important;
+}

@@ -1,0 +1,24 @@
+#codex-app-nav .battle-tools-menu > button{
+    background:linear-gradient(180deg,#765EB0 0%,#674E9E 100%) !important;
+    border:1px solid #A98AE8 !important;
+    color:#FFFFFF !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      0 2px 7px rgba(45,28,82,.22) !important;
+    text-shadow:0 1px 1px rgba(30,18,56,.35) !important;
+  }
+
+  #codex-app-nav .battle-tools-menu > button:hover,
+  #codex-app-nav .battle-tools-menu > button:focus-visible{
+    background:linear-gradient(180deg,#9174CD 0%,#7D61BA 100%) !important;
+    border-color:#C7ABFF !important;
+    color:#FFFFFF !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.20),
+      0 0 13px rgba(183,145,255,.38) !important;
+    outline:none !important;
+  }
+
+  #codex-app-nav .battle-tools-menu > button:active{
+    background:#7156A9 !important;
+  }

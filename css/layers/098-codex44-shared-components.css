@@ -1,0 +1,120 @@
+/*
+   * Shared component tokens.
+   * This intentionally centralizes common controls without changing type colors,
+   * Lumen artwork, or the existing feature layouts.
+   */
+  :root{
+    --ui-radius-sm:8px;
+    --ui-radius-md:10px;
+    --ui-control-h:36px;
+    --ui-focus:#33F3D6;
+    --ui-purple:#765EB0;
+    --ui-purple-hover:#9174CD;
+  }
+
+  /* Common text/search controls */
+  #search,
+  #mv-move-search,
+  #move-compare-search,
+  #team-builder-search,
+  .lumen-counter-search,
+  .vs-pick select,
+  .build-around-controls select{
+    box-sizing:border-box;
+    border-radius:var(--ui-radius-sm) !important;
+    outline:none;
+  }
+
+  #search:focus,
+  #mv-move-search:focus,
+  #move-compare-search:focus,
+  #team-builder-search:focus,
+  .lumen-counter-search:focus,
+  .vs-pick select:focus,
+  .build-around-controls select:focus{
+    border-color:var(--ui-focus) !important;
+    box-shadow:0 0 0 3px rgba(51,243,214,.12) !important;
+  }
+
+  /* Common modal shell */
+  .compare-modal{
+    border-radius:14px !important;
+    border-color:var(--line) !important;
+  }
+  .compare-modal-head{
+    min-height:32px;
+  }
+  .compare-close{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  /* Shared category capsules across Moves + Move Comparison */
+  .mv-cat-chip,
+  .move-compare-table .mv-cat-chip,
+  .move-compare-option .mv-cat-chip{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:999px !important;
+    font-family:'JetBrains Mono',monospace !important;
+    font-weight:800 !important;
+    text-transform:uppercase !important;
+    border:1px solid rgba(255,255,255,.58) !important;
+    color:#fff !important;
+    text-shadow:0 1px 1px rgba(0,0,0,.35) !important;
+  }
+  .mv-cat-chip.category-physical{
+    background:linear-gradient(180deg,#C69A68,#A8784E) !important;
+  }
+  .mv-cat-chip.category-special{
+    background:linear-gradient(180deg,#EE91BF,#C95E95) !important;
+  }
+  .mv-cat-chip.category-status{
+    background:linear-gradient(180deg,#AAB5C2,#74808D) !important;
+  }
+
+  /* Shared type-pill treatment */
+  .mv-type-chip,
+  .move-compare-type-chip,
+  .move-selector-type-chip{
+    border-radius:999px !important;
+    color:#fff !important;
+  }
+
+  /* One consistent utility-button interaction */
+  #codex-app-nav button,
+  #battle-tools-menu button,
+  .tb-upgrade-btn,
+  .move-compare-launch,
+  .vs-launch{
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  /* Do not allow a stale map banner to exist outside the actual map view. */
+  body:not(.codex-map-open) #map-lumen-highlight-banner{
+    display:none !important;
+  }
+
+  /* Team Builder is the only visible content while its modal is active. */
+  body.codex-team-builder-open .detail-panel{
+    visibility:hidden !important;
+  }
+  body.codex-team-builder-open #team-builder-overlay,
+  body.codex-team-builder-open #team-builder-overlay *{
+    visibility:visible !important;
+  }
+
+  @media(max-width:600px){
+    /* Theme button belongs only to the normal Codex view. */
+    body.codex-utility-open #theme-settings-btn{
+      opacity:0 !important;
+      visibility:hidden !important;
+      pointer-events:none !important;
+      transform:translateY(-8px) scale(.94) !important;
+    }
+    #theme-settings-btn{
+      transition:opacity .14s ease,visibility .14s ease,transform .14s ease !important;
+    }
+  }

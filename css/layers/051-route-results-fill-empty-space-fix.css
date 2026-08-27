@@ -1,0 +1,8 @@
+/* Desktop route results: use the available width before wrapping.
+   Quarry Road's 8 Lumen now fit on one compact row on wide screens,
+   removing the large unused space after the sixth card. */
+@media (min-width:1101px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr)) !important;
+  }
+}

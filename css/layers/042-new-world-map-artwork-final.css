@@ -1,0 +1,10 @@
+#lumena-world-map .world-map-image{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+}
+#lumena-world-map .world-map-canvas{
+  overflow:hidden !important;
+}

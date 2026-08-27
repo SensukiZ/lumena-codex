@@ -1,0 +1,7 @@
+/* Lumen Type Counter: center the defending type and keep its original type symbol. */
+#counter-filtered-chart table{width:100%;table-layout:fixed;}
+#counter-filtered-chart th.attack-col{width:42%;text-align:center;padding-left:0;}
+#counter-filtered-chart th.damage-col{width:58%;text-align:center;}
+#counter-filtered-chart .row-type{padding:4px 8px;text-align:center;vertical-align:middle;}
+#counter-filtered-chart .counter-chip{display:inline-flex;min-width:78px;justify-content:center;align-items:center;margin:0 auto;}
+#counter-filtered-chart .counter-chip::before{flex:0 0 10px;width:10px;height:10px;margin-right:3px;}

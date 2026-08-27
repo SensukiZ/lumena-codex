@@ -1,0 +1,80 @@
+/* MOBILE: lock the page and make ONLY the Lumen list scroll. */
+@media (max-width:820px){
+  html, body{
+    width:100%;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    overflow:hidden !important;
+    overscroll-behavior:none !important;
+  }
+
+  body{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .topbar{
+    flex:0 0 auto !important;
+  }
+
+  .layout{
+    flex:1 1 auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:hidden !important;
+    position:relative !important;
+    display:block !important;
+  }
+
+  /* This is the ONLY scrolling area on the normal mobile Codex screen. */
+  body:not(.detail-open) .sidebar{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    min-height:0 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    overscroll-behavior-y:contain !important;
+    scrollbar-width:auto !important;
+    scrollbar-color:#35c8ff #071426 !important;
+  }
+
+  body:not(.detail-open) .sidebar::-webkit-scrollbar{
+    width:12px !important;
+    display:block !important;
+  }
+
+  body:not(.detail-open) .sidebar::-webkit-scrollbar-track{
+    background:#071426 !important;
+  }
+
+  body:not(.detail-open) .sidebar::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg,#55ddff 0%,#168bd1 100%) !important;
+    border-radius:999px !important;
+    border:2px solid #071426 !important;
+  }
+
+  /* Keep the Codex detail screen independently scrollable when opened. */
+  body.detail-open .layout{
+    flex:1 1 auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  body.detail-open .detail-panel{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+}

@@ -1,0 +1,82 @@
+/*
+   * Level-Up, TM / Item, and Tutor move pills reuse the exact visual recipe
+   * of the Codex type badges: same bright type background, gloss, outline,
+   * text treatment — but deliberately no type symbol.
+   */
+  .detail-view .type-colored-moves-panel .move-chip{
+    --move-bg:var(--tc);
+    position:relative !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:24px !important;
+    padding:2px 9px 3px !important;
+    border-radius:999px !important;
+    border:2px solid #111 !important;
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.58) 0%,rgba(255,255,255,.12) 34%,rgba(0,0,0,.12) 100%),
+      var(--move-bg) !important;
+    color:#0a0a0a !important;
+    font-family:'Oxanium','JetBrains Mono',monospace !important;
+    font-size:10.5px !important;
+    font-weight:800 !important;
+    letter-spacing:.035em !important;
+    line-height:1 !important;
+    text-transform:none !important;
+    text-align:center !important;
+    box-shadow:
+      inset 0 1px 1px rgba(255,255,255,.9),
+      inset 0 -2px 3px rgba(0,0,0,.28),
+      0 0 0 1px rgba(255,255,255,.92),
+      0 0 0 2px #111,
+      0 2px 3px rgba(0,0,0,.30) !important;
+    text-shadow:
+      -1px -1px 0 #fff,
+       1px -1px 0 #fff,
+      -1px  1px 0 #fff,
+       1px  1px 0 #fff !important;
+    white-space:nowrap !important;
+  }
+
+  /* Explicitly suppress any symbol pseudo-element. */
+  .detail-view .type-colored-moves-panel .move-chip::before,
+  .detail-view .type-colored-moves-panel .move-chip::after{
+    content:none !important;
+    display:none !important;
+    background-image:none !important;
+  }
+
+  /* Exact bright type-background mapping used by the unified type badges. */
+  .type-colored-moves-panel .move-chip[style*="#9AC13A"]{--move-bg:#9AC13A;} /* Bug */
+  .type-colored-moves-panel .move-chip[style*="#8A8896"]{--move-bg:#4A3A2A;} /* Dark */
+  .type-colored-moves-panel .move-chip[style*="#6F7FE8"]{--move-bg:#5143D8;} /* Dragon */
+  .type-colored-moves-panel .move-chip[style*="#E0BE3C"]{--move-bg:#F2B51D;} /* Electric */
+  .type-colored-moves-panel .move-chip[style*="#E896C7"]{--move-bg:#E58BD8;} /* Fairy */
+  .type-colored-moves-panel .move-chip[style*="#C1554A"]{--move-bg:#8D4025;} /* Fighting */
+  .type-colored-moves-panel .move-chip[style*="#E8703A"]{--move-bg:#F04416;} /* Fire */
+  .type-colored-moves-panel .move-chip[style*="#9FB6E8"]{--move-bg:#858DF0;} /* Flying */
+  .type-colored-moves-panel .move-chip[style*="#8577D6"]{--move-bg:#6550C7;} /* Ghost */
+  .type-colored-moves-panel .move-chip[style*="#6FBE6E"]{--move-bg:#5FBE2E;} /* Grass */
+  .type-colored-moves-panel .move-chip[style*="#C7A15C"]{--move-bg:#D2A936;} /* Ground */
+  .type-colored-moves-panel .move-chip[style*="#7FD6D6"]{--move-bg:#91E7FF;} /* Ice */
+  .type-colored-moves-panel .move-chip[style*="#B9B6A9"]{--move-bg:#D7D7D7;} /* Normal */
+  .type-colored-moves-panel .move-chip[style*="#A45FC1"]{--move-bg:#A43FB5;} /* Poison */
+  .type-colored-moves-panel .move-chip[style*="#E86FA3"]{--move-bg:#E83D73;} /* Psychic */
+  .type-colored-moves-panel .move-chip[style*="#B0A06A"]{--move-bg:#B5A269;} /* Rock */
+  .type-colored-moves-panel .move-chip[style*="#9FB0BF"]{--move-bg:#B9C0C7;} /* Steel */
+  .type-colored-moves-panel .move-chip[style*="#4E9BD9"]{--move-bg:#4E9BD9;} /* Water */
+
+  @media(max-width:600px){
+    .detail-view .type-colored-moves-panel .move-chip{
+      min-height:22px !important;
+      padding:2px 7px 3px !important;
+      font-size:9px !important;
+      border-width:1px !important;
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.9),
+        inset 0 -1px 2px rgba(0,0,0,.25),
+        0 0 0 1px rgba(255,255,255,.88),
+        0 0 0 1px #111,
+        0 1px 2px rgba(0,0,0,.25) !important;
+    }
+  }

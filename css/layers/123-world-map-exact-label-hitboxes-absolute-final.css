@@ -1,0 +1,66 @@
+/* FINAL MAP CLICK TARGETS
+   Every clickable area is limited to the printed LOCATION NAME plaque/text
+   in the 1402 x 1122 artwork. This intentionally overrides all older
+   minimum-width route rules that made neighboring locations overlap. */
+body.world-map-full-page #lumena-world-map .map-route,
+body.world-map-full-page #lumena-world-map .map-town-hitbox{
+  position:absolute !important;
+  transform:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  min-width:0 !important;
+  max-width:none !important;
+  min-height:0 !important;
+  max-height:none !important;
+  box-sizing:border-box !important;
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+}
+
+/* Route / area label rectangles — percentages are exact conversions from
+   the original 1402 x 1122 map image. */
+body.world-map-full-page #lumena-world-map .map-route[data-route="Cinderfall Tarn"]{left:17.4037% !important;top:16.9340% !important;width:10.8417% !important;height:2.6738% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Ember Pass"]{left:18.5449% !important;top:37.0766% !important;width:5.8488% !important;height:1.9608% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Quarry Road"]{left:36.9472% !important;top:37.6114% !important;width:6.7047% !important;height:1.7825% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Frostpeak Climb"]{left:45.9344% !important;top:22.1034% !important;width:8.2739% !important;height:2.4955% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Snowline Rise"]{left:46.0770% !important;top:28.1640% !important;width:8.1312% !important;height:2.4955% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Glimmer Flats"]{left:56.4907% !important;top:38.3244% !important;width:7.5606% !important;height:2.1390% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Spark Woods"]{left:58.9158% !important;top:45.9893% !important;width:6.8474% !important;height:1.9608% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Shade Trail"]{left:78.3167% !important;top:47.0588% !important;width:5.7061% !important;height:1.9608% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Coast Route"]{left:33.3809% !important;top:63.4581% !important;width:6.5621% !important;height:2.1390% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Marsh Route"]{left:49.5007% !important;top:60.2496% !important;width:6.2767% !important;height:2.1390% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Softglade Path"]{left:22.5392% !important;top:75.5793% !important;width:7.1327% !important;height:2.1390% !important;}
+body.world-map-full-page #lumena-world-map .map-route[data-route="Firstlight Village"]{left:14.8359% !important;top:85.2050% !important;width:10.4137% !important;height:3.3868% !important;}
+
+/* Town/city label rectangles — the emblem itself is deliberately NOT part
+   of the click target; only the printed location-name plaque is clickable. */
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Bloomvale"]{left:15.2639% !important;top:67.9144% !important;width:10.6990% !important;height:3.2086% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Tidemarsh"]{left:41.5121% !important;top:75.5793% !important;width:10.2710% !important;height:3.3868% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Frostpeak"]{left:45.2211% !important;top:15.1515% !important;width:9.8431% !important;height:3.3868% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Spark Metropolis"]{left:41.5121% !important;top:50.9804% !important;width:14.8359% !important;height:3.7433% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Prismgate"]{left:67.1897% !important;top:45.9893% !important;width:9.1298% !important;height:3.0303% !important;}
+body.world-map-full-page #lumena-world-map .map-town-hitbox[data-location="Shadeholt"]{left:85.0214% !important;top:43.6720% !important;width:9.7004% !important;height:2.8520% !important;}
+
+/* Keep targets invisible. Keyboard/active feedback stays confined to the
+   exact label rectangle, never the surrounding map. */
+body.world-map-full-page #lumena-world-map .map-route,
+body.world-map-full-page #lumena-world-map .map-town-hitbox{
+  opacity:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+}
+body.world-map-full-page #lumena-world-map .map-route:focus-visible,
+body.world-map-full-page #lumena-world-map .map-route.active{
+  opacity:.16 !important;
+  background:rgba(255,211,107,.18) !important;
+  outline:2px solid rgba(255,211,107,.9) !important;
+}
+body.world-map-full-page #lumena-world-map .map-town-hitbox:focus-visible,
+body.world-map-full-page #lumena-world-map .map-town-hitbox.active{
+  opacity:.16 !important;
+  background:rgba(51,243,214,.18) !important;
+  outline:2px solid rgba(51,243,214,.95) !important;
+}

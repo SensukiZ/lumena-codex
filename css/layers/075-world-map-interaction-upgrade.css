@@ -1,0 +1,102 @@
+/* Selected location: stronger gold state so the active waypoint/city is unmistakable. */
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active circle.ring{
+  stroke:#ffd45d !important;
+  stroke-width:4.5 !important;
+  filter:drop-shadow(0 0 4px #ffc42e) drop-shadow(0 0 10px rgba(255,196,46,.95)) !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active circle.hit{
+  fill:rgba(255,196,77,.18) !important;
+  stroke:rgba(255,231,157,.95) !important;
+  stroke-width:2 !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot.active{
+  filter:drop-shadow(0 0 8px rgba(255,196,77,.9));
+}
+
+/* Header count. */
+#rebuilt-map-ui .rebuilt-lumen-heading{
+  justify-content:center;
+}
+#rebuilt-map-ui .rebuilt-lumen-heading > span{
+  white-space:nowrap;
+}
+#rebuilt-map-ui .rebuilt-lumen-count{
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,212,93,.75);
+  border-radius:999px;
+  background:rgba(255,196,77,.12);
+  color:#ffd45d;
+  font:700 10px 'JetBrains Mono',monospace;
+}
+
+/* Lumen encounter probability and direct Codex affordance. */
+#rebuilt-map-ui .rebuilt-lumen-info{
+  flex:1 1 auto !important;
+}
+#rebuilt-map-ui .rebuilt-lumen-meta{
+  margin-left:auto;
+  flex:0 0 auto;
+  min-width:78px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+  gap:5px;
+}
+#rebuilt-map-ui .rebuilt-lumen-probability{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:58px;
+  padding:3px 7px;
+  border:1px solid rgba(255,196,77,.62);
+  border-radius:999px;
+  background:rgba(255,196,77,.12);
+  color:#ffd76a;
+  font:700 10px 'JetBrains Mono',monospace;
+  white-space:nowrap;
+}
+#rebuilt-map-ui .rebuilt-lumen-open-hint{
+  color:#79bfff;
+  font:600 9px 'JetBrains Mono',monospace;
+  white-space:nowrap;
+  opacity:.78;
+}
+#rebuilt-map-ui .rebuilt-lumen-row:hover .rebuilt-lumen-open-hint,
+#rebuilt-map-ui .rebuilt-lumen-row:focus-visible .rebuilt-lumen-open-hint{
+  color:#b9e1ff;
+  opacity:1;
+}
+#rebuilt-map-ui .rebuilt-lumen-row:focus-visible{
+  outline:2px solid #ffd45d !important;
+  outline-offset:1px;
+}
+
+/* Keep the information readable on phones. */
+@media (max-width:600px){
+  #rebuilt-map-ui .rebuilt-lumen-row{
+    gap:7px !important;
+    padding:6px !important;
+  }
+  #rebuilt-map-ui .rebuilt-lumen-row img{
+    width:48px !important;
+    height:48px !important;
+  }
+  #rebuilt-map-ui .rebuilt-lumen-meta{
+    min-width:62px;
+    gap:3px;
+  }
+  #rebuilt-map-ui .rebuilt-lumen-probability{
+    min-width:52px;
+    padding:2px 5px;
+    font-size:9px;
+  }
+  #rebuilt-map-ui .rebuilt-lumen-open-hint{
+    font-size:8px;
+  }
+}

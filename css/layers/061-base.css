@@ -1,0 +1,5 @@
+.lumen-counter-item.active{
+ border-color:var(--rarity-glow)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.22),
+            0 0 14px var(--rarity-glow)!important;
+}

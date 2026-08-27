@@ -1,0 +1,27 @@
+.code-trait-panel{margin-top:16px}
+.code-trait-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.code-trait-head h4{margin:0}
+.code-trait-source{font:700 10px 'JetBrains Mono',monospace;color:#a9d5ff}
+.code-trait-source a{color:#ffd55a;text-decoration:underline;text-underline-offset:2px}
+.code-trait-note{margin:8px 0 12px;color:#c7dcf4;font-size:12px;line-height:1.5}
+.code-trait-table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:8px;background:rgba(3,31,70,.34)}
+.code-trait-table th,.code-trait-table td{padding:9px 12px;border-bottom:1px solid rgba(105,176,242,.22);text-align:left}
+.code-trait-table th{color:#85cbff;font:800 10px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em}
+.code-trait-table td{color:#e8f4ff;font-size:13px}
+.code-trait-table tr:last-child td{border-bottom:0}
+.code-trait-table .trait-range{width:94px;text-align:center;font-family:'JetBrains Mono',monospace;font-weight:800;white-space:nowrap}
+.code-trait-table tr.trait-strong .trait-range{color:#7fffb0}
+.code-trait-table tr.trait-limited .trait-range{color:#ffd36b}
+.trait-grade-bands{display:grid;grid-template-columns:repeat(6,minmax(52px,1fr));gap:5px}
+.trait-grade{display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;padding:5px 4px;border:1px solid rgba(145,193,239,.28);border-radius:6px;background:rgba(1,24,55,.52);color:#d9ebff;font:700 9px 'JetBrains Mono',monospace;white-space:nowrap}
+.trait-grade b{font-size:11px}
+.trait-grade-e b{color:#b8c8d9}.trait-grade-d b{color:#73b9f5}.trait-grade-c b{color:#61d1ff}.trait-grade-b b{color:#c47aff}.trait-grade-a b{color:#ffbd4a}.trait-grade-s{border-color:rgba(255,91,75,.55);box-shadow:0 0 8px rgba(255,76,61,.13)}.trait-grade-s b{color:#ff5b4b;text-shadow:0 0 6px rgba(255,67,50,.72)}
+.code-trait-key{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.code-trait-key span{padding:5px 8px;border:1px solid rgba(118,188,255,.35);border-radius:999px;background:rgba(3,31,70,.42);color:#cfe7ff;font-size:10px}
+@media(max-width:600px){
+  .code-trait-table th,.code-trait-table td{padding:8px 7px;font-size:11px}
+  .code-trait-table .trait-range{width:58px}
+  .trait-grade-bands{grid-template-columns:repeat(3,minmax(50px,1fr));gap:4px}
+  .trait-grade{padding:4px 3px;font-size:8px}
+  .code-trait-note{font-size:11px}
+}

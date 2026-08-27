@@ -1,0 +1,41 @@
+/* Show the whole map at once: no inner scrolling and no oversized canvas. */
+#lumena-world-map .world-map-stage{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+}
+#lumena-world-map .world-map-canvas{
+  width:100% !important;
+  min-width:0 !important;
+  height:auto !important;
+  aspect-ratio:1402 / 1122 !important;
+}
+#lumena-world-map .world-map-image{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
+#lumena-world-map .map-town-symbol{
+  display:none !important;
+}
+/* Spark Woods is a route only: its button is the only interactive marker there. */
+#lumena-world-map .spark-woods-route{
+  min-width:86px !important;
+  padding:6px 9px !important;
+}
+/* Do not create any icon/emblem for Spark Woods. */
+#lumena-world-map .spark-woods-symbol{
+  display:none !important;
+}
+@media (max-width:820px){
+  #lumena-world-map .world-map-stage{
+    max-height:none !important;
+    overflow:hidden !important;
+  }
+  #lumena-world-map .world-map-canvas{
+    min-width:0 !important;
+    width:100% !important;
+  }
+}

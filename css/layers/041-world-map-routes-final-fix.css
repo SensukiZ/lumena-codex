@@ -1,0 +1,94 @@
+/* FULL-PAGE MAP: size the overlay canvas to the actual rendered image.
+   This keeps every percentage-based route hitbox aligned with the artwork. */
+body.world-map-full-page #lumena-world-map .world-map-stage{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  overflow:hidden !important;
+}
+body.world-map-full-page #lumena-world-map .world-map-canvas{
+  position:relative !important;
+  flex:0 0 auto !important;
+  width:min(100vw, 124.9554vh) !important;
+  height:min(100vh, 80.0285vw) !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100vw !important;
+  max-height:100vh !important;
+  aspect-ratio:1402 / 1122 !important;
+}
+body.world-map-full-page #lumena-world-map .world-map-image{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:fill !important;
+  z-index:1 !important;
+}
+body.world-map-full-page #lumena-world-map .map-route{
+  z-index:100 !important;
+  pointer-events:auto !important;
+}
+
+/* Route names are already printed on the artwork, so only the hitboxes are
+   invisible. Spark Woods' oversized artwork label was removed and is replaced
+   with this same-sized route label. */
+#lumena-world-map .map-route{
+  min-width:96px !important;
+  max-width:116px !important;
+  min-height:30px !important;
+  padding:6px 8px !important;
+  opacity:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  text-shadow:none !important;
+  backdrop-filter:none !important;
+}
+#lumena-world-map .map-route:hover,
+#lumena-world-map .map-route:focus,
+#lumena-world-map .map-route.active{
+  opacity:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+}
+
+/* Spark Woods is a route, not a town. Show one normal route label only. */
+#lumena-world-map .spark-woods-route{
+  min-width:96px !important;
+  max-width:116px !important;
+  min-height:30px !important;
+  padding:6px 8px !important;
+  opacity:1 !important;
+  background:rgba(50,33,19,.84) !important;
+  border:1px solid rgba(255,229,167,.75) !important;
+  color:#fff0c7 !important;
+  box-shadow:0 3px 9px rgba(0,0,0,.4) !important;
+  backdrop-filter:blur(2px) !important;
+  font:600 10px/1.15 'JetBrains Mono',monospace !important;
+}
+#lumena-world-map .spark-woods-route:hover,
+#lumena-world-map .spark-woods-route:focus,
+#lumena-world-map .spark-woods-route.active{
+  opacity:1 !important;
+  background:rgba(117,73,27,.96) !important;
+  border-color:#ffd36b !important;
+  color:#fff7df !important;
+  box-shadow:0 0 16px rgba(255,196,77,.32),0 4px 12px rgba(0,0,0,.45) !important;
+}
+
+/* Never show the old zero-count pseudo-label on the route hitboxes. */
+#lumena-world-map .map-route::after{
+  display:none !important;
+  content:none !important;
+}
+#lumena-world-map .map-town-symbol{
+  display:none !important;
+}

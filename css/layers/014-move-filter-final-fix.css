@@ -1,0 +1,32 @@
+/* Final fix: custom Moves filters must replace the native selects. */
+.mv-filter-custom{
+  position:relative !important;
+  display:block !important;
+  min-width:160px !important;
+  z-index:100 !important;
+}
+.mv-filter-custom .filter-select-trigger{
+  width:100% !important;
+  min-height:50px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:8px !important;
+}
+.mv-filter-custom .filter-select-label-wrap{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  min-width:0 !important;
+}
+.mv-filter-custom .filter-select-menu{
+  z-index:1000 !important;
+}
+#mv-type-filter.filter-select-native,
+#mv-category-filter.filter-select-native{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}

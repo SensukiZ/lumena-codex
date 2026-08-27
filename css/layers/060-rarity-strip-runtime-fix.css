@@ -1,0 +1,4 @@
+.lumen-counter-item::before{
+  background:var(--rarity-color,#3ea0ff)!important;
+  box-shadow:0 0 8px var(--rarity-color,#3ea0ff)!important;
+}

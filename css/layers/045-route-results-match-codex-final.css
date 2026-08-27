@@ -1,0 +1,51 @@
+/* Route results use the same Lumen row design as the main Codex. */
+.route-results{
+  margin-top:10px !important;
+  padding:0 !important;
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  background:var(--panel) !important;
+  overflow:hidden !important;
+}
+.route-results-head{
+  padding:12px 14px !important;
+  margin:0 !important;
+  background:linear-gradient(180deg,#0d1c31,#09111e) !important;
+  border-bottom:1px solid var(--line) !important;
+}
+.route-lumen-grid{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:0 !important;
+}
+.route-lumen-grid .route-codex-item{
+  width:100% !important;
+  min-height:58px !important;
+  border-left:3px solid transparent !important;
+  border-bottom:1px solid #245a93 !important;
+  border-radius:0 !important;
+  padding:11px 16px !important;
+  background:linear-gradient(135deg,#123d72 0%,#0d2b55 52%,#081b38 100%) !important;
+  color:#f4f8ff !important;
+  text-align:left !important;
+  box-shadow:inset 0 1px 0 rgba(110,190,255,.08) !important;
+}
+.route-lumen-grid .route-codex-item:hover{
+  background:linear-gradient(135deg,#18508f 0%,#104075 52%,#0b254a 100%) !important;
+}
+.route-lumen-grid .route-codex-item .side-thumb{
+  width:32px !important;height:32px !important;
+}
+.route-lumen-grid .route-codex-item .side-name{
+  font-family:'Fraunces',serif !important;
+  font-size:14.5px !important;
+}
+.route-lumen-grid .route-codex-item .side-num{
+  font-family:'JetBrains Mono',monospace !important;
+}
+@media(max-width:520px){
+  .route-results-head{padding:10px !important;}
+  .route-lumen-grid .route-codex-item{padding:9px 10px !important;gap:7px !important;}
+  .route-lumen-grid .route-codex-item .side-thumb{width:30px !important;height:30px !important;}
+  .route-lumen-grid .route-codex-item .side-num{min-width:32px !important;}
+}

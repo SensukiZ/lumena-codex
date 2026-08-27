@@ -1,0 +1,21 @@
+/* Final world-map artwork: 1537 x 1023. Keep the image and hotspot SVG in the exact same coordinate space. */
+#rebuilt-map-ui .rebuilt-map-image-wrap{
+  aspect-ratio:1537 / 1023 !important;
+  width:min(100%,calc(100vh * 1.5024438)) !important;
+  max-width:100% !important;
+  max-height:100% !important;
+}
+#rebuilt-map-ui #rebuilt-map-image{
+  object-fit:fill !important;
+  object-position:center center !important;
+}
+/* The new artwork has no baked-in bottom legends, so do not cover any of the map. */
+#rebuilt-map-ui .rebuilt-route-cover,
+#rebuilt-map-ui .rebuilt-type-cover{display:none !important;}
+/* Keep hotspots above the image and invisible until hover/focus. */
+#rebuilt-map-ui #rebuilt-map-hotspots{z-index:20 !important;}
+@media (max-width:900px){
+  #rebuilt-map-ui .rebuilt-map-image-wrap{
+    aspect-ratio:1537 / 1023 !important;
+  }
+}

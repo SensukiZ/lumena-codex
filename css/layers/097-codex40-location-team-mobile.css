@@ -1,0 +1,278 @@
+/* ---------- Location Encounter Panel ---------- */
+.location-encounter-panel{
+  margin-top:10px;
+  padding:11px;
+  border:1px solid rgba(51,243,214,.25);
+  border-radius:12px;
+  background:rgba(12,28,48,.92);
+}
+.location-encounter-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:9px;
+}
+.location-encounter-head b{
+  font:700 12px 'Fraunces',serif;
+  color:var(--ink);
+}
+.location-encounter-head small{
+  font:8px 'JetBrains Mono',monospace;
+  color:var(--ink-muted);
+}
+.location-encounter-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:7px;
+}
+.location-encounter-card{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  align-items:center;
+  gap:7px;
+  min-width:0;
+  padding:7px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--panel);
+  color:var(--ink);
+  cursor:pointer;
+  text-align:left;
+}
+.location-encounter-card:hover{
+  border-color:#33f3d6;
+  background:rgba(51,243,214,.06);
+}
+.location-encounter-card img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+.location-encounter-id{
+  color:#ffbf3f;
+  font:700 7.5px 'JetBrains Mono',monospace;
+}
+.location-encounter-name{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font:600 10.5px 'Fraunces',serif;
+}
+.location-encounter-types{
+  display:flex;
+  gap:3px;
+  flex-wrap:wrap;
+  margin-top:3px;
+}
+.location-encounter-type{
+  padding:1px 5px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.32);
+  color:#fff;
+  font:700 6.5px 'JetBrains Mono',monospace;
+  text-shadow:0 1px 1px rgba(0,0,0,.35);
+}
+.location-encounter-empty{
+  color:var(--ink-muted);
+  font:9px 'JetBrains Mono',monospace;
+}
+
+/* ---------- Mobile Team Builder Redesign ---------- */
+@media(max-width:600px){
+  #team-builder-overlay .compare-modal,
+  #team-builder-overlay .team-builder-modal{
+    padding:9px !important;
+  }
+
+  #team-builder-overlay .counter-tracker-sub{
+    margin-bottom:7px !important;
+    font-size:9px !important;
+    line-height:1.35 !important;
+  }
+
+  #team-builder-slots{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:5px !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding:0 !important;
+  }
+
+  #team-builder-slots .team-slot{
+    min-height:78px !important;
+    height:auto !important;
+    padding:6px 4px !important;
+    border-radius:9px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:3px !important;
+    text-align:center !important;
+    min-width:0 !important;
+  }
+
+  #team-builder-slots .team-slot img{
+    width:36px !important;
+    height:36px !important;
+    object-fit:contain !important;
+    margin:0 !important;
+  }
+
+  #team-builder-slots .team-slot b,
+  #team-builder-slots .team-slot .team-slot-name{
+    display:block !important;
+    width:100% !important;
+    font-size:8.5px !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+
+  #team-builder-slots .team-slot small,
+  #team-builder-slots .team-slot .team-slot-types{
+    font-size:6.5px !important;
+    line-height:1 !important;
+  }
+
+  #team-builder-slots [data-tb-remove]{
+    position:absolute !important;
+    top:3px !important;
+    right:3px !important;
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    font-size:8px !important;
+  }
+
+  #team-builder-slots .team-slot{
+    position:relative !important;
+  }
+
+  #team-builder-slots .tb-mobile-order{
+    position:absolute !important;
+    left:3px !important;
+    bottom:3px !important;
+    right:3px !important;
+    justify-content:space-between !important;
+    margin:0 !important;
+  }
+
+  #team-builder-slots .tb-mobile-order button{
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    padding:0 !important;
+    font-size:10px !important;
+  }
+
+  .tb-drag-hint{
+    display:none !important;
+  }
+
+  /* Compact the add-Lumen picker */
+  #team-builder-overlay .team-builder-picker,
+  #team-builder-overlay .team-builder-add{
+    margin-top:7px !important;
+    padding:7px !important;
+  }
+
+  #team-builder-search{
+    height:38px !important;
+    padding:7px 10px !important;
+    font-size:10px !important;
+  }
+
+  #team-builder-list{
+    max-height:210px !important;
+  }
+
+  #team-builder-list [data-tb-add]{
+    min-height:48px !important;
+    padding:6px 7px !important;
+  }
+
+  #team-builder-list [data-tb-add] img{
+    width:32px !important;
+    height:32px !important;
+  }
+
+  /* Turn the growing analysis area into clean mobile sections. */
+  #team-builder-upgrade,
+  #build-around-box{
+    margin-top:7px !important;
+    padding:8px !important;
+    border-radius:9px !important;
+  }
+
+  #team-builder-upgrade .tb-upgrade-grid{
+    grid-template-columns:1fr !important;
+    gap:5px !important;
+  }
+
+  #team-builder-upgrade .tb-upgrade-card{
+    padding:7px !important;
+  }
+
+  #build-around-box .build-around-controls{
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    gap:5px !important;
+  }
+
+  #build-around-box .build-around-controls select{
+    min-width:0 !important;
+    width:100% !important;
+    font-size:8px !important;
+  }
+
+  #build-around-result{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:4px !important;
+  }
+
+  #build-around-result .build-around-lumen{
+    padding:4px !important;
+  }
+
+  #build-around-result .build-around-lumen img{
+    width:32px !important;
+    height:32px !important;
+  }
+
+  #build-around-result .build-around-lumen b{
+    font-size:8px !important;
+  }
+
+  #build-around-result .build-around-lumen small{
+    font-size:6px !important;
+  }
+
+  /* Encounter panel inside map */
+  .location-encounter-panel{
+    padding:8px !important;
+    margin-top:7px !important;
+  }
+  .location-encounter-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:5px !important;
+  }
+  .location-encounter-card{
+    grid-template-columns:34px minmax(0,1fr) !important;
+    gap:5px !important;
+    padding:5px !important;
+  }
+  .location-encounter-card img{
+    width:34px !important;
+    height:34px !important;
+  }
+  .location-encounter-name{font-size:8.5px !important}
+  .location-encounter-id{font-size:6.5px !important}
+  .location-encounter-type{font-size:5.8px !important;padding:1px 4px !important}
+}

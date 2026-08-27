@@ -1,0 +1,472 @@
+/* Hide the old experimental map UI completely. */
+#lumena-world-map > .world-map-shell{display:none !important;}
+
+#lumena-world-map{
+  display:none !important;
+}
+#lumena-world-map.rebuilt-open{
+  display:block !important;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:2147483000 !important;
+  background:#030a11 !important;
+  overflow:hidden !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+#rebuilt-map-ui{
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-rows:72px minmax(0,1fr) 58px;
+  background:#030a11;
+  color:#f4e5bd;
+  font-family:'Inter',system-ui,sans-serif;
+}
+.rebuilt-map-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:9px 18px 8px;
+  border-bottom:1px solid rgba(204,137,26,.55);
+  background:linear-gradient(180deg,#07111c,#040b12);
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.rebuilt-map-brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-width:0;
+}
+.rebuilt-map-compass{
+  color:#e1a72f;
+  font-size:34px;
+  line-height:1;
+}
+.rebuilt-map-brand-text h2{
+  margin:0;
+  font-family:'Fraunces',serif;
+  font-size:31px;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:#ffe2a1;
+  line-height:1;
+}
+.rebuilt-map-brand-text p{
+  margin:4px 0 0;
+  color:#d6a63f;
+  font:600 11px 'JetBrains Mono',monospace;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.rebuilt-map-close{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  border:1px solid rgba(204,137,26,.58);
+  background:rgba(14,19,25,.86);
+  color:#f7e5c0;
+  border-radius:3px;
+  padding:10px 15px;
+  font:600 12px 'JetBrains Mono',monospace;
+  letter-spacing:.05em;
+  cursor:pointer;
+}
+.rebuilt-map-close:hover{border-color:#e6ad37;background:#121b25;}
+
+.rebuilt-map-body{
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 370px;
+  gap:0;
+}
+.rebuilt-map-left{
+  position:relative;
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
+  background:#061421;
+  border-right:1px solid rgba(204,137,26,.4);
+}
+.rebuilt-map-viewport{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#061421;
+}
+.rebuilt-map-image-wrap{
+  position:relative;
+  width:100%;
+  max-height:100%;
+  aspect-ratio:1537 / 1023;
+}
+#rebuilt-map-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  display:block;
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+}
+
+/* Cover the two old baked-in legends with the new map UI, like the reference. */
+.rebuilt-route-cover{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:205px;
+  height:132px;
+  z-index:3;
+  background:
+    radial-gradient(ellipse at 40% 35%,rgba(15,44,61,.98),rgba(4,17,28,.99) 72%),
+    #061421;
+  border-top:1px solid rgba(204,137,26,.35);
+  border-right:1px solid rgba(204,137,26,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  color:#d8d8d1;
+  font:500 11px 'JetBrains Mono',monospace;
+  line-height:1.55;
+  text-align:center;
+}
+.rebuilt-type-cover{
+  position:absolute;
+  left:245px;
+  right:0;
+  bottom:0;
+  height:79px;
+  z-index:3;
+  background:linear-gradient(180deg,rgba(5,16,26,.99),rgba(2,9,15,.99));
+  border-top:1px solid rgba(204,137,26,.35);
+}
+
+/* SVG shares the exact 1537x1023 image coordinate system. */
+#rebuilt-map-hotspots{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+  pointer-events:none;
+  overflow:visible;
+  touch-action:manipulation;
+}
+#rebuilt-map-hotspots .map-dot{
+  pointer-events:all;
+  cursor:pointer;
+  outline:none;
+}
+#rebuilt-map-hotspots .map-dot circle.hit{
+  fill:rgba(255,210,74,.001);
+  stroke:transparent;
+  stroke-width:4;
+  vector-effect:non-scaling-stroke;
+}
+#rebuilt-map-hotspots .map-dot circle.ring{
+  fill:transparent;
+  stroke:transparent;
+  stroke-width:3;
+  vector-effect:non-scaling-stroke;
+  pointer-events:none;
+}
+#rebuilt-map-hotspots .map-dot:hover circle.ring,
+#rebuilt-map-hotspots .map-dot:focus-visible circle.ring,
+#rebuilt-map-hotspots .map-dot.active circle.ring{
+  stroke:#ffd45d;
+  filter:drop-shadow(0 0 5px rgba(255,202,50,.95));
+}
+
+/* Right-side location panel */
+.rebuilt-map-panel{
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
+  padding:14px;
+  background:
+    radial-gradient(500px 300px at 30% 0%,rgba(32,63,83,.2),transparent 60%),
+    linear-gradient(180deg,#07131e,#040b12);
+}
+.rebuilt-panel-card{
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  border:1px solid rgba(204,137,26,.5);
+  background:linear-gradient(180deg,rgba(8,22,34,.98),rgba(4,13,21,.99));
+  box-shadow:inset 0 0 0 1px rgba(255,215,120,.03),0 10px 28px rgba(0,0,0,.25);
+}
+.rebuilt-panel-empty{
+  margin:auto;
+  max-width:270px;
+  text-align:center;
+  color:#7f91a3;
+  font:500 12px 'JetBrains Mono',monospace;
+  line-height:1.7;
+  padding:25px;
+}
+.rebuilt-location-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 16px 12px;
+  border-bottom:1px solid rgba(204,137,26,.22);
+}
+.rebuilt-location-icon{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(229,173,55,.65);
+  background:#0c1924;
+  color:#ffd45d;
+  font-size:25px;
+  flex:0 0 auto;
+}
+
+/* Proper elemental emblem inside the World Map location header. */
+.rebuilt-location-icon{
+  padding:5px !important;
+}
+.rebuilt-location-icon .location-type-symbol{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+.rebuilt-location-icon .location-type-symbol svg{
+  width:38px;
+  height:38px;
+  display:block;
+  overflow:visible;
+}
+.rebuilt-location-icon .location-type-symbol svg *{
+  vector-effect:non-scaling-stroke;
+}
+
+.rebuilt-location-title{
+  min-width:0;
+  flex:1 1 auto;
+}
+.rebuilt-location-title h3{
+  margin:0;
+  font-family:'Fraunces',serif;
+  font-size:22px;
+  color:#f7e7c5;
+  font-weight:600;
+}
+.rebuilt-location-title p{
+  margin:3px 0 0;
+  color:#b9b0a0;
+  font-size:12px;
+}
+.rebuilt-location-x{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:#e6aa35;
+  font-size:25px;
+  cursor:pointer;
+  padding:2px 4px;
+}
+
+.rebuilt-location-image{
+  margin:0 16px 10px;
+  border:1px solid rgba(204,137,26,.55);
+  background:#07111b;
+  overflow:hidden;
+  aspect-ratio:16 / 8;
+  min-height:120px;
+}
+.rebuilt-location-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+.rebuilt-location-image.is-missing{
+  display:none;
+}
+
+.rebuilt-location-summary{
+  padding:13px 16px 8px;
+  color:#aeb7c1;
+  font-size:12.5px;
+  line-height:1.6;
+}
+.rebuilt-lumen-heading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 16px 10px;
+  color:#e9b94d;
+  font:600 11px 'JetBrains Mono',monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.rebuilt-lumen-heading::before,
+.rebuilt-lumen-heading::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(214,154,35,.7));
+}
+.rebuilt-lumen-heading::after{
+  background:linear-gradient(90deg,rgba(214,154,35,.7),transparent);
+}
+#rebuilt-lumen-list{
+  min-height:0;
+  flex:1 1 auto;
+  overflow:auto;
+  padding:0 12px 12px;
+  scrollbar-width:thin;
+}
+.rebuilt-lumen-row{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  border:1px solid rgba(96,119,139,.38);
+  background:rgba(13,28,40,.83);
+  color:#eef2f5;
+  padding:6px 8px;
+  margin-bottom:8px;
+  cursor:pointer;
+  text-align:left;
+}
+.rebuilt-lumen-row:hover{
+  border-color:rgba(224,171,60,.65);
+  background:rgba(20,39,52,.95);
+}
+.rebuilt-lumen-row img{
+  width:54px;
+  height:54px;
+  object-fit:contain;
+  flex:0 0 auto;
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(215,159,45,.45);
+}
+.rebuilt-lumen-info{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.rebuilt-lumen-name{
+  font-family:'Fraunces',serif;
+  font-size:15px;
+  color:#f7ead0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.rebuilt-lumen-types{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+.rebuilt-lumen-types .chip{
+  transform:scale(.9);
+  transform-origin:left center;
+}
+.rebuilt-no-lumen{
+  color:#8090a0;
+  font:500 11px 'JetBrains Mono',monospace;
+  line-height:1.7;
+  padding:22px 12px;
+  text-align:center;
+}
+
+.rebuilt-map-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:0 20px;
+  border-top:1px solid rgba(204,137,26,.55);
+  background:linear-gradient(180deg,#06111b,#03090f);
+  color:#d8d8d2;
+  font:500 11px 'JetBrains Mono',monospace;
+  letter-spacing:.02em;
+}
+.rebuilt-footer-left,
+.rebuilt-footer-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.rebuilt-footer-dot{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  border:3px solid #e5ac39;
+  box-shadow:0 0 0 2px #4c3512 inset;
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:6px;
+}
+.rebuilt-footer-route{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.rebuilt-footer-route::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:#e4ad3d;
+}
+.rebuilt-footer-route::after{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  border:2px solid #e4ad3d;
+  background:#07121d;
+  margin-left:-20px;
+}
+
+@media (max-width:900px){
+  #rebuilt-map-ui{grid-template-rows:62px minmax(0,1fr) 48px;}
+  .rebuilt-map-brand-text h2{font-size:24px;}
+  .rebuilt-map-body{grid-template-columns:1fr;}
+  .rebuilt-map-panel{
+    position:absolute;
+    z-index:50;
+    top:74px;
+    right:8px;
+    bottom:55px;
+    width:min(360px,calc(100vw - 16px));
+    padding:0;
+    pointer-events:none;
+  }
+  .rebuilt-panel-card{
+    pointer-events:auto;
+    box-shadow:0 16px 40px rgba(0,0,0,.55);
+  }
+  .rebuilt-panel-card.panel-empty-state{
+    display:none;
+  }
+  .rebuilt-map-footer{padding:0 12px;font-size:9px;}
+  .rebuilt-footer-right{gap:8px;}
+}
+@media (max-width:560px){
+  .rebuilt-map-brand-text p{display:none;}
+  .rebuilt-map-compass{font-size:26px;}
+  .rebuilt-map-close{padding:8px 10px;font-size:10px;}
+  .rebuilt-map-header{padding:7px 10px;}
+  .rebuilt-map-panel{top:66px;bottom:51px;}
+  .rebuilt-route-cover{width:130px;height:92px;font-size:8px;padding:8px;}
+  .rebuilt-type-cover{left:130px;height:58px;}
+  .rebuilt-footer-right span:last-child{display:none;}
+}

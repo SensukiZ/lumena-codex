@@ -1,0 +1,334 @@
+/* Stable responsive layout. Keep the existing Codex structure/JS untouched. */
+html,body{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow-x:hidden;
+}
+img{
+  max-width:100%;
+}
+
+/* Desktop: preserve the original layout. */
+@media (min-width:821px){
+  .layout{
+    display:flex;
+    min-width:0;
+  }
+  .sidebar{
+    flex:0 0 360px;
+    width:360px;
+  }
+  .detail-panel{
+    flex:1 1 auto;
+    min-width:0;
+    position:relative;
+    isolation:isolate;
+    overflow-y:auto;
+    overflow-x:hidden;
+    --habitat-rgb:111,190,110;
+    background:#070d17;
+  }
+
+  /* Background exists only inside the Codex detail section. */
+  .detail-panel::before{
+    content:"";
+    position:fixed;
+    top:var(--topbar-height, 0px);
+    right:0;
+    bottom:0;
+    left:360px;
+    z-index:0;
+    pointer-events:none;
+    background:
+      radial-gradient(620px 700px at 50% 8%, rgba(var(--habitat-rgb),.22), transparent 68%),
+      linear-gradient(180deg, rgba(4,8,12,.04), rgba(4,9,15,.68)),
+      var(--lumena-habitat-bg,
+        radial-gradient(900px 500px at 50% 0%, rgba(var(--habitat-rgb),.22), transparent 72%),
+        linear-gradient(180deg,#16202b 0%,#080d13 100%)
+      );
+    background-size:cover, cover, cover;
+    background-position:center, center, center;
+    background-repeat:no-repeat;
+  }
+
+  /* Keep the habitat scene visible all the way down while the Codex content scrolls. */
+  .detail-panel{
+    background:transparent;
+  }
+
+  /* Keep the actual Codex content above the background. */
+  .detail-panel > *{
+    position:relative;
+    z-index:1;
+  }
+
+  /* Dark glass panels keep the habitat visible while making the lower Codex
+     sections easy to read against bright/animated habitat backgrounds. */
+  .detail-panel .panel{
+    background:rgba(5,8,14,.88) !important;
+    border-color:rgba(74,103,145,.72);
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+  }
+  .detail-panel .entry-grid .panel{
+    background:rgba(5,8,14,.90) !important;
+  }
+
+  /* Type tint comes from the active Lumen in THIS detail section only. */
+  .detail-panel:has(.detail-view.active[data-types^="Fire"]){--habitat-rgb:232,112,58;}
+  .detail-panel:has(.detail-view.active[data-types^="Water"]){--habitat-rgb:78,155,217;}
+  .detail-panel:has(.detail-view.active[data-types^="Grass"]){--habitat-rgb:111,190,110;}
+  .detail-panel:has(.detail-view.active[data-types^="Electric"]){--habitat-rgb:224,190,60;}
+  .detail-panel:has(.detail-view.active[data-types^="Ice"]){--habitat-rgb:158,221,232;}
+  .detail-panel:has(.detail-view.active[data-types^="Rock"]){--habitat-rgb:169,142,106;}
+  .detail-panel:has(.detail-view.active[data-types^="Ground"]){--habitat-rgb:199,157,98;}
+  .detail-panel:has(.detail-view.active[data-types^="Flying"]){--habitat-rgb:142,184,217;}
+  .detail-panel:has(.detail-view.active[data-types^="Bug"]){--habitat-rgb:154,184,77;}
+  .detail-panel:has(.detail-view.active[data-types^="Normal"]){--habitat-rgb:185,182,169;}
+  .detail-panel:has(.detail-view.active[data-types^="Poison"]){--habitat-rgb:155,106,181;}
+  .detail-panel:has(.detail-view.active[data-types^="Psychic"]){--habitat-rgb:232,111,163;}
+  .detail-panel:has(.detail-view.active[data-types^="Fighting"]){--habitat-rgb:193,85,74;}
+  .detail-panel:has(.detail-view.active[data-types^="Ghost"]){--habitat-rgb:133,119,214;}
+  .detail-panel:has(.detail-view.active[data-types^="Dragon"]){--habitat-rgb:92,121,201;}
+  .detail-panel:has(.detail-view.active[data-types^="Dark"]){--habitat-rgb:103,90,114;}
+  .detail-panel:has(.detail-view.active[data-types^="Steel"]){--habitat-rgb:159,176,191;}
+  .detail-panel:has(.detail-view.active[data-types^="Fairy"]){--habitat-rgb:230,165,207;}
+
+}
+
+/* Phone/tablet: sidebar is the first screen; clicking a Lumen slides to its detail. */
+@media (max-width:820px){
+  .topbar{
+    width:100%;
+    max-width:100%;
+    padding:16px 12px 12px !important;
+  }
+
+  .topbar-row{
+    width:100%;
+    min-width:0;
+    gap:8px !important;
+  }
+
+  .brand{
+    min-width:0;
+    width:100%;
+  }
+
+  h1.title{
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    font-size:25px !important;
+  }
+
+  .hero-stats{
+    width:100%;
+    min-width:0;
+    flex-wrap:wrap;
+    gap:5px 12px !important;
+  }
+
+  /* One clean column for the search/filter/action controls. */
+  .search-row{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:8px !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .search-row > input,
+  .search-row > select,
+  .search-row > button,
+  .search-row > .filter-select-custom,
+  .search-row > .location-filter-wrap{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    margin:0 !important;
+  }
+
+  .search-row > .filter-select-custom .filter-select-trigger,
+  .search-row > .location-filter-wrap .filter-select-trigger{
+    width:100% !important;
+  }
+
+  /* Keep the custom menus inside the viewport. */
+  .search-row .filter-select-menu,
+  .search-row .location-filter-wrap .filter-select-menu{
+    left:0 !important;
+    right:auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    max-height:58dvh !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+  }
+
+  .search-row .filter-select-option,
+  .search-row .location-filter-wrap .filter-select-option{
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  /* The actual Codex list/detail behavior. */
+  .layout{
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:calc(100dvh - 250px);
+    min-height:420px;
+    overflow:hidden !important;
+  }
+
+  .sidebar{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    flex:none !important;
+    border-right:0 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    z-index:1;
+  }
+
+  .detail-panel{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    flex:none !important;
+    background:transparent !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    transform:translateX(100%) !important;
+    transition:transform .22s ease !important;
+    z-index:2;
+  }
+
+  body.detail-open .sidebar{
+    display:none !important;
+  }
+
+  body.detail-open .detail-panel{
+    display:block !important;
+    transform:translateX(0) !important;
+  }
+
+  .back-btn{
+    display:inline-flex !important;
+  }
+
+  .detail-inner{
+    width:100% !important;
+    max-width:760px;
+    margin:0 auto;
+    padding:18px 12px 80px !important;
+  }
+
+  .entry-grid{
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+
+  .panel{
+    width:100%;
+    min-width:0;
+  }
+
+  .stat-row{
+    grid-template-columns:72px minmax(0,1fr) 32px !important;
+  }
+
+  .profile-list{
+    grid-template-columns:minmax(0,auto) minmax(0,1fr) !important;
+  }
+
+  .profile-list dd{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+
+  .lumena-art{
+    width:100%;
+    min-width:0;
+  }
+
+  .lumena-art img{
+    max-width:100%;
+  }
+
+  /* Modal windows fit the phone without changing their desktop design. */
+  .compare-modal,
+  .leaderboard-modal,
+  .mv-tracker-modal,
+  .counter-tracker-modal,
+  .lumen-counter-modal{
+    width:calc(100vw - 20px) !important;
+    max-width:calc(100vw - 20px) !important;
+    min-width:0 !important;
+  }
+}
+
+@media (max-width:480px){
+  .topbar{
+    padding-left:10px !important;
+    padding-right:10px !important;
+  }
+
+  .layout{
+    height:calc(100dvh - 270px);
+  }
+
+  .side-item{
+    padding-left:10px !important;
+    padding-right:10px !important;
+    gap:7px !important;
+  }
+
+  .side-num{
+    min-width:32px !important;
+  }
+
+  .side-thumb{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .side-name{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .detail-inner{
+    padding-left:10px !important;
+    padding-right:10px !important;
+  }
+
+  .entry-name{
+    font-size:21px !important;
+  }
+
+  .stat-row{
+    grid-template-columns:60px minmax(0,1fr) 28px !important;
+    gap:6px !important;
+  }
+
+  .profile-list{
+    grid-template-columns:1fr !important;
+    gap:2px 0 !important;
+  }
+
+  .profile-list dt{
+    margin-top:5px;
+  }
+}

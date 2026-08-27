@@ -1,25 +1,11 @@
 {
-  "name": "The Lumen Codex",
-  "short_name": "Lumen Codex",
-  "description": "Interactive Lumena codex with map, team builder, moves, counters, matchups, collection tools, and offline support.",
+  "name": "Lumena Codex",
+  "short_name": "Lumena Codex",
+  "description": "Interactive Lumena creature database and battle toolkit.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#080E1A",
-  "theme_color": "#080E1A",
-  "icons": [
-    {
-      "src": "./lumena-codex-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./lumena-codex-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
+  "background_color": "#071528",
+  "theme_color": "#155ca8",
+  "icons": []
 }

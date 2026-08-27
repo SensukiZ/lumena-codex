@@ -1,0 +1,79 @@
+/* Render the existing Codex type icon graphics inside the custom Type dropdown. */
+.filter-select-option{display:flex !important;align-items:center !important;}
+.filter-select-option .type-option-symbol{
+  display:inline-flex !important;
+  flex:0 0 13px !important;
+  width:13px !important;
+  height:13px !important;
+  min-width:13px !important;
+  min-height:13px !important;
+  margin:0 5px 0 0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  line-height:0 !important;
+  font-size:0 !important;
+}
+.filter-select-option .type-option-symbol::before{
+  content:"" !important;
+  display:block !important;
+  width:13px !important;
+  height:13px !important;
+  margin:0 !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-size:contain !important;
+}
+
+/* Compact lantern logo displayed immediately before the Codex title.
+   The source WebP has transparent padding, so the wrapper crops that padding
+   instead of leaving a large visual gap around the lantern. */
+.title{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.lumena-token-wrap{
+  width:28px;
+  height:43px;
+  flex:0 0 28px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:-8px;
+  margin-right:0;
+}
+.lumena-token{
+  width:55px;
+  height:55px;
+  max-width:none;
+  flex:0 0 55px;
+  display:block;
+}
+
+
+  /* Final Lumen Type Counter fixes: keep attack badges compact and glossy. */
+  .counter-filtered-chart .counter-chip{
+    display:inline-flex !important;
+    width:76px !important;
+    min-width:76px !important;
+    height:20px !important;
+    min-height:20px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:2px 6px !important;
+    border-radius:999px !important;
+    box-sizing:border-box !important;
+    color:#fff !important;
+    font:800 8px/1 'Oxanium','JetBrains Mono',monospace !important;
+    text-transform:uppercase !important;
+    letter-spacing:.04em !important;
+    text-shadow:0 1px 1px rgba(0,0,0,.45) !important;
+  }
+  .counter-filtered-chart .row-type{padding-left:10px !important;}
+  .counter-filtered-chart td.effect-super,
+  .counter-filtered-chart td.effect-half,
+  .counter-filtered-chart td.effect-zero{font-size:10px !important;}

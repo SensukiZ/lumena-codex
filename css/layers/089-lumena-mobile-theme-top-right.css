@@ -1,0 +1,39 @@
+@media (max-width:600px){
+  /* Anchor the settings control to the viewport's upper-right corner so it
+     never consumes a row beneath the Codex title/counters. */
+  #theme-settings-btn{
+    position:fixed !important;
+    top:max(8px, env(safe-area-inset-top)) !important;
+    right:max(8px, env(safe-area-inset-right)) !important;
+    left:auto !important;
+    bottom:auto !important;
+
+    width:36px !important;
+    height:36px !important;
+    min-width:36px !important;
+    min-height:36px !important;
+    margin:0 !important;
+    padding:0 !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    z-index:2147483600 !important;
+    border-radius:10px !important;
+    background:rgba(10,20,38,.94) !important;
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 14px rgba(0,0,0,.30) !important;
+  }
+
+  /* The fixed button no longer participates in the header layout. */
+  .topbar-row #theme-settings-btn{
+    flex:none !important;
+  }
+
+  /* Reserve a little space at the right side of the mobile title so a very
+     long title can never run underneath the fixed settings button. */
+  .topbar-row{
+    padding-right:46px !important;
+  }
+}

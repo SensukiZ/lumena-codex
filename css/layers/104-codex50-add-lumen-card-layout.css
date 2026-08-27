@@ -1,0 +1,122 @@
+/* Make each Add Lumen entry a stable image + content card. */
+  #team-builder-list [data-tb-add]{
+    display:grid !important;
+    grid-template-columns:42px minmax(0,1fr) auto !important;
+    grid-template-rows:auto !important;
+    align-items:center !important;
+    column-gap:9px !important;
+    row-gap:0 !important;
+    min-height:72px !important;
+    height:auto !important;
+    padding:8px 10px !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  #team-builder-list [data-tb-add] > img,
+  #team-builder-list [data-tb-add] .team-builder-option-thumb{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    width:38px !important;
+    height:38px !important;
+    object-fit:contain !important;
+    align-self:center !important;
+    margin:0 !important;
+  }
+
+  /* Main identity + badges live in one content column. */
+  #team-builder-list [data-tb-add] > span:not(.tb-option-types):not(.team-builder-option-types),
+  #team-builder-list [data-tb-add] .team-builder-option-content{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    gap:5px !important;
+    min-width:0 !important;
+    overflow:hidden !important;
+  }
+
+  #team-builder-list .team-builder-option-identity{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    min-width:0 !important;
+    width:100% !important;
+  }
+
+  #team-builder-list .team-builder-option-num{
+    flex:0 0 auto !important;
+  }
+
+  #team-builder-list .team-builder-option-name{
+    min-width:0 !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+  }
+
+  /* Keep all type badges inside the same card, under the name. */
+  #team-builder-list .tb-option-types,
+  #team-builder-list .team-builder-option-types{
+    position:static !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    flex-wrap:wrap !important;
+    gap:4px !important;
+    width:auto !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+    overflow:visible !important;
+  }
+
+  #team-builder-list .team-builder-option-content .tb-option-types,
+  #team-builder-list .team-builder-option-content .team-builder-option-types,
+  #team-builder-list [data-tb-add] > span:not(.tb-option-types):not(.team-builder-option-types) > .tb-option-types,
+  #team-builder-list [data-tb-add] > span:not(.tb-option-types):not(.team-builder-option-types) > .team-builder-option-types{
+    display:flex !important;
+  }
+
+  /* Right-side action/type summary stays in its own column if present. */
+  #team-builder-list [data-tb-add] > :last-child:not(span):not(img),
+  #team-builder-list [data-tb-add] .team-builder-option-action{
+    grid-column:3 !important;
+    grid-row:1 !important;
+    align-self:center !important;
+  }
+
+  @media(max-width:600px){
+    #team-builder-list [data-tb-add]{
+      grid-template-columns:36px minmax(0,1fr) 22px !important;
+      min-height:70px !important;
+      padding:7px 8px !important;
+      column-gap:7px !important;
+    }
+
+    #team-builder-list [data-tb-add] > img,
+    #team-builder-list [data-tb-add] .team-builder-option-thumb{
+      width:32px !important;
+      height:32px !important;
+    }
+
+    #team-builder-list .team-builder-option-identity{
+      gap:6px !important;
+    }
+
+    #team-builder-list .tb-option-types,
+    #team-builder-list .team-builder-option-types{
+      gap:3px !important;
+    }
+
+    #team-builder-list .type-chip.team-builder-unified-type{
+      flex:0 0 auto !important;
+      min-width:44px !important;
+      max-width:none !important;
+    }
+  }

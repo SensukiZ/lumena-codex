@@ -1,0 +1,76 @@
+#team-builder-upgrade .team-analysis-unified-type,
+  #build-around-box .team-analysis-unified-type,
+  #team-builder-overlay .tb-rec-reasons .team-analysis-unified-type{
+    margin:0 !important;
+    flex:0 0 auto !important;
+  }
+
+  #team-builder-upgrade .tb-upgrade-badges{
+    display:flex !important;
+    align-items:center !important;
+    flex-wrap:wrap !important;
+    gap:6px !important;
+  }
+
+  #team-builder-upgrade .type-chip.team-analysis-unified-type{
+    min-width:58px !important;
+    height:20px !important;
+    padding:2px 8px !important;
+    border-radius:999px !important;
+    font-size:8px !important;
+    line-height:1 !important;
+  }
+
+  #team-builder-upgrade .type-chip.team-analysis-unified-type::before,
+  #team-builder-overlay .tb-rec-reasons .type-chip.team-analysis-unified-type::before{
+    display:inline-block !important;
+    width:10px !important;
+    height:10px !important;
+    margin-right:4px !important;
+    flex:0 0 10px !important;
+    background-size:contain !important;
+    background-repeat:no-repeat !important;
+    background-position:center !important;
+  }
+
+  .tb-rec-reasons{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    gap:3px !important;
+    color:var(--ink-muted) !important;
+  }
+
+  .tb-rec-reason{
+    display:inline-flex !important;
+    align-items:center !important;
+    flex-wrap:wrap !important;
+    gap:3px !important;
+  }
+
+  .tb-rec-sep{
+    color:var(--ink-faint) !important;
+  }
+
+  #team-builder-overlay .tb-rec-reasons .type-chip.team-analysis-unified-type{
+    min-width:50px !important;
+    height:17px !important;
+    padding:1px 6px !important;
+    font-size:7px !important;
+  }
+
+  @media(max-width:600px){
+    #team-builder-upgrade .type-chip.team-analysis-unified-type{
+      min-width:50px !important;
+      height:18px !important;
+      padding:1px 6px !important;
+      font-size:7px !important;
+    }
+
+    #team-builder-overlay .tb-rec-reasons .type-chip.team-analysis-unified-type{
+      min-width:46px !important;
+      height:16px !important;
+      padding:1px 5px !important;
+      font-size:6.5px !important;
+    }
+  }

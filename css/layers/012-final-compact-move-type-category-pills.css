@@ -1,0 +1,75 @@
+/* Compact move badges: Lumen Type and category are the same size. */
+.mv-move-tags{
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  flex-wrap:nowrap !important;
+}
+.mv-tag-divider{
+  display:inline-block !important;
+  width:1px !important;
+  height:14px !important;
+  flex:0 0 1px !important;
+  margin:0 1px !important;
+  background:rgba(190,205,235,.78) !important;
+  box-shadow:0 0 2px rgba(255,255,255,.20) !important;
+}
+.mv-type-chip,
+.mv-cat-chip{
+  position:relative !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+  width:58px !important;
+  min-width:58px !important;
+  height:18px !important;
+  min-height:18px !important;
+  padding:2px 5px !important;
+  border-radius:999px !important;
+  font-family:'JetBrains Mono',monospace !important;
+  font-size:8px !important;
+  line-height:1 !important;
+  font-weight:800 !important;
+  letter-spacing:.08px !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+/* Thin vertical divider between Lumen Type and category. */
+.mv-cat-chip{
+  margin-left:0 !important;
+}
+/* Category symbols, kept monochrome so they match the type-pill icons. */
+.mv-cat-chip .mv-cat-icon{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:9px !important;
+  height:9px !important;
+  margin-right:3px !important;
+  color:#fff !important;
+  font-size:8px !important;
+  line-height:1 !important;
+  text-shadow:0 1px 1px rgba(0,0,0,.4) !important;
+  flex:0 0 9px !important;
+}
+/* Keep the glossy highlight on the category pill, while reserving ::before for the divider. */
+.mv-cat-chip::after{
+  content:'' !important;
+  position:absolute !important;
+  left:7px !important; right:7px !important; top:2px !important;
+  height:45% !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,0)) !important;
+  pointer-events:none !important;
+}
+/* The type badge already gets its normal Codex symbol from the existing CSS. */
+.mv-type-chip::after{
+  content:'' !important;
+  position:absolute !important;
+  left:7px !important; right:7px !important; top:2px !important;
+  height:45% !important;
+  border-radius:999px !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,0)) !important;
+  pointer-events:none !important;
+}

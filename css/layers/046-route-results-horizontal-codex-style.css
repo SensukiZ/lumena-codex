@@ -1,0 +1,136 @@
+/* Route results: compact horizontal cards like the supplied reference,
+   while using the exact Codex sidebar colors and typography. */
+.route-results{
+  margin-top:12px !important;
+  padding:0 !important;
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  background:var(--panel) !important;
+  overflow:hidden !important;
+}
+.route-results-head{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  padding:10px 14px !important;
+  margin:0 !important;
+  background:var(--panel-raised) !important;
+  border-bottom:1px solid var(--line) !important;
+}
+.route-results-head h3{
+  margin:0 !important;
+  color:var(--ink) !important;
+  font-family:'Fraunces',serif !important;
+  font-size:18px !important;
+}
+.route-results-head p{
+  margin:2px 0 0 !important;
+  color:var(--ink-faint) !important;
+  font-family:'JetBrains Mono',monospace !important;
+  font-size:10px !important;
+}
+.route-results-close{
+  border:1px solid var(--line) !important;
+  background:var(--panel) !important;
+  color:var(--ink) !important;
+  border-radius:7px !important;
+  padding:5px 9px !important;
+}
+.route-lumen-grid{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr)) !important;
+  gap:7px !important;
+  padding:8px !important;
+  background:var(--void) !important;
+}
+.route-lumen-grid .route-codex-item{
+  --tc:#999;
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:38px 42px minmax(0,1fr) !important;
+  grid-template-rows:auto auto !important;
+  align-items:center !important;
+  column-gap:8px !important;
+  row-gap:1px !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:64px !important;
+  padding:8px 10px !important;
+  margin:0 !important;
+  border:1px solid #245a93 !important;
+  border-left:3px solid transparent !important;
+  border-radius:8px !important;
+  background:linear-gradient(135deg,#123d72 0%,#0d2b55 52%,#081b38 100%) !important;
+  color:#f4f8ff !important;
+  text-align:left !important;
+  box-shadow:inset 0 1px 0 rgba(110,190,255,.08) !important;
+  overflow:hidden !important;
+}
+.route-lumen-grid .route-codex-item:hover{
+  background:linear-gradient(135deg,#18508f 0%,#104075 52%,#0b254a 100%) !important;
+  border-left-color:var(--tc) !important;
+}
+.route-lumen-grid .route-codex-item .side-check{display:none !important;}
+.route-lumen-grid .route-codex-item .side-num{
+  grid-column:2 !important;
+  grid-row:1 !important;
+  min-width:0 !important;
+  color:var(--tc) !important;
+  font-family:'JetBrains Mono',monospace !important;
+  font-size:10px !important;
+}
+.route-lumen-grid .route-codex-item .side-thumb{
+  grid-column:1 !important;
+  grid-row:1 / span 2 !important;
+  width:38px !important;
+  height:38px !important;
+  padding:3px !important;
+  border-radius:8px !important;
+  background:color-mix(in srgb,var(--tc) 18%,var(--panel)) !important;
+  border:1px solid color-mix(in srgb,var(--tc) 45%,var(--line)) !important;
+}
+.route-lumen-grid .route-codex-item .side-name{
+  grid-column:3 !important;
+  grid-row:1 !important;
+  min-width:0 !important;
+  color:var(--ink) !important;
+  font-family:'Fraunces',serif !important;
+  font-weight:600 !important;
+  font-size:14px !important;
+  line-height:1.15 !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+}
+.route-lumen-grid .route-codex-item .side-types{
+  grid-column:3 !important;
+  grid-row:2 !important;
+  justify-content:flex-start !important;
+  min-width:0 !important;
+}
+.route-lumen-grid .route-codex-item .side-types .chip{
+  font-size:9px !important;
+  padding:2px 5px !important;
+}
+.route-lumen-grid .route-codex-item .side-stage{
+  display:none !important;
+}
+@media(max-width:900px){
+  .route-lumen-grid{
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr)) !important;
+  }
+}
+@media(max-width:520px){
+  .route-results-head{padding:9px 10px !important;}
+  .route-results-head h3{font-size:16px !important;}
+  .route-lumen-grid{
+    grid-template-columns:1fr !important;
+    gap:5px !important;
+    padding:6px !important;
+  }
+  .route-lumen-grid .route-codex-item{
+    min-height:58px !important;
+    padding:7px 9px !important;
+  }
+}

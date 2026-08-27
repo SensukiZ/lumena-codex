@@ -1,0 +1,35 @@
+/* Keep every main toolbar control at the same height. */
+.search-row > button,
+.search-row > .filter-select-custom,
+.search-row > .location-filter-wrap,
+.search-row > .filter-select-custom .filter-select-trigger,
+.search-row > .location-filter-wrap .filter-select-trigger {
+  height:50px !important;
+  min-height:50px !important;
+  box-sizing:border-box !important;
+}
+
+.search-row > button {
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+
+.search-row > .filter-select-custom,
+.search-row > .location-filter-wrap {
+  align-self:stretch !important;
+}
+
+/* Make the custom filter controls line up exactly with the action buttons. */
+.search-row > .filter-select-custom .filter-select-trigger,
+.search-row > .location-filter-wrap .filter-select-trigger {
+  display:flex !important;
+  align-items:center !important;
+}
+
+/* The Reset Filters control gets the same 50px box as every other control. */
+.search-row > .clear-btn {
+  height:50px !important;
+  min-height:50px !important;
+  padding:0 15px !important;
+  box-sizing:border-box !important;
+}

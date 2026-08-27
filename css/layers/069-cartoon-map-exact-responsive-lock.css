@@ -1,0 +1,41 @@
+#rebuilt-map-ui #rebuilt-map-image-wrap{
+  position:relative !important;
+  aspect-ratio:3 / 2 !important;
+  overflow:hidden !important;
+}
+#rebuilt-map-ui #rebuilt-map-image,
+#rebuilt-map-ui #rebuilt-map-hotspots{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  transform:none !important;
+}
+#rebuilt-map-ui #rebuilt-map-image{
+  object-fit:fill !important;
+  pointer-events:none !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots{
+  pointer-events:none !important;
+  touch-action:manipulation !important;
+}
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot{
+  pointer-events:all !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent !important;
+}
+/* Desktop: precise click area. */
+#rebuilt-map-ui #rebuilt-map-hotspots .map-dot circle.hit{
+  fill:rgba(255,255,255,.001) !important;
+}
+/* Mobile: larger invisible tap target, while ring stays centered exactly. */
+@media (max-width:900px), (pointer:coarse){
+  #rebuilt-map-ui #rebuilt-map-hotspots .map-dot circle.hit{
+    r:25px !important;
+  }
+}
+@media (max-width:560px){
+  #rebuilt-map-ui #rebuilt-map-hotspots .map-dot circle.hit{
+    r:29px !important;
+  }
+}

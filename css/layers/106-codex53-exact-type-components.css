@@ -1,0 +1,73 @@
+/*
+   * IMPORTANT: .type-chip.small is deliberately NOT restyled here.
+   * It uses the original Codex CSS exactly, including official symbol,
+   * glossy background, black/white outline, typography, and mapped color.
+   */
+  .exact-type-wrap{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    flex:0 0 auto;
+    vertical-align:middle;
+  }
+
+  .exact-type-extra{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:16px;
+    padding:1px 5px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--panel-raised);
+    color:var(--ink-muted);
+    font:800 7px 'JetBrains Mono',monospace;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  .exact-stab-tag{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:16px;
+    padding:1px 5px;
+    border-radius:999px;
+    border:1px solid rgba(51,243,214,.55);
+    background:rgba(51,243,214,.08);
+    color:var(--signal);
+    font:800 6.5px 'JetBrains Mono',monospace;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  /* Semantic emphasis is placed on the wrapper, never on the real type badge. */
+  .exact-type-wrap.danger .exact-type-extra{
+    border-color:rgba(255,102,102,.52);
+    color:#ffb0b0;
+  }
+  .exact-type-wrap.safe .exact-type-extra{
+    border-color:rgba(80,235,177,.45);
+    color:#9cf1ce;
+  }
+  .coverage-exact-wrap.gap{
+    opacity:.62;
+  }
+
+  .lumen-matchup-chips,
+  .move-coverage-chips{
+    align-items:center !important;
+    gap:7px !important;
+  }
+
+  @media(max-width:600px){
+    .exact-type-wrap{
+      gap:3px;
+    }
+    .exact-type-extra,
+    .exact-stab-tag{
+      min-height:14px;
+      padding:1px 4px;
+      font-size:6px;
+    }
+  }

@@ -1,0 +1,24 @@
+#rebuilt-map-ui #rebuilt-map-image-wrap{
+  transform-origin:50% 50% !important;
+  will-change:transform !important;
+}
+#rebuilt-map-ui .rebuilt-map-viewport{
+  overscroll-behavior:contain !important;
+}
+#rebuilt-map-ui #rebuilt-map-image-wrap.is-zoomed{
+  cursor:grab !important;
+}
+#rebuilt-map-ui #rebuilt-map-image-wrap.is-zoomed:active{
+  cursor:grabbing !important;
+}
+@media (max-width:900px){
+  #rebuilt-map-ui .rebuilt-map-viewport{
+    touch-action:none !important;
+  }
+  #rebuilt-map-ui #rebuilt-map-hotspots{
+    touch-action:none !important;
+  }
+  #rebuilt-map-ui #rebuilt-map-hotspots .map-dot{
+    touch-action:none !important;
+  }
+}

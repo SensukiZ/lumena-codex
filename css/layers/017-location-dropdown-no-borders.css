@@ -1,0 +1,21 @@
+/* Remove the visible borders around the Location dropdown and its options. */
+.location-filter-wrap .filter-select-menu{
+  border:none !important;
+  box-shadow:none !important;
+}
+.location-filter-wrap .filter-select-option{
+  border:none !important;
+  outline:none !important;
+  box-shadow:none !important;
+}
+.location-filter-wrap .filter-select-option:hover,
+.location-filter-wrap .filter-select-option.selected{
+  border:none !important;
+  outline:none !important;
+  box-shadow:none !important;
+}
+.location-filter-wrap .filter-select-option:focus{
+  border:none !important;
+  outline:none !important;
+  box-shadow:none !important;
+}

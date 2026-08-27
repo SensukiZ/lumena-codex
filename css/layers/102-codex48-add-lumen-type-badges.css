@@ -1,0 +1,55 @@
+@media(max-width:600px){
+  /* Give each Add Lumen row enough height for the type badges. */
+  #team-builder-list [data-tb-add]{
+    min-height:62px !important;
+    height:auto !important;
+    padding:7px 9px !important;
+    align-items:center !important;
+    overflow:visible !important;
+  }
+
+  #team-builder-list [data-tb-add] > span{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    gap:4px !important;
+    min-width:0 !important;
+  }
+
+  #team-builder-list .team-builder-option-identity{
+    display:flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    min-width:0 !important;
+  }
+
+  /* Keep type badges fully inside each card. */
+  #team-builder-list .side-types,
+  #team-builder-list .team-builder-option-types,
+  #team-builder-list .tb-option-types{
+    display:flex !important;
+    align-items:center !important;
+    flex-wrap:wrap !important;
+    gap:3px !important;
+    margin:0 !important;
+    padding:0 !important;
+    position:static !important;
+    transform:none !important;
+  }
+
+  #team-builder-list .side-types .type-chip,
+  #team-builder-list .team-builder-option-types .type-chip,
+  #team-builder-list .tb-option-types .type-chip{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-width:42px !important;
+    height:16px !important;
+    padding:1px 6px !important;
+    border-radius:999px !important;
+    font-size:6.7px !important;
+    line-height:1 !important;
+    margin:0 !important;
+  }
+}

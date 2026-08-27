@@ -1,0 +1,2 @@
+#lumena-world-map .map-route{z-index:10000 !important;touch-action:manipulation !important;}
+#lumena-world-map .map-route.no-data{opacity:0 !important;pointer-events:auto !important;}

@@ -1,0 +1,50 @@
+/* Force the leaderboard into fixed, aligned columns.
+     Rank + Lumen stay on the left; every numeric stat box is exactly the same width. */
+  .leaderboard-modal #leaderboard-list-wrap .compare-table{
+    width:100% !important;
+    table-layout:fixed !important;
+    border-collapse:separate !important;
+    border-spacing:0 7px !important;
+  }
+
+  .leaderboard-modal #leaderboard-list-wrap .compare-table th,
+  .leaderboard-modal #leaderboard-list-wrap .compare-table td{
+    box-sizing:border-box !important;
+  }
+
+  /* Rank */
+  .leaderboard-modal #leaderboard-list-wrap .compare-table th:nth-child(1),
+  .leaderboard-modal #leaderboard-list-wrap .compare-table td:nth-child(1){
+    width:6.5% !important;
+  }
+
+  /* Lumen name / image area */
+  .leaderboard-modal #leaderboard-list-wrap .compare-table th:nth-child(2),
+  .leaderboard-modal #leaderboard-list-wrap .compare-table td:nth-child(2){
+    width:42% !important;
+    text-align:left !important;
+  }
+
+  /* HP, Attack, Defense, Total: identical widths */
+  .leaderboard-modal #leaderboard-list-wrap .compare-table th:nth-child(n+3),
+  .leaderboard-modal #leaderboard-list-wrap .compare-table td:nth-child(n+3){
+    width:12.875% !important;
+    min-width:0 !important;
+    text-align:center !important;
+  }
+
+  /* Prevent the Lumen cell contents from changing column widths. */
+  .leaderboard-modal #leaderboard-list-wrap .lb-name-cell{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+
+  .leaderboard-modal #leaderboard-list-wrap .lb-name-text{
+    min-width:0 !important;
+  }
+
+  .leaderboard-modal #leaderboard-list-wrap .lb-name-text b{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }

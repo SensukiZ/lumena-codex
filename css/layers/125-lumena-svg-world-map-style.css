@@ -1,0 +1,52 @@
+/*
+  The original map is 1402 x 1122. The SVG below uses that SAME coordinate
+  system, so every hotspot scales with the artwork on desktop and mobile.
+  Disable the older separately-positioned HTML hitboxes to prevent overlap.
+*/
+body.world-map-full-page #lumena-world-map .map-route,
+body.world-map-full-page #lumena-world-map .map-town-hitbox{
+  pointer-events:none !important;
+}
+#world-map-canvas{ position:relative !important; }
+#lumena-svg-hotspots{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  z-index:2147483000 !important;
+  pointer-events:none !important;
+  overflow:visible !important;
+}
+#lumena-svg-hotspots .lumena-svg-hotspot{
+  fill:rgba(255,255,255,0.001);
+  stroke:transparent;
+  stroke-width:2;
+  pointer-events:all;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  outline:none;
+}
+#lumena-svg-hotspots .lumena-svg-hotspot:hover,
+#lumena-svg-hotspots .lumena-svg-hotspot:focus{
+  fill:rgba(255,211,107,.13);
+  stroke:rgba(255,211,107,.82);
+}
+#lumena-svg-hotspots .lumena-svg-hotspot[data-kind="town"]:hover,
+#lumena-svg-hotspots .lumena-svg-hotspot[data-kind="town"]:focus{
+  fill:rgba(51,243,214,.12);
+  stroke:rgba(51,243,214,.88);
+}
+#lumena-svg-hotspots .lumena-svg-hotspot.is-active{
+  fill:rgba(255,211,107,.16);
+  stroke:rgba(255,211,107,.95);
+}
+#lumena-svg-hotspots .lumena-svg-hotspot[data-kind="town"].is-active{
+  fill:rgba(51,243,214,.15);
+  stroke:rgba(51,243,214,.95);
+}
+@media (max-width:820px){
+  #lumena-svg-hotspots .lumena-svg-hotspot{
+    stroke-width:3;
+  }
+}

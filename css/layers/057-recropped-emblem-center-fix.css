@@ -1,0 +1,7 @@
+#rebuilt-map-ui .rebuilt-location-icon .header-town-emblem{
+  width:96% !important;
+  height:96% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:auto !important;
+}

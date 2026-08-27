@@ -1,0 +1,34 @@
+@media(max-width:600px){
+  /* Full-screen utilities must get the whole phone viewport. */
+  body.codex-utility-open #codex-app-nav,
+  body.codex-team-builder-open #codex-app-nav{
+    transform:translateY(calc(100% + env(safe-area-inset-bottom) + 12px)) !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  #codex-app-nav{
+    transition:
+      transform .16s ease,
+      opacity .14s ease,
+      visibility .14s ease !important;
+  }
+
+  /* Remove the space reserved for the bottom nav while a utility is open. */
+  body.codex-utility-open,
+  body.codex-team-builder-open{
+    padding-bottom:0 !important;
+  }
+
+  /* Allow utility modals to use the full available mobile height. */
+  body.codex-utility-open .compare-overlay,
+  body.codex-team-builder-open #team-builder-overlay{
+    padding-bottom:max(8px,env(safe-area-inset-bottom)) !important;
+  }
+
+  body.codex-team-builder-open #team-builder-overlay .compare-modal,
+  body.codex-team-builder-open #team-builder-overlay .team-builder-modal{
+    max-height:calc(100dvh - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+  }
+}

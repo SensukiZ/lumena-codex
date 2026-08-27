@@ -1,0 +1,17 @@
+/* All route hitboxes are transparent; the map itself handles route clicks. */
+body.world-map-full-page #lumena-world-map .map-route{
+  pointer-events:auto !important;
+  opacity:0 !important;
+  min-width:118px !important;
+  max-width:150px !important;
+  min-height:44px !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:transparent !important;
+}
+body.world-map-full-page #lumena-world-map .spark-woods-route{
+  opacity:0 !important;
+}
+#lumena-world-map .map-route::after{display:none !important;content:none !important;}

@@ -1,0 +1,56 @@
+/* Move filter dropdowns: use the same compact pill treatment as the main
+   All Rarities / All Types controls, with the type/category symbols carried
+   into both the menu and the selected value. */
+#mv-type-filter.filter-select-native,
+#mv-category-filter.filter-select-native{
+  position:absolute!important;opacity:0!important;pointer-events:none!important;
+  width:1px!important;height:1px!important;
+}
+.mv-filter-custom{min-width:128px;position:relative;z-index:20;}
+.mv-filter-custom .filter-select-trigger{
+  min-height:40px;
+  padding:8px 11px;
+  font-size:14px;
+}
+.mv-filter-custom .filter-select-menu{min-width:100%;}
+.mv-filter-custom .filter-select-option{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:5px;
+  width:max-content;
+  min-width:58px;
+}
+.mv-filter-custom .filter-select-label-wrap{
+  display:inline-flex;align-items:center;gap:5px;min-width:0;
+}
+.mv-filter-custom .filter-option-symbol,
+.mv-filter-custom .filter-trigger-symbol{
+  display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 auto;
+  width:11px;height:11px;
+  font-size:8px;line-height:1;
+  border-radius:50%;
+  color:#fff;
+  text-shadow:0 1px 1px rgba(0,0,0,.45);
+}
+.mv-filter-custom .filter-trigger-symbol.type-symbol,
+.mv-filter-custom .filter-option-symbol.type-symbol{
+  width:10px;height:10px;
+  background:transparent!important;
+  border-radius:0;
+}
+.mv-filter-custom .filter-trigger-symbol.cat-symbol,
+.mv-filter-custom .filter-option-symbol.cat-symbol{
+  border:1px solid rgba(255,255,255,.65);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.35),0 1px 2px rgba(0,0,0,.25);
+}
+.mv-filter-custom .filter-trigger-symbol.cat-physical,
+.mv-filter-custom .filter-option-symbol.cat-physical{background:#C89D6D;}
+.mv-filter-custom .filter-trigger-symbol.cat-special,
+.mv-filter-custom .filter-option-symbol.cat-special{background:#E982AD;}
+.mv-filter-custom .filter-trigger-symbol.cat-status,
+.mv-filter-custom .filter-option-symbol.cat-status{background:#B9C5D2;}
+.mv-filter-custom .filter-select-trigger.has-value .filter-trigger-symbol{
+  filter:brightness(1.05) saturate(1.03);
+}

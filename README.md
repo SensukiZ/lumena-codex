@@ -1,14 +1,20 @@
-# Lumena Codex
+# Lumena Codex — Faithful Modular Refactor
 
-This package is ready for GitHub Pages.
+This project preserves the supplied Codex interface and behavior while moving its embedded code into external files.
 
-## Update your site
+## Structure
 
-1. Open your existing GitHub repository.
-2. Choose **Add file → Upload files**.
-3. Upload `index.html` and `.nojekyll` from this package.
-4. Allow GitHub to replace the old files, then select **Commit changes**.
-5. Wait about one or two minutes and refresh your GitHub Pages address.
+- `index.html` — original structural markup
+- `css/theme.css` — maintainable rarity, type, and move-category variables
+- `css/layers/` — 131 ordered style layers from the original build
+- `js/runtime/` — 55 feature runtimes in their original execution positions
+- `js/data/lumens.js` — 150 extracted Lumen index records
+- `js/data/moves.js` — authoritative move database
+- `js/data/types.js` — shared type definitions
+- `js/modules/filters.js` — pure Lumen and move filtering logic
+- `js/modules/renderers.js` — reusable Lumen and move HTML renderers
+- `js/app.js` — ES6 module entry point and stable public module API
+- `assets/world-map.png` — original embedded world-map artwork
+- `manifest.webmanifest` — installable-app metadata retained by the original HTML
 
-If GitHub Pages is not enabled yet, open **Settings → Pages**, select **Deploy from a branch**, choose the `main` branch and `/ (root)`, then save.
-
+The numbered CSS and runtime filenames intentionally preserve the old cascade and execution order. Upload the complete folder contents to the root of a GitHub repository.

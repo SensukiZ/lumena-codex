@@ -1,0 +1,20 @@
+#team-builder-analysis{display:grid!important}
+  .team-analysis-bottom{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+  .team-analysis-bottom>.team-builder-section-title{margin-bottom:9px}
+  #top-team-compositions .top-team-list{max-height:min(560px,58vh)!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:#4bbde9 #0b1d38}
+  #top-team-compositions .top-team-list::-webkit-scrollbar{width:10px}
+  #top-team-compositions .top-team-list::-webkit-scrollbar-track{background:#0b1d38;border-radius:999px}
+  #top-team-compositions .top-team-list::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#4da9ff,#43e4cf);border:2px solid #0b1d38;border-radius:999px}
+  .automatic-team-coach{margin-top:12px;padding:13px;border:1px solid rgba(70,239,196,.30);border-radius:12px;background:linear-gradient(135deg,rgba(70,239,196,.065),rgba(181,140,255,.055))}
+  .automatic-team-coach-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+  .automatic-team-coach-title{margin:0;color:var(--ink);font:700 12px 'Fraunces',serif}
+  .automatic-team-coach-live{padding:4px 7px;border:1px solid rgba(70,239,196,.32);border-radius:999px;color:#72efd0;background:rgba(70,239,196,.08);font:700 8px 'JetBrains Mono',monospace;text-transform:uppercase}
+  .automatic-team-coach-verdict{margin:0 0 9px;padding:9px 10px;border-left:3px solid #46efc4;border-radius:7px;background:rgba(5,21,42,.35);color:var(--ink);font:600 10px/1.55 'Inter',sans-serif}
+  .automatic-team-coach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .automatic-team-coach-comment{min-width:0;padding:9px;border:1px solid var(--line);border-radius:9px;background:var(--panel)}
+  .automatic-team-coach-comment b{display:block;margin-bottom:4px;color:var(--ink-faint);font:700 8px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+  .automatic-team-coach-comment span{color:var(--ink);font:600 9px/1.5 'Inter',sans-serif}
+  .automatic-team-coach-suggestion{margin-top:8px;padding:9px 10px;border:1px solid rgba(255,196,77,.30);border-radius:9px;background:rgba(255,196,77,.07);color:var(--ink);font:600 9px/1.5 'Inter',sans-serif}
+  .automatic-team-coach-suggestion strong{color:var(--gold)}
+  .average-team-stats-slot{margin-top:10px}.average-team-stats-slot:empty{display:none}.average-team-stats-slot>.tb-analysis-card{width:100%;box-sizing:border-box}
+  @media(max-width:680px){.automatic-team-coach-grid{grid-template-columns:1fr}.automatic-team-coach{padding:10px}.automatic-team-coach-head{align-items:flex-start}}

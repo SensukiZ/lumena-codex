@@ -1,0 +1,31 @@
+.route-codex-item{
+  position:relative;
+  padding-bottom:34px !important;
+}
+.route-probability-badge{
+  position:absolute;
+  left:48px;
+  bottom:7px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  font-weight:700;
+  color:#dcecff;
+  background:rgba(20,72,145,.72);
+  border:1px solid rgba(111,168,255,.5);
+  border-radius:999px;
+  padding:3px 8px;
+  line-height:1.15;
+  white-space:nowrap;
+}
+@media (max-width:600px){
+  .route-codex-item{padding-bottom:32px !important;}
+  .route-probability-badge{
+    left:44px;
+    bottom:6px;
+    font-size:9px;
+    padding:3px 7px;
+  }
+}

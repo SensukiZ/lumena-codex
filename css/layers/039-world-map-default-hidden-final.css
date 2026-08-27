@@ -1,0 +1,7 @@
+/* World Map is a separate full-screen mode; never show it on normal Codex load. */
+#lumena-world-map{
+  display:none !important;
+}
+body.world-map-full-page #lumena-world-map{
+  display:block !important;
+}

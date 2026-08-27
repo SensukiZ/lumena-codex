@@ -1,0 +1,13 @@
+/* Steel: keep the real Lumena icon when available, with a visible fallback if steel.webp fails to load. */
+.type-chip[style*="#9FB0BF"]::before,
+.lumen-counter-defending-type[style*="#9FB0BF"]::before,
+.mv-type-chip[style*="#9FB0BF"]::before,
+.counter-selected-type[style*="#9FB0BF"]::before,
+.counter-result-type-badge[style*="#9FB0BF"]::before,
+.counter-chip[style*="#9FB0BF"]::before,
+.lumen-counter-item-type[style*="#9FB0BF"]::before {
+  background-image:url("https://lumena.gg/images/battle/type-icons/white/steel.webp") !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-size:contain !important;
+}

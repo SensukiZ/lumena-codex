@@ -1,0 +1,24 @@
+@media (max-width:820px){
+  /* On the Lumen detail screen, remove the search/filter/action controls. */
+  body.detail-open .topbar .search-row,
+  body.detail-open .topbar .result-count{
+    display:none !important;
+  }
+
+  /* Let the detail screen use the space freed by the controls. */
+  body.detail-open .layout{
+    height:calc(100dvh - 92px) !important;
+    min-height:0 !important;
+  }
+
+  /* Keep the header compact while viewing a Lumen. */
+  body.detail-open .topbar{
+    padding-bottom:10px !important;
+  }
+}
+
+@media (max-width:480px){
+  body.detail-open .layout{
+    height:calc(100dvh - 82px) !important;
+  }
+}
