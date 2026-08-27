@@ -1,4 +1,11 @@
 @media(max-width:600px){
+  /* Never leave a stale comparison bar behind the fixed mobile navigation. */
+  body:not(.compare-mode) #compare-bar{
+    transform:translateX(-50%) translateY(160%) !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
   /* Full-screen utilities must get the whole phone viewport. */
   body.codex-utility-open #codex-app-nav,
   body.codex-team-builder-open #codex-app-nav{

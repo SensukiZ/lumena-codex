@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'lumena-codex-frost-signal-2';
+const CACHE_VERSION = 'lumena-codex-mobile-controls-8';
 
 self.addEventListener('install', event => {
   self.skipWaiting();

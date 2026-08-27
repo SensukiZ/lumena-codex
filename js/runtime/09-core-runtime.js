@@ -356,7 +356,9 @@
     compareCountEl.textContent = String(n);
     compareCountEl.dataset.empty = n === 0 ? '1' : '0';
     compareBarCount.textContent = String(n);
-    compareBar.classList.toggle('visible', n > 0);
+    /* Show the controls as soon as comparison mode starts, even before the
+       first Lumen is selected. */
+    compareBar.classList.toggle('visible', compareMode || n > 0);
     compareBarGo.disabled = n < 2;
   }
 
@@ -380,6 +382,7 @@
     compareMode = on;
     document.body.classList.toggle('compare-mode', compareMode);
     compareToggleBtn.classList.toggle('active', compareMode);
+    updateCompareCounters();
   }
 
   function clearCompareSelection(){
@@ -448,10 +451,23 @@
   function openCompareOverlay(){
     renderCompareOverlay();
     compareOverlay.classList.add('open');
+    compareOverlay.setAttribute('aria-hidden','false');
+    document.body.classList.add('compare-stats-open','codex-utility-open');
   }
 
   function closeCompareOverlay(){
     compareOverlay.classList.remove('open');
+    compareOverlay.setAttribute('aria-hidden','true');
+    document.body.classList.remove('compare-stats-open');
+    /* On phones, returning to the Codex should also end selection mode.
+       Otherwise the fixed compare bar remains trapped behind the bottom nav. */
+    if (window.matchMedia('(max-width:820px)').matches){
+      clearCompareSelection();
+      setCompareMode(false);
+    }
+    if(window.__codexViewManager && typeof window.__codexViewManager.sync==='function'){
+      setTimeout(window.__codexViewManager.sync,0);
+    }
   }
 
   compareToggleBtn.addEventListener('click', function(){

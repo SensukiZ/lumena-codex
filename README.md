@@ -23,3 +23,7 @@ The numbered CSS and runtime filenames intentionally preserve the old cascade an
 
 - Snow weather is set by **Frost Signal**. Blizzard Call remains a damaging Ice move.
 - Weather runtime URLs are versioned and the service worker clears older cached builds.
+- Closing Compare Stats on mobile now clears selection mode and fully hides the comparison bar.
+- The mobile bottom navigation has a centered hide/show handle.
+- Compare Stats controls appear immediately and remain fully above the mobile navigation.
+- The mobile navigation handle uses a smaller semicircle design.

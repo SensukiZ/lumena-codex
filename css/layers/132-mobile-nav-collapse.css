@@ -1,0 +1,117 @@
+@media (max-width:600px){
+  #codex-app-nav{
+    transition:transform .22s ease,opacity .18s ease,visibility .18s ease !important;
+  }
+
+  #mobile-nav-collapse-toggle{
+    position:fixed;
+    left:50%;
+    bottom:calc(var(--mobile-nav-height,82px) + env(safe-area-inset-bottom));
+    z-index:2147483501;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:21px;
+    padding:0;
+    border:1px solid #d6a900;
+    border-bottom:0;
+    border-radius:42px 42px 0 0;
+    background:linear-gradient(180deg,#ffe86b 0%,#ffc928 100%);
+    color:#09101d;
+    box-shadow:0 -4px 14px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.72);
+    font:900 12px/1 'JetBrains Mono',monospace;
+    transform:translateX(-50%);
+    cursor:pointer;
+    transition:bottom .22s ease,filter .15s ease;
+  }
+
+  #mobile-nav-collapse-toggle:hover,
+  #mobile-nav-collapse-toggle:focus-visible{filter:brightness(1.08);}
+
+  body.mobile-nav-collapsed #codex-app-nav{
+    transform:translateY(calc(100% + env(safe-area-inset-bottom) + 4px)) !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  body.mobile-nav-collapsed #mobile-nav-collapse-toggle{
+    bottom:max(4px,env(safe-area-inset-bottom));
+    border-bottom:1px solid #d6a900;
+    border-top:0;
+    border-radius:0 0 42px 42px;
+  }
+
+  body.mobile-nav-collapsed{padding-bottom:34px !important;}
+
+  /* Keep the selection controls fully above the navigation and its handle. */
+  body.compare-mode:not(.compare-stats-open) #compare-bar.visible{
+    left:50% !important;
+    right:auto !important;
+    bottom:calc(var(--mobile-nav-height,82px) + 34px + env(safe-area-inset-bottom)) !important;
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    width:calc(100% - 24px) !important;
+    max-width:470px !important;
+    gap:7px !important;
+    padding:9px 10px !important;
+    box-sizing:border-box !important;
+    border-radius:16px !important;
+    transform:translateX(-50%) translateY(0) !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+  }
+
+  body.compare-mode:not(.compare-stats-open) #compare-bar .compare-bar-label{
+    grid-column:1/-1 !important;
+    width:100% !important;
+    text-align:center !important;
+    white-space:normal !important;
+  }
+
+  body.compare-mode:not(.compare-stats-open) #compare-bar .compare-bar-go,
+  body.compare-mode:not(.compare-stats-open) #compare-bar .compare-bar-clear{
+    width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+  }
+
+  body.mobile-nav-collapsed.compare-mode:not(.compare-stats-open) #compare-bar.visible{
+    bottom:calc(38px + env(safe-area-inset-bottom)) !important;
+  }
+
+  body.codex-utility-open #mobile-nav-collapse-toggle,
+  body.codex-team-builder-open #mobile-nav-collapse-toggle{
+    transform:translate(-50%,calc(100% + 40px)) !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  /* Compare Stats receives an explicit state because it can open from the
+     floating selection bar without going through the main navigation. */
+  body.compare-stats-open #codex-app-nav,
+  body.compare-stats-open #compare-bar{
+    transform:translateY(calc(100% + env(safe-area-inset-bottom) + 14px)) !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  body.compare-stats-open #compare-bar{
+    transform:translateX(-50%) translateY(180%) !important;
+  }
+
+  body.compare-stats-open #mobile-nav-collapse-toggle{
+    transform:translate(-50%,calc(100% + 40px)) !important;
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+}
+
+@media (min-width:601px){
+  #mobile-nav-collapse-toggle{display:none !important;}
+}
