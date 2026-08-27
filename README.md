@@ -22,3 +22,4 @@ The numbered CSS and runtime filenames intentionally preserve the old cascade an
 ## Corrections retained after extraction
 
 - Snow weather is set by **Frost Signal**. Blizzard Call remains a damaging Ice move.
+- Weather runtime URLs are versioned and the service worker clears older cached builds.
