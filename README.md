@@ -18,3 +18,7 @@ This project preserves the supplied Codex interface and behavior while moving it
 - `manifest.webmanifest` — installable-app metadata retained by the original HTML
 
 The numbered CSS and runtime filenames intentionally preserve the old cascade and execution order. Upload the complete folder contents to the root of a GitHub repository.
+
+## Corrections retained after extraction
+
+- Snow weather is set by **Frost Signal**. Blizzard Call remains a damaging Ice move.
