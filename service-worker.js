@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'lumena-codex-mobile-controls-8';
+const CACHE_VERSION = 'lumena-codex-moves-20260915';
 
 self.addEventListener('install', event => {
   self.skipWaiting();
