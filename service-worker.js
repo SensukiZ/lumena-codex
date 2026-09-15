@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'lumena-codex-moves-20260915';
+const CACHE_VERSION = 'lumena-codex-200-species-20260915';
 
 self.addEventListener('install', event => {
   self.skipWaiting();

@@ -8,7 +8,7 @@ This project preserves the supplied Codex interface and behavior while moving it
 - `css/theme.css` — maintainable rarity, type, and move-category variables
 - `css/layers/` — 131 ordered style layers from the original build
 - `js/runtime/` — 55 feature runtimes in their original execution positions
-- `js/data/lumens.js` — 150 extracted Lumen index records
+- `js/data/lumens.js` — 200 Lumen index records with learnsets, artwork, and supplied encounter probabilities
 - `js/data/moves.js` — authoritative move database
 - `js/data/types.js` — shared type definitions
 - `js/modules/filters.js` — pure Lumen and move filtering logic
