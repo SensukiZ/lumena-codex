@@ -1,4 +1,13 @@
 export const moveDatabase = {
+    version: `0.1`,
+    notes: {
+        power: `null means the move does not directly deal damage or has variable power.`,
+        accuracy: `null means it always succeeds unless blocked by battle rules.`,
+        pp: `How many times the move can be used before replenishing at a Center.`,
+        categories: [`physical`, `special`, `status`],
+        suggested_types: [`Normal`, `Fire`, `Water`, `Electric`, `Grass`, `Ice`, `Fighting`, `Poison`, `Ground`, `Flying`, `Psychic`, `Bug`, `Rock`, `Ghost`, `Dragon`, `Dark`, `Steel`, `Fairy`],
+        cooldown_ms: `Real-time cooldown used by legendary rift world combat. Server-enforced; lower values mean faster repeat use.`
+    },
     moves: [{
         id: `struggle`,
         name: `Struggle`,
@@ -2076,9 +2085,7 @@ export const moveDatabase = {
         power: 95,
         accuracy: 90,
         pp: 10,
-        effect: {
-            uses_stat: `attack`
-        },
+        effect: null,
         description: `Your Lumen grabs its opening and crashes in with a decisive finishing blow.`,
         cooldown_ms: 4100
     }, {
@@ -2157,6 +2164,1580 @@ export const moveDatabase = {
         },
         description: `Your Lumen's core spins past its limiter and fires a bright surge that may paralyze the opposing Lumen.`,
         cooldown_ms: 4400
+    }, {
+        id: `thunder_ram`,
+        name: `Thunder Ram`,
+        type: `Electric`,
+        category: `physical`,
+        power: 110,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            recoil: .25
+        },
+        description: `Your Lumen drives its charged armored body into the target, taking recoil equal to a quarter of the damage dealt.`,
+        cooldown_ms: 4600
+    }, {
+        id: `root_circuit`,
+        name: `Root Circuit`,
+        type: `Grass`,
+        category: `special`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `target_last_move_type`,
+                type: `Electric`
+            }
+        },
+        description: `Roots crackle with stored charge. Power jumps to 105 if the opposing Lumen's last move was Electric.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `grounding_bloom`,
+        name: `Grounding Bloom`,
+        type: `Grass`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            absorb_type: {
+                type: `Electric`,
+                heal: .25
+            },
+            duration_turns: 2
+        },
+        description: `Blooms a grounding petal that absorbs one Electric attack until the end of next turn and heals your Lumen.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `thorn_turn`,
+        name: `Thorn Turn`,
+        type: `Grass`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            switch_after_attack: !0
+        },
+        description: `A thorny lash that lets your Lumen switch out after it lands.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `seed_pantry`,
+        name: `Seed Pantry`,
+        type: `Grass`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            side_entry_effect: {
+                heal: .25
+            },
+            duration_turns: 5
+        },
+        description: `Stores a seed on your side for a few turns. The next Lumen you send in eats it to recover HP.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `canopy_drop`,
+        name: `Canopy Drop`,
+        type: `Grass`,
+        category: `physical`,
+        power: 80,
+        accuracy: 95,
+        pp: 10,
+        effect: {
+            hits_semi_invulnerable: `airborne`,
+            semi_invulnerable_damage_multiplier: 1.5
+        },
+        description: `Drops a heavy canopy from above and hits airborne Lumens even harder.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `solar_bloom`,
+        name: `Solar Bloom`,
+        type: `Grass`,
+        category: `special`,
+        power: 120,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            charge_turn: !0,
+            skip_charge_in_weather: `sun`
+        },
+        description: `Gathers sunlight for a turn, then releases it in a blinding bloom. Fires at once in sunny weather.`,
+        cooldown_ms: 4500,
+        introduced: `season_one`
+    }, {
+        id: `undertow_cut`,
+        name: `Undertow Cut`,
+        type: `Water`,
+        category: `physical`,
+        power: 70,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            high_crit: !0
+        },
+        description: `A slicing undertow with a high critical-hit chance.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `low_tide`,
+        name: `Low Tide`,
+        type: `Water`,
+        category: `special`,
+        power: 65,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            conditional_power: {
+                power: 100,
+                when: `target_below_half_hp`
+            }
+        },
+        description: `Drags the opposing Lumen down. Power rises to 100 when the opposing Lumen is below half HP.`,
+        cooldown_ms: 3400,
+        introduced: `season_one`
+    }, {
+        id: `pressure_current`,
+        name: `Pressure Current`,
+        type: `Water`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                attack: -1
+            }
+        },
+        description: `A crushing current that lowers the opposing Lumen's Attack.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `acid_signal`,
+        name: `Acid Signal`,
+        type: `Poison`,
+        category: `special`,
+        power: 40,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                special_defense: -2
+            }
+        },
+        description: `A corrosive signal that harshly lowers the opposing Lumen's Sp. Def.`,
+        cooldown_ms: 2900,
+        introduced: `season_one`
+    }, {
+        id: `toxin_feast`,
+        name: `Toxin Feast`,
+        type: `Poison`,
+        category: `physical`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `target_status_in`,
+                statuses: [`poison`, `bad_poison`]
+            }
+        },
+        description: `Feeds on venom. Power rises to 105 against a poisoned Lumen.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `purging_fumes`,
+        name: `Purging Fumes`,
+        type: `Poison`,
+        category: `special`,
+        power: 50,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            never_misses: !0,
+            clears_target_stat_changes: !0
+        },
+        description: `Never-missing fumes that wipe away every stat change on the opposing Lumen.`,
+        cooldown_ms: 3100,
+        introduced: `season_one`
+    }, {
+        id: `venom_lash`,
+        name: `Venom Lash`,
+        type: `Poison`,
+        category: `physical`,
+        power: 80,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            chance: 30,
+            target_status: `poison`
+        },
+        description: `A venomous lash that may poison the opposing Lumen.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `corrosion_hymn`,
+        name: `Corrosion Hymn`,
+        type: `Poison`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            corrosive_turns: 3
+        },
+        description: `For a few turns your Lumen's Poison attacks corrode Steel, hitting it for neutral damage.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `caustic_guard`,
+        name: `Caustic Guard`,
+        type: `Poison`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            priority: 4,
+            protect: !0,
+            protect_contact_status: `poison`
+        },
+        description: `Protects your Lumen this turn and poisons any Lumen whose physical attack hits the guard.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `counterweight`,
+        name: `Counterweight`,
+        type: `Normal`,
+        category: `physical`,
+        power: 80,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            uses_stat: `defense`
+        },
+        description: `Throws your Lumen's full weight into the opposing Lumen, using its Defense instead of Attack.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `last_word`,
+        name: `Last Word`,
+        type: `Normal`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            conditional_power: {
+                power: 90,
+                when: `target_moved_this_turn`
+            }
+        },
+        description: `A closing retort. Power rises to 90 if the opposing Lumen already moved this turn.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `second_wind`,
+        name: `Second Wind`,
+        type: `Normal`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            heal: .3333,
+            clears_user_negative_stages: !0
+        },
+        description: `Your Lumen catches its breath, restoring a third of its max HP and shaking off stat drops.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `echo_relay`,
+        name: `Echo Relay`,
+        type: `Normal`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            switch_after_attack: !0
+        },
+        description: `A bouncing echo that lets your Lumen switch out after it lands.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `fault_pulse`,
+        name: `Fault Pulse`,
+        type: `Ground`,
+        category: `special`,
+        power: 85,
+        accuracy: 100,
+        pp: 15,
+        effect: null,
+        description: `A steady seismic pulse with no side effect.`,
+        cooldown_ms: 3800,
+        introduced: `season_one`
+    }, {
+        id: `dust_cannon`,
+        name: `Dust Cannon`,
+        type: `Ground`,
+        category: `special`,
+        power: 110,
+        accuracy: 85,
+        pp: 5,
+        effect: {
+            chance: 20,
+            target_stat_changes: {
+                accuracy: -1
+            }
+        },
+        description: `A blinding blast of dust that may lower the opposing Lumen's Accuracy.`,
+        cooldown_ms: 4300,
+        introduced: `season_one`
+    }, {
+        id: `quicksand_turn`,
+        name: `Quicksand Turn`,
+        type: `Ground`,
+        category: `special`,
+        power: 40,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            target_stat_changes: {
+                speed: -1
+            },
+            switch_after_attack: !0
+        },
+        description: `Sinks the opposing Lumen's footing to lower its Speed, then your Lumen switches out.`,
+        cooldown_ms: 2900,
+        introduced: `season_one`
+    }, {
+        id: `seismic_relay`,
+        name: `Seismic Relay`,
+        type: `Ground`,
+        category: `physical`,
+        power: 35,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            multi_hit: {
+                min: 2,
+                max: 2
+            }
+        },
+        description: `Two quick tremors in a row. Each hit deals damage separately.`,
+        cooldown_ms: 2800,
+        introduced: `season_one`
+    }, {
+        id: `tremor_sense`,
+        name: `Tremor Sense`,
+        type: `Ground`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            user_stat_changes: {
+                accuracy: 1
+            },
+            clear_target_positive_stages: [`evasion`]
+        },
+        description: `Your Lumen feels every footstep, raising its Accuracy and removing the opposing Lumen's Evasion boosts.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `subduction`,
+        name: `Subduction`,
+        type: `Ground`,
+        category: `special`,
+        power: 100,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            user_stat_changes: {
+                speed: -1
+            }
+        },
+        description: `Drags a plate of earth over the opposing Lumen. Lowers your Lumen's Speed afterwards.`,
+        cooldown_ms: 4100,
+        introduced: `season_one`
+    }, {
+        id: `rooted_stance`,
+        name: `Rooted Stance`,
+        type: `Ground`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            rooted: {
+                heal_per_turn: .0625
+            },
+            duration_turns: 5
+        },
+        description: `Your Lumen digs in for a few turns, healing a little each turn but unable to switch out.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `earthstar_cannon`,
+        name: `Earthstar Cannon`,
+        type: `Ground`,
+        category: `special`,
+        power: 140,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            charge_turn: !0
+        },
+        description: `Charges a core of compressed earth for a turn, then fires it.`,
+        cooldown_ms: 4900,
+        introduced: `season_one`
+    }, {
+        id: `resonant_stone`,
+        name: `Resonant Stone`,
+        type: `Rock`,
+        category: `special`,
+        power: 80,
+        accuracy: 100,
+        pp: 15,
+        effect: null,
+        description: `A humming stone beam with no side effect.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `geode_burst`,
+        name: `Geode Burst`,
+        type: `Rock`,
+        category: `special`,
+        power: 110,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            user_stat_changes: {
+                special_defense: -1
+            }
+        },
+        description: `Shatters a geode in a burst of crystal. Lowers your Lumen's Sp. Def afterwards.`,
+        cooldown_ms: 4300,
+        introduced: `season_one`
+    }, {
+        id: `lithic_recovery`,
+        name: `Lithic Recovery`,
+        type: `Rock`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            heal: .5
+        },
+        description: `Your Lumen regrows its stone, restoring half of its max HP.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `prism_alignment`,
+        name: `Prism Alignment`,
+        type: `Rock`,
+        category: `special`,
+        power: 120,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            charge_turn: !0,
+            screen_pierce: !0
+        },
+        description: `Aligns a prism for a turn, then fires a beam that passes straight through screens.`,
+        cooldown_ms: 4500,
+        introduced: `season_one`
+    }, {
+        id: `fault_chime`,
+        name: `Fault Chime`,
+        type: `Rock`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                speed: -1
+            }
+        },
+        description: `A ringing tremor that lowers the opposing Lumen's Speed.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `flashover`,
+        name: `Flashover`,
+        type: `Fire`,
+        category: `special`,
+        power: 120,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            user_stat_changes: {
+                special_attack: -2
+            }
+        },
+        description: `Everything ignites at once. Harshly lowers your Lumen's Sp. Atk afterwards.`,
+        cooldown_ms: 4500,
+        introduced: `season_one`
+    }, {
+        id: `cinder_reprisal`,
+        name: `Cinder Reprisal`,
+        type: `Fire`,
+        category: `physical`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `user_status_in`,
+                statuses: [`burn`, `poison`, `bad_poison`, `paralyze`]
+            }
+        },
+        description: `A burning grudge. Power rises to 105 while your Lumen is burned, poisoned or paralyzed.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `scorch_audit`,
+        name: `Scorch Audit`,
+        type: `Fire`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_target_status: {
+                status: `burn`,
+                when: `target_has_positive_stage`
+            }
+        },
+        description: `Scorches any Lumen that has been boosting. Burns the opposing Lumen if it has a raised stat.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `furnace_finale`,
+        name: `Furnace Finale`,
+        type: `Fire`,
+        category: `physical`,
+        power: 150,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            recharge: !0
+        },
+        description: `A furnace-hot slam. Your Lumen must recover next turn.`,
+        cooldown_ms: 5100,
+        introduced: `season_one`
+    }, {
+        id: `magma_breach`,
+        name: `Magma Breach`,
+        type: `Fire`,
+        category: `physical`,
+        power: 90,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            on_survive: {
+                target_stat_changes: {
+                    defense: -1
+                }
+            },
+            on_ko: {
+                user_stat_changes: {
+                    speed: 1
+                }
+            }
+        },
+        description: `Vulcavyrm's signature eruption. Lowers the opposing Lumen's Defense, or raises your Lumen's Speed if it knocks the opposing Lumen out.`,
+        cooldown_ms: 3900,
+        introduced: `season_one`
+    }, {
+        id: `rampart_break`,
+        name: `Rampart Break`,
+        type: `Fighting`,
+        category: `physical`,
+        power: 75,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            removes_opponent_screens: !0
+        },
+        description: `Removes the opposing team's damage-reducing barriers, such as Bulwark Field, Reflective Mind, and Aurora Screen, before dealing physical Fighting damage. These barriers stay removed after the attack.`,
+        cooldown_ms: 3600,
+        introduced: `season_one`
+    }, {
+        id: `crater_palm`,
+        name: `Crater Palm`,
+        type: `Fighting`,
+        category: `physical`,
+        power: 80,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            uses_stat: `defense`
+        },
+        description: `A grounded palm strike that uses your Lumen's Defense instead of Attack.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `aura_knuckle`,
+        name: `Aura Knuckle`,
+        type: `Fighting`,
+        category: `special`,
+        power: 75,
+        accuracy: null,
+        pp: 15,
+        effect: {
+            never_misses: !0
+        },
+        description: `A fist of focused aura that never misses.`,
+        cooldown_ms: 3600,
+        introduced: `season_one`
+    }, {
+        id: `reprisal_stance`,
+        name: `Reprisal Stance`,
+        type: `Fighting`,
+        category: `physical`,
+        power: null,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            counter_physical_damage_multiplier: 2,
+            priority: -5
+        },
+        description: `Your Lumen braces, then returns double the physical damage it took this turn.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `pressure_wave`,
+        name: `Pressure Wave`,
+        type: `Fighting`,
+        category: `special`,
+        power: 90,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            chance: 20,
+            target_stat_changes: {
+                special_defense: -1
+            }
+        },
+        description: `A wave of fighting spirit that may lower the opposing Lumen's Sp. Def.`,
+        cooldown_ms: 3900,
+        introduced: `season_one`
+    }, {
+        id: `shoulder_check`,
+        name: `Shoulder Check`,
+        type: `Fighting`,
+        category: `physical`,
+        power: 60,
+        accuracy: 90,
+        pp: 10,
+        effect: {
+            priority: -6,
+            forces_switch: !0
+        },
+        description: `A late, heavy shove that forces the opposing Lumen to switch out.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `shard_sprint`,
+        name: `Shard Sprint`,
+        type: `Ice`,
+        category: `physical`,
+        power: 40,
+        accuracy: 100,
+        pp: 20,
+        effect: {
+            priority: 1
+        },
+        description: `A quick dash of ice shards that strikes first.`,
+        cooldown_ms: 2900,
+        introduced: `season_one`
+    }, {
+        id: `rime_reversal`,
+        name: `Rime Reversal`,
+        type: `Ice`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 100,
+                when: `user_damaged_this_turn`
+            }
+        },
+        description: `Turns a hit back as frost. Power rises to 100 if your Lumen was damaged earlier this turn.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `frost_hammer`,
+        name: `Frost Hammer`,
+        type: `Ice`,
+        category: `physical`,
+        power: 100,
+        accuracy: 90,
+        pp: 10,
+        effect: {
+            user_stat_changes: {
+                speed: -1
+            }
+        },
+        description: `A crushing hammer of ice. Lowers your Lumen's Speed afterwards.`,
+        cooldown_ms: 4100,
+        introduced: `season_one`
+    }, {
+        id: `aurora_screen`,
+        name: `Aurora Screen`,
+        type: `Ice`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            screen: `all_damage_reduction`,
+            duration_turns: 4,
+            requires_weather: `snow`
+        },
+        description: `Only works in snow. Halves damage to your side for a few turns.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `whiteout_exit`,
+        name: `Whiteout Exit`,
+        type: `Ice`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            weather: `snow`,
+            duration_turns: 5,
+            switch_after_use: !0
+        },
+        description: `Whips up a snowstorm, then your Lumen switches out.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `snowplow`,
+        name: `Snowplow`,
+        type: `Ice`,
+        category: `physical`,
+        power: 50,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            clear_hazards: `own`,
+            on_clear: {
+                user_stat_changes: {
+                    speed: 1
+                }
+            }
+        },
+        description: `Plows away the hazards on your side. Raises your Lumen's Speed if it cleared any.`,
+        cooldown_ms: 3100,
+        introduced: `season_one`
+    }, {
+        id: `permafrost`,
+        name: `Permafrost`,
+        type: `Ice`,
+        category: `special`,
+        power: 60,
+        accuracy: 95,
+        pp: 10,
+        effect: {
+            trap: {
+                duration_min: 3,
+                duration_max: 3,
+                damage_per_turn: .0625
+            }
+        },
+        description: `Locks the opposing Lumen in ice for a few turns, chipping away HP each turn.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `crystal_volley`,
+        name: `Crystal Volley`,
+        type: `Ice`,
+        category: `physical`,
+        power: 25,
+        accuracy: 90,
+        pp: 10,
+        effect: {
+            multi_hit: {
+                min: 2,
+                max: 5
+            }
+        },
+        description: `A volley of crystal shards that hits 2 to 5 times.`,
+        cooldown_ms: 2600,
+        introduced: `season_one`
+    }, {
+        id: `glacial_echo`,
+        name: `Glacial Echo`,
+        type: `Ice`,
+        category: `special`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `target_repeated_move`
+            }
+        },
+        description: `Freezes a repeated pattern. Power rises to 105 if the opposing Lumen used the same move two turns running.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `glacial_terminus`,
+        name: `Glacial Terminus`,
+        type: `Ice`,
+        category: `special`,
+        power: 150,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            recharge: !0
+        },
+        description: `A final glacier that ends the argument. Your Lumen must recover next turn.`,
+        cooldown_ms: 5100,
+        introduced: `season_one`
+    }, {
+        id: `final_stone`,
+        name: `Final Stone`,
+        type: `Ice`,
+        category: `physical`,
+        power: 80,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            uses_stat: `defense`,
+            conditional_power: {
+                power: 120,
+                when: `user_damaged_this_turn`
+            }
+        },
+        description: `Rinkolos's signature stone. Uses your Lumen's Defense, and power rises to 120 if your Lumen was damaged earlier this turn.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `clear_skies`,
+        name: `Clear Skies`,
+        type: `Flying`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            clear_field: `both`
+        },
+        description: `A clearing wind that sweeps hazards and screens from both sides.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `dive_feint`,
+        name: `Dive Feint`,
+        type: `Flying`,
+        category: `physical`,
+        power: 60,
+        accuracy: null,
+        pp: 15,
+        effect: {
+            never_misses: !0,
+            hits_semi_invulnerable: `airborne`
+        },
+        description: `A feinting dive that never misses and reaches airborne Lumens.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `pressure_draft`,
+        name: `Pressure Draft`,
+        type: `Flying`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                attack: -1
+            }
+        },
+        description: `A draft of pressure that lowers the opposing Lumen's Attack.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `gale_lance`,
+        name: `Gale Lance`,
+        type: `Flying`,
+        category: `special`,
+        power: 90,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            high_crit: !0
+        },
+        description: `A piercing lance of wind with a high critical-hit chance.`,
+        cooldown_ms: 3900,
+        introduced: `season_one`
+    }, {
+        id: `cloudbreaker`,
+        name: `Cloudbreaker`,
+        type: `Flying`,
+        category: `physical`,
+        power: 120,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            recoil: .3333
+        },
+        description: `Breaks the sky with a full-speed dive. Your Lumen takes a third of the damage as recoil.`,
+        cooldown_ms: 4500,
+        introduced: `season_one`
+    }, {
+        id: `stat_exchange`,
+        name: `Stat Exchange`,
+        type: `Psychic`,
+        category: `status`,
+        power: null,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            stat_swap: `speed`
+        },
+        description: `Swaps Speed changes between your Lumen and the opposing Lumen.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `prediction_tax`,
+        name: `Prediction Tax`,
+        type: `Psychic`,
+        category: `special`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `target_chose_status_move`
+            }
+        },
+        description: `Punishes hesitation. Power rises to 105 if the opposing Lumen chose a status move this turn.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `vector_crush`,
+        name: `Vector Crush`,
+        type: `Psychic`,
+        category: `physical`,
+        power: 80,
+        accuracy: 100,
+        pp: 15,
+        effect: null,
+        description: `A crushing psychic force with no side effect.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `quiet_interval`,
+        name: `Quiet Interval`,
+        type: `Psychic`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            no_positive_stages_turns: 2
+        },
+        description: `For a short while, no Lumen on either side can raise its stats.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `fable_crash`,
+        name: `Fable Crash`,
+        type: `Fairy`,
+        category: `physical`,
+        power: 90,
+        accuracy: 90,
+        pp: 10,
+        effect: {
+            chance: 10,
+            target_stat_changes: {
+                attack: -1
+            }
+        },
+        description: `A storybook charge that may lower the opposing Lumen's Attack.`,
+        cooldown_ms: 3900,
+        introduced: `season_one`
+    }, {
+        id: `heartbreak_rush`,
+        name: `Heartbreak Rush`,
+        type: `Fairy`,
+        category: `physical`,
+        power: 65,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                special_attack: -1
+            }
+        },
+        description: `A rush that lowers the opposing Lumen's Sp. Atk.`,
+        cooldown_ms: 3400,
+        introduced: `season_one`
+    }, {
+        id: `ribbon_ward`,
+        name: `Ribbon Ward`,
+        type: `Fairy`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            super_effective_ward: !0,
+            duration_turns: 3
+        },
+        description: `Ties a ribbon ward around your side that halves the next super-effective hit.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `little_mercy`,
+        name: `Little Mercy`,
+        type: `Fairy`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            heal_reserve: .25
+        },
+        description: `Heals a resting party member by a quarter of its max HP.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `fable_finale`,
+        name: `Fable Finale`,
+        type: `Fairy`,
+        category: `physical`,
+        power: 140,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            charge_turn: !0
+        },
+        description: `Gathers a tale's ending for a turn, then unleashes it.`,
+        cooldown_ms: 4900,
+        introduced: `season_one`
+    }, {
+        id: `relay_spark`,
+        name: `Relay Spark`,
+        type: `Electric`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            switch_after_attack: !0
+        },
+        description: `A spark that lets your Lumen switch out after it lands.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `static_net`,
+        name: `Static Net`,
+        type: `Electric`,
+        category: `status`,
+        power: null,
+        accuracy: 90,
+        pp: 10,
+        effect: {
+            target_stat_changes: {
+                speed: -1
+            },
+            prevents_switching: !0,
+            duration_turns: 2,
+            respects_type_immunity: !0
+        },
+        description: `A crackling net that lowers the opposing Lumen's Speed and stops it from switching for a while.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `capacitor_drain`,
+        name: `Capacitor Drain`,
+        type: `Electric`,
+        category: `special`,
+        power: 65,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            drain: .5
+        },
+        description: `Drains charge from the opposing Lumen, restoring half of the damage dealt.`,
+        cooldown_ms: 3400,
+        introduced: `season_one`
+    }, {
+        id: `arc_step`,
+        name: `Arc Step`,
+        type: `Electric`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            user_stat_changes: {
+                speed: 1
+            }
+        },
+        description: `A quick electric step that raises your Lumen's Speed.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `circuit_snip`,
+        name: `Circuit Snip`,
+        type: `Electric`,
+        category: `special`,
+        power: 55,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            ends_opponent_speed_buff: !0
+        },
+        description: `Snips the opposing side's Tailwind Path.`,
+        cooldown_ms: 3200,
+        introduced: `season_one`
+    }, {
+        id: `alloy_ray`,
+        name: `Alloy Ray`,
+        type: `Steel`,
+        category: `special`,
+        power: 85,
+        accuracy: 100,
+        pp: 15,
+        effect: null,
+        description: `A steady ray of molten alloy with no side effect.`,
+        cooldown_ms: 3800,
+        introduced: `season_one`
+    }, {
+        id: `rivet_rush`,
+        name: `Rivet Rush`,
+        type: `Steel`,
+        category: `physical`,
+        power: 40,
+        accuracy: 100,
+        pp: 20,
+        effect: {
+            priority: 1
+        },
+        description: `A rapid rivet strike that goes first.`,
+        cooldown_ms: 2900,
+        introduced: `season_one`
+    }, {
+        id: `alloy_cataclysm`,
+        name: `Alloy Cataclysm`,
+        type: `Steel`,
+        category: `special`,
+        power: 150,
+        accuracy: 90,
+        pp: 5,
+        effect: {
+            recharge: !0
+        },
+        description: `Floods the field with molten alloy. Your Lumen must recover next turn.`,
+        cooldown_ms: 5100,
+        introduced: `season_one`
+    }, {
+        id: `resonance_cannon`,
+        name: `Resonance Cannon`,
+        type: `Steel`,
+        category: `special`,
+        power: 80,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            uses_stat: `defense`
+        },
+        description: `Fires resonance from your Lumen's armor, using its Defense instead of Sp. Atk.`,
+        cooldown_ms: 3700,
+        introduced: `season_one`
+    }, {
+        id: `clockwork_guard`,
+        name: `Clockwork Guard`,
+        type: `Steel`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            priority: 3,
+            protect: !0,
+            priority_guard: !0,
+            on_block: {
+                user_stat_changes: {
+                    speed: 1
+                }
+            }
+        },
+        description: `Guards your Lumen for the turn. If the attack it blocks was a priority move, your Lumen's Speed rises.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `grave_mend`,
+        name: `Grave Mend`,
+        type: `Ghost`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            heal_if_target_has_status: {
+                yes: .5,
+                no: .25
+            }
+        },
+        description: `Mends from beyond. Restores a quarter of your Lumen's max HP, or half if the opposing Lumen has a status condition.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `grave_lunge`,
+        name: `Grave Lunge`,
+        type: `Ghost`,
+        category: `physical`,
+        power: 85,
+        accuracy: 100,
+        pp: 15,
+        effect: null,
+        description: `A cold lunge from the grave with no side effect.`,
+        cooldown_ms: 3800,
+        introduced: `season_one`
+    }, {
+        id: `phantom_feint`,
+        name: `Phantom Feint`,
+        type: `Ghost`,
+        category: `physical`,
+        power: 45,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            ignore_protection: !0
+        },
+        description: `A phantom strike that slips past protection.`,
+        cooldown_ms: 3e3,
+        introduced: `season_one`
+    }, {
+        id: `borrowed_glory`,
+        name: `Borrowed Glory`,
+        type: `Ghost`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            steal_one_stage: !0
+        },
+        description: `Steals one stat boost from the opposing Lumen after hitting.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `possession_exit`,
+        name: `Possession Exit`,
+        type: `Ghost`,
+        category: `special`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            switch_after_attack: !0
+        },
+        description: `A parting possession that lets your Lumen switch out after it lands.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `funeral_bell`,
+        name: `Funeral Bell`,
+        type: `Ghost`,
+        category: `special`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            heal_block_turns: 2
+        },
+        description: `A mournful bell that stops the opposing Lumen from healing until the end of next turn.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `sabotage`,
+        name: `Sabotage`,
+        type: `Dark`,
+        category: `physical`,
+        power: 55,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            item_suppress: !0
+        },
+        description: `Sabotages the opposing Lumen's held item until it switches out.`,
+        cooldown_ms: 3200,
+        introduced: `season_one`
+    }, {
+        id: `envy_pulse`,
+        name: `Envy Pulse`,
+        type: `Dark`,
+        category: `special`,
+        power: 70,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            conditional_power: {
+                power: 105,
+                when: `target_has_positive_stage`
+            }
+        },
+        description: `Envy that feeds on boosts. Power rises to 105 against a Lumen with a raised stat.`,
+        cooldown_ms: 3500,
+        introduced: `season_one`
+    }, {
+        id: `trapdoor`,
+        name: `Trapdoor`,
+        type: `Dark`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            priority: 4,
+            reflect_trap_or_phaze: !0
+        },
+        description: `Springs a trapdoor that bounces back the next trapping or forced-switch effect this turn.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `parting_jeer`,
+        name: `Parting Jeer`,
+        type: `Dark`,
+        category: `status`,
+        power: null,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            target_stat_changes: {
+                attack: -1,
+                special_attack: -1
+            },
+            switch_after_use: !0
+        },
+        description: `A jeer that lowers the opposing Lumen's Attack and Sp. Atk, then your Lumen switches out.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `ambush_tax`,
+        name: `Ambush Tax`,
+        type: `Dark`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            intercept_switch_power: 90
+        },
+        description: `Ambushes a Lumen on its way out. Hits harder if the opposing Lumen switches out manually.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `cocoon_pulse`,
+        name: `Cocoon Pulse`,
+        type: `Bug`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            user_stat_changes: {
+                defense: 2,
+                special_defense: 1,
+                speed: -1
+            }
+        },
+        description: `Hardens a cocoon. Sharply raises your Lumen's Defense and raises its Sp. Def, but lowers its Speed.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `web_reversal`,
+        name: `Web Reversal`,
+        type: `Bug`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            swap_field: !0
+        },
+        description: `Reverses the field, swapping hazards and screens between the two sides.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `silk_salvage`,
+        name: `Silk Salvage`,
+        type: `Bug`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            clear_hazards: `own`,
+            on_clear: {
+                heal: .2
+            },
+            fails_without_clear: !0
+        },
+        description: `Salvages the hazards on your side into silk. Heals your Lumen if it cleared any.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `brood_parcel`,
+        name: `Brood Parcel`,
+        type: `Bug`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 5,
+        effect: {
+            side_entry_effect: {
+                stat_changes: {
+                    special_defense: 1
+                }
+            },
+            duration_turns: 3
+        },
+        description: `Leaves a parcel for the next Lumen you send in, raising its Sp. Def.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `signal_buzz`,
+        name: `Signal Buzz`,
+        type: `Bug`,
+        category: `special`,
+        power: 90,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            chance: 10,
+            target_stat_changes: {
+                special_defense: -1
+            }
+        },
+        description: `A piercing buzz that may lower the opposing Lumen's Sp. Def.`,
+        cooldown_ms: 3900,
+        introduced: `season_one`
+    }, {
+        id: `final_sting`,
+        name: `Final Sting`,
+        type: `Bug`,
+        category: `physical`,
+        power: 50,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            on_ko: {
+                user_stat_changes: {
+                    attack: 2
+                }
+            }
+        },
+        description: `A last sting. Sharply raises your Lumen's Attack if it knocks the opposing Lumen out.`,
+        cooldown_ms: 3100,
+        introduced: `season_one`
+    }, {
+        id: `pattern_break`,
+        name: `Pattern Break`,
+        type: `Bug`,
+        category: `special`,
+        power: 75,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            screen_pierce: !0
+        },
+        description: `A pattern that slips through screens without removing them.`,
+        cooldown_ms: 3600,
+        introduced: `season_one`
+    }, {
+        id: `scale_tribute`,
+        name: `Scale Tribute`,
+        type: `Dragon`,
+        category: `status`,
+        power: null,
+        accuracy: null,
+        pp: 10,
+        effect: {
+            consume_stage_heal: {
+                stat: `defense`,
+                heal: .3
+            }
+        },
+        description: `Sheds one Defense boost to restore a good chunk of your Lumen's max HP.`,
+        cooldown_ms: 5e3,
+        introduced: `season_one`
+    }, {
+        id: `scale_resonance`,
+        name: `Scale Resonance`,
+        type: `Dragon`,
+        category: `special`,
+        power: 110,
+        accuracy: 100,
+        pp: 5,
+        effect: {
+            user_stat_changes: {
+                defense: -1
+            }
+        },
+        description: `A resonant dragon pulse. Lowers your Lumen's Defense afterwards.`,
+        cooldown_ms: 4300,
+        introduced: `season_one`
+    }, {
+        id: `wyrm_break`,
+        name: `Wyrm Break`,
+        type: `Dragon`,
+        category: `physical`,
+        power: 60,
+        accuracy: 100,
+        pp: 15,
+        effect: {
+            target_stat_changes: {
+                attack: -1
+            }
+        },
+        description: `A wyrm's strike that lowers the opposing Lumen's Attack.`,
+        cooldown_ms: 3300,
+        introduced: `season_one`
+    }, {
+        id: `elder_spiral`,
+        name: `Elder Spiral`,
+        type: `Dragon`,
+        category: `special`,
+        power: 100,
+        accuracy: 100,
+        pp: 10,
+        effect: {
+            user_stat_changes: {
+                speed: -1
+            }
+        },
+        description: `An ancient spiral of dragon force. Lowers your Lumen's Speed afterwards.`,
+        cooldown_ms: 4100,
+        introduced: `season_one`
     }]
 };
 export const moves = moveDatabase.moves;
