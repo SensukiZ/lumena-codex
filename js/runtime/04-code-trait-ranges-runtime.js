@@ -31,9 +31,11 @@
       if(min===4&&max===31) return [['E','4–8'],['D','9–13'],['C','14–19'],['B','20–24'],['A','25–30'],['S','31']];
       return [['E','0–5'],['D','6–12'],['C','13–18'],['B','19–24'],['A','25–30'],['S','31']];
     }
+    var suppliedRanges=view.dataset.traitRanges ? JSON.parse(view.dataset.traitRanges) : null;
     var rows=STAT_NAMES.map(function(stat){
       var min=strong.has(stat)?4:0,max=limited.has(stat)?25:31;
-      var cls=strong.has(stat)?'trait-strong':limited.has(stat)?'trait-limited':'';
+      if(suppliedRanges && suppliedRanges[stat]){ min=suppliedRanges[stat].min; max=suppliedRanges[stat].max; }
+      var cls=min===4?'trait-strong':max===25?'trait-limited':'';
       var grades=gradeBands(min,max).map(function(band){return '<span class="trait-grade trait-grade-'+band[0].toLowerCase()+'"><b>'+band[0]+'</b> '+band[1]+'</span>'}).join('');
       return '<tr class="'+cls+'"><td>'+escapeHtml(stat)+'</td><td class="trait-range">'+min+'–'+max+'</td><td><div class="trait-grade-bands">'+grades+'</div></td></tr>';
     }).join('');
