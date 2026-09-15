@@ -15233,7 +15233,9 @@ export const lumens = [
       "Bug"
     ],
     "rarity": "common",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/151_nivemite_front-WqYW15Ci.webp",
     "backImage": "https://lumena.gg/assets/151_nivemite_back-vijbJWA6.webp",
     "encounterProbability": 0.209915,
@@ -15309,7 +15311,9 @@ export const lumens = [
       "Bug"
     ],
     "rarity": "uncommon",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/152_chrysnow_front-CDPDqkYt.webp",
     "backImage": "https://lumena.gg/assets/152_chrysnow_back-shwptiR-.webp",
     "encounterProbability": null,
@@ -15390,7 +15394,9 @@ export const lumens = [
       "Bug"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/153_crysalace_front-ghNOVRJ4.webp",
     "backImage": "https://lumena.gg/assets/153_crysalace_back-BzVU-PUP.webp",
     "encounterProbability": null,
@@ -15523,7 +15529,9 @@ export const lumens = [
       "Rock"
     ],
     "rarity": "epic",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/154_boreabell_front-DGQNBuFI.webp",
     "backImage": "https://lumena.gg/assets/154_boreabell_back-BUeyliHZ.webp",
     "encounterProbability": 0.000166666666666667,
@@ -15637,7 +15645,9 @@ export const lumens = [
       "Electric"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/155_fluxflake_front-BU3xeha0.webp",
     "backImage": "https://lumena.gg/assets/155_fluxflake_back-BfhAy_wz.webp",
     "encounterProbability": 0.00666666666666667,
@@ -15708,7 +15718,9 @@ export const lumens = [
       "Electric"
     ],
     "rarity": "epic",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/156_aurorcoil_front-BQv8MyC9.webp",
     "backImage": "https://lumena.gg/assets/156_aurorcoil_back-DjvxgqYX.webp",
     "encounterProbability": null,
@@ -16306,7 +16318,9 @@ export const lumens = [
       "Psychic"
     ],
     "rarity": "uncommon",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/162_kilnink_front-BeIa2u_x.webp",
     "backImage": "https://lumena.gg/assets/162_kilnink_back-DTlAa90Q.webp",
     "encounterProbability": 0.04,
@@ -16390,7 +16404,9 @@ export const lumens = [
       "Psychic"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/163_scrynder_front-DVALt4-a.webp",
     "backImage": "https://lumena.gg/assets/163_scrynder_back-CUP_jUtc.webp",
     "encounterProbability": null,
@@ -17274,7 +17290,9 @@ export const lumens = [
       "Ghost"
     ],
     "rarity": "uncommon",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/172_cindervox_front-B-B0xmlx.webp",
     "backImage": "https://lumena.gg/assets/172_cindervox_back-BFlyNBOr.webp",
     "encounterProbability": 0.17,
@@ -17355,7 +17373,9 @@ export const lumens = [
       "Ghost"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/173_pyrechoir_front-C78JUATH.webp",
     "backImage": "https://lumena.gg/assets/173_pyrechoir_back-iZx7EOHd.webp",
     "encounterProbability": null,
@@ -18260,7 +18280,9 @@ export const lumens = [
       "Normal"
     ],
     "rarity": "common",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/182_flurrum_front-DqaIhbqT.webp",
     "backImage": "https://lumena.gg/assets/182_flurrum_back-3Ez9YRvb.webp",
     "encounterProbability": 0.12,
@@ -18339,7 +18361,9 @@ export const lumens = [
       "Normal"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/183_paradeglace_front-DRkVUBIm.webp",
     "backImage": "https://lumena.gg/assets/183_paradeglace_back-DHMbz1f-.webp",
     "encounterProbability": null,
@@ -18632,7 +18656,9 @@ export const lumens = [
       "Flying"
     ],
     "rarity": "common",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/186_ashplume_front-CuVXEfA8.webp",
     "backImage": "https://lumena.gg/assets/186_ashplume_back-CQXR4Oi3.webp",
     "encounterProbability": 0.329915,
@@ -18723,7 +18749,9 @@ export const lumens = [
       "Flying"
     ],
     "rarity": "uncommon",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/187_flarecrest_front-1fhm8ati.webp",
     "backImage": "https://lumena.gg/assets/187_flarecrest_back-R3hsbgnb.webp",
     "encounterProbability": null,
@@ -18819,7 +18847,9 @@ export const lumens = [
       "Flying"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/188_dawnbraze_front-DRbfosk7.webp",
     "backImage": "https://lumena.gg/assets/188_dawnbraze_back-C-PLnys3.webp",
     "encounterProbability": null,
@@ -18947,7 +18977,9 @@ export const lumens = [
       "Ground"
     ],
     "rarity": "epic",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/189_calderyx_front-movk9ppI.webp",
     "backImage": "https://lumena.gg/assets/189_calderyx_back-DGzaCIBg.webp",
     "encounterProbability": 0.00025,
@@ -19076,7 +19108,9 @@ export const lumens = [
       "Dragon"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/190_rimescale_front-Dhu4w4QR.webp",
     "backImage": "https://lumena.gg/assets/190_rimescale_back-C90KblI8.webp",
     "encounterProbability": 0.0001,
@@ -19146,7 +19180,9 @@ export const lumens = [
       "Dragon"
     ],
     "rarity": "epic",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/191_cryovyrm_front-CW8n2yLG.webp",
     "backImage": "https://lumena.gg/assets/191_cryovyrm_back-CjL8cGOx.webp",
     "encounterProbability": null,
@@ -19246,7 +19282,9 @@ export const lumens = [
       "Fairy"
     ],
     "rarity": "rare",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/192_kindlit_front-BY6-v30q.webp",
     "backImage": "https://lumena.gg/assets/192_kindlit_back-_19fZgP5.webp",
     "encounterProbability": 0.001,
@@ -19331,7 +19369,9 @@ export const lumens = [
       "Fairy"
     ],
     "rarity": "epic",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/193_hearthare_front-D5km8d5a.webp",
     "backImage": "https://lumena.gg/assets/193_hearthare_back-7ealDMcY.webp",
     "encounterProbability": null,
@@ -19643,7 +19683,9 @@ export const lumens = [
       "Fighting"
     ],
     "rarity": "legendary",
-    "locations": [],
+    "locations": [
+      "Rimewatch"
+    ],
     "image": "https://lumena.gg/assets/196_rinkolos_front-Br189rnP.webp",
     "backImage": "https://lumena.gg/assets/196_rinkolos_back-BmUIaATj.webp",
     "encounterProbability": null,
@@ -19946,7 +19988,9 @@ export const lumens = [
       "Dragon"
     ],
     "rarity": "legendary",
-    "locations": [],
+    "locations": [
+      "Cinderbank"
+    ],
     "image": "https://lumena.gg/assets/199_vulcavyrm_front-BMCaEpQN.webp",
     "backImage": "https://lumena.gg/assets/199_vulcavyrm_back-DHVyD3HL.webp",
     "encounterProbability": null,
